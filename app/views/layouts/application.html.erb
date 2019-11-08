@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gimme 3 Table</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <!-- <nav class ="navbar">
+          <span class="navbar-toggle" id="js-navbar-toggle"> 
+              <i class="fas fa bars"></i>
+          </span>
+          <a href="#" class="Gimme A Table">logo</a>
+          <ul class="main-nav" id="js-menu">
+            <a href="#" class="nav-links">Sign up</a>
+            <a href="#" class="nav-links">Sign in</a>
+            <Link to="/signup" class>Sign Up</Link>
+          </ul>
+      </nav> -->
+     
+    <%= yield %>
+  </body>
+</html>
