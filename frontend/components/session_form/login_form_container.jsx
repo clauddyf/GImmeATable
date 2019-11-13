@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { clearErrors } from '../../actions/clear_errors';
 
 
 const mSTP = ({ errors }) => {
     return {
         errors: errors.session,
-        formType: 'login',
-        navLink: <Link to='/signup'>Wanna Sign up?</Link>
+        formType: 'Sign In',
+        navLink: <Link to='/signup'>Create an Account?</Link>
     };
 };
 
@@ -22,7 +23,9 @@ const mDTP = dispatch => {
                 Signup
             </button>
         ),
-        closeModal: () => dispatch(closeModal())
+        openModal: (type) => dispatch(openModal(type)),
+        closeModal: () => dispatch(closeModal()),
+        clearErrors: () => dispatch(clearErrors())
     };
 };
 

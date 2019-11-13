@@ -6,15 +6,18 @@ import { openModal } from '../../actions/modal_actions';
 const Greeting = ({ currentUser, logout, openModal}) => {
     const sessionLinks = () => (
         <nav className='login-signup'>
-            <Link onClick={() => openModal('login')} to="/login">Sign in</Link>
+            <Link className = 'nav-signin' onClick={() => openModal('login')} to="/login">Sign in</Link>
             &nbsp; &nbsp;
-            <Link onClick={() => openModal('signup')} to='/signup'>Sign up!</Link>
+            <Link className = 'nav-signup' onClick={() => openModal('signup')} to='/signup'>Sign up!</Link>
         </nav>
     );
 
     const personalGreeting = () => (
+        
         <hgroup className="header-group">
-            <h2 className='header-name'>Ready to Eat?, {currentUser.username}!</h2>
+            <div className='header-name'>
+                Ready to Eat, {currentUser.first_name}?!
+            </div>
             <button className='header-button' onClick={logout}>Log Out</button>
         </hgroup>
     );

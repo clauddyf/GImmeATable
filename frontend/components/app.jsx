@@ -11,18 +11,21 @@ const App = () => (
     <div>
         <header className="nav-bar">
             <Link to="/" className='header-link'>
-                {/* <h1>Gimme A Table</h1> */}
-                <img src="/2ndlogo.png" alt=""/>
+                Gimme A Table
             </Link>
             <GreetingContainer/>
         </header>
         <div className="splash">
         </div>
+        {/* <div className = 'rest-pics'>
+            <img src="/nolarestaurant.jpg" alt=""/>
+            <img src="/LArest.jpg" alt=""/>
+        </div> */}
         <ul>
          <Modal/>
          <Switch>
-            {/* <AuthRoute exact path='/login' component={LoginFormContainer}/>
-            <AuthRoute exact path='/signup' component={SignupFormContainer}/> */}
+             {/* <AuthRoute exact path='/login' component={LoginFormContainer}/> */}
+             {/* <AuthRoute exact path='/signup' component={SignupFormContainer}/>   */}
          </Switch>
         </ul>
     </div>
