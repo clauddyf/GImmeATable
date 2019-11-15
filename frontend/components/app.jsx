@@ -28,6 +28,14 @@ const App = () => {
                      <Route path="/restaurants/:restId" component={RestaurantShowContainer} />
                  </Switch>
                 </ul>
+                <div className='footer-div'>
+                {/* <footer className='footy'>
+                    <p>Created by Claudius Solomon</p>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <hr/>
+                    <a href="#" class="fa fa-google"></a>
+                </footer> */}
+            </div>
             </div>
         );
 }

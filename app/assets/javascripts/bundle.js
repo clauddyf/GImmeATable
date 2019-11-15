@@ -303,7 +303,9 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/restaurants/:restId",
     component: _restaurant_show_restaurant_show_container__WEBPACK_IMPORTED_MODULE_7__["default"]
-  }))));
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-div"
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(App));
@@ -542,6 +544,12 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "waffles"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "waffy",
+        src: "/waffles.jpg",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("aside", {
         className: "right-side"
@@ -553,7 +561,11 @@ function (_React$Component) {
         className: "baby-dress"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dresscode"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "act-dress"
-      }, this.props.restaurant.dresscode))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.restaurant.dresscode))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "baby-din-style"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dining Style"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "din-style"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.dining_style))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ove-sect"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name-body"
@@ -569,9 +581,7 @@ function (_React$Component) {
         className: "rev-icon"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "num-revs"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.num_of_views), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " Reviews")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "din-style"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.dining_style)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.num_of_views), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " Reviews")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "desc-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.restaurant.description)))));
     }
@@ -1012,9 +1022,11 @@ var Splash = function Splash() {
     className: "content-block"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "greyed-out"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "content-block-header"
-  }, "Find your table for any occasion")));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "obama-text"
+  }, "Find your table for any occasion")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash);

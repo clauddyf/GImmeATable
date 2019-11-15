@@ -5,11 +5,14 @@ const Splash = () => {
         <div className="splash">
             <div className='content-block'>
                 <div className='greyed-out'>
+                    <div className='content-block-header'>
+                        <h1 className='obama-text'>
+                            Find your table for any occasion
+                        </h1>  
+                    </div>
                 </div>
-                <h1 className='content-block-header'>
-                    Find your table for any occasion
-                </h1>  
             </div>
+            
         </div>
     )
 }

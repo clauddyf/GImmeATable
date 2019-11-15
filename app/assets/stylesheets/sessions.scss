@@ -242,21 +242,32 @@ a {
    display: flex;
  }
 .header-name{
-   font-family: 'Playfair Display', serif;
-   text-align: center;
-   padding: 15px;
-   width: 1556px;
-   font-size: 40px;
+   // font-family: 'Playfair Display', serif;
+   // text-align: center;
+   // padding: 23px;
+   // font-size: 20px;
+   // color: red;
+   font-family: 'Overpass', sans-serif;;
+   padding-top: 5px;
+   padding-left: 15px;
+   padding-right: 15px;
+   text-decoration: none;
+   background-color: red;
+   color: white;
+   height: 55px;
+   line-height: 60px;
+   border-radius: 15px;
+   margin: 10px;
 }
 
 .content-block{
    align-items: center;
-   background-image: url('/bndo.jpg');
+   // background-image: url('/bndo.jpg');
    background-color: rgba(47,45,65,.7);
    height:500px;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
+   // background-position: center;
+   // background-repeat: no-repeat;
+   // background-size: cover;
    border: none;
    display: flex;
    flex-direction: column;
@@ -265,15 +276,55 @@ a {
    width: 100%;
 }
 
+.greyed-out{
+   background-color: grey;
+   width: 100%;
+   height: 100%;
+   // margin-bottom: -61px;
+   background-image: url('/group-table.jpg');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   // background-position-y: -96px;
+}
 .content-block-header{
    display: flex;
    justify-content: center;
    color: white;
    font-size: 60px;
+   z-index: 1;
+   font-family: 'Playfair Display', serif; 
+   margin-top: 41px;
 }
-.greyed-out{
-   background-color: grey;
-   opacity: .25;
-   width: 100%;
-   height: 100%;
+
+.obama-text{
+
+   z-index: 5;
 }
+
+// .footer-div{
+//    display: flex;
+//    -webkit-box-orient: horizontal;
+//    -webkit-box-direction: reverse;
+//    flex-direction: row-reverse;
+//    max-width: 992px;
+//    margin-left: auto;
+//    margin-right: auto;
+//    font-family: 'Playfair Display', serif;
+//    margin-top: 200px;
+//    margin-left: -83px;
+// }
+
+// .footer-div {
+//    padding: 20px;
+//    font-size: 30px;
+//    width: 50px;
+//    text-align: center;
+//    text-decoration: none;
+//    margin: 5px 2px;
+// }
+
+// .footy{
+//    display: flex;
+//    justify-content: space-between;
+// }

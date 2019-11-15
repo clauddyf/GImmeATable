@@ -14,6 +14,9 @@ class RestaurantShow extends React.Component{
         if (this.props.restaurant === undefined) return null; 
         return(
             <div className='rest-page'>
+                <div className='waffles'>
+                    <img className= 'waffy' src="/waffles.jpg" alt=""/>
+                </div>
                 <div className='rest-body'>
                     <aside className='right-side'>
                         <div className='baby-right-side'>
@@ -25,6 +28,14 @@ class RestaurantShow extends React.Component{
                                     </div>
                                 </div>
                             </div>
+                            <hr/>
+                            <div className='baby-din-style'>
+                                <span>Dining Style</span>
+                                <div className='din-style'>
+                                    <span>{this.props.restaurant.dining_style}</span>
+                                </div>
+                            </div>
+                            <hr/>
                         </div>
                     </aside>
                     <div className='ove-sect' >
@@ -35,17 +46,13 @@ class RestaurantShow extends React.Component{
                             <div className='reviews'>
                                 <div className='rev-bar'>
                                     <div className='rev-icon'>
-
+                                        
                                     </div>
                                     <div className='num-revs'>
                                         <span>{this.props.restaurant.num_of_views}</span>
                                         <span> Reviews</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div className='din-style'>
-                                <span></span>
-                                <span>{this.props.restaurant.dining_style}</span>
                             </div>
                         </div>
                       </div>
