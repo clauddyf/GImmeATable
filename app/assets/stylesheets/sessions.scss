@@ -248,3 +248,32 @@ a {
    width: 1556px;
    font-size: 40px;
 }
+
+.content-block{
+   align-items: center;
+   background-image: url('/bndo.jpg');
+   background-color: rgba(47,45,65,.7);
+   height:500px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   border: none;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   margin-top: 23px;
+   width: 100%;
+}
+
+.content-block-header{
+   display: flex;
+   justify-content: center;
+   color: white;
+   font-size: 60px;
+}
+.greyed-out{
+   background-color: grey;
+   opacity: .25;
+   width: 100%;
+   height: 100%;
+}

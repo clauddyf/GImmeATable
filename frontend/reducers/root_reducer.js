@@ -4,8 +4,9 @@ import entities from './entities_reducer';
 import errors from './errors_reducer';
 import ui from './ui.reducer';
 
+
 const rootReducer = combineReducers({
-    entities,session,errors,ui
+    entities,session,errors,ui,
 });
 
 export default rootReducer;

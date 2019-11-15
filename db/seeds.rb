@@ -8,9 +8,15 @@
 User.destroy_all
 
 new_guy = User.new(email:'demouser@gmail.com', password: 'password', first_name: 'guest', last_name:'user', city: 'Oakland')
-
 new_guy.save!
-
 another_guy = User.new(email:'anotherdemo@gmail.com', password: 'password', first_name: 'Ariel', last_name:'Solomon', city: 'Oakland')
-
 another_guy.save!
+
+Restaurant.destroy_all
+
+first_res = Restaurant.new(name: 'Cafe Claudius', description:'Close to Union Square and closer to Paris, 
+    Café Claude has remained an unpretentious neighborhood meeting place nestled amongst the urban skyscrapers. Café Claude is a classic Bistro, Gallic waiters, and Paris Bistro style menu. Enjoy a bubbly atmosphere',
+ dresscode: 'Business Casual', dining_style: 'Casual Elegant', num_of_views: 22, location: 'Oakland', rating: 4.5, cuisine_type: 'Jamaican')
+first_res.save!
+sec_res = Restaurant.new(name: 'Good Burger', description:'Close to Mondo Burger, Good Burger is a great small business with amazing sauce', dresscode: 'Regular ', dining_style: 'Fast food', num_of_views: 1997, location: 'San Francisco', rating: 4.2, cuisine_type: 'Classic American')
+sec_res.save!
