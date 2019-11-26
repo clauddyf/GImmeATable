@@ -1,7 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**GimmeATable
+
+GimmeATable is a site in which a user can search for a restaurant, reserve a table, and leave a review of that same restaurant. This site is inspired by the website OpenTable
+
+**Technologies
+
+Ruby on Rails
+React/Redux
+Javascript
 
 Things you may want to cover:
 
