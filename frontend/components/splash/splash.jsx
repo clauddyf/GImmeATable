@@ -13,10 +13,10 @@ const Splash = () => {
                     </div>
                 </div>
             </div>
-            <hr/>
             <div className='pop-rests'>
                 <h2>Popular Restaurants in San Francisco</h2>
             </div>
+            <hr/>
             <div className='splashcont'>
                 <SplashContainer />
             </div>

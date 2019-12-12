@@ -1144,9 +1144,9 @@ var Splash = function Splash() {
     className: "content-block-header"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "obama-text"
-  }, "Find your table for any occasion")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Find your table for any occasion")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "pop-rests"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Popular Restaurants in San Francisco")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Popular Restaurants in San Francisco")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "splashcont"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
 }; // class Splash extends React.Component {
