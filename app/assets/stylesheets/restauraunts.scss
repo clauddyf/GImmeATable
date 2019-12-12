@@ -36,7 +36,7 @@
 
 .right-side{
     width: 320px;
-    margin: 0 0 0 1rem;
+    margin: 0 0 0 7rem;
     display: block;
 }
 .baby-right-side{
@@ -60,13 +60,32 @@
     font-weight: 700;
     line-height: 56px;
 }
-
-.ratings-bar {
+.ratings-bar{
     display: flex;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    flex-direction: row;
+    // justify-content: space-around
+}
+.rte-bar-child {
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    justify-content: space-around;
+}
+
+.rev-bar{
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    justify-content: space-around;
+}
+.c-type{
+    // display: flex;
+    // box-sizing: border-box;
+    // position: relative;
+    // justify-content: space-around;
+    padding: 9px;
 }
 .reviews{
     display: flex;
@@ -75,11 +94,6 @@
     padding: 0;
 }
 
-.rev-bar{
-  margin-right: .25rem;
-  margin: 0;
-  padding: 0;  
-}
 
 .num-revs{
     font-size: 14px;
@@ -105,19 +119,19 @@
     max-height: calc(3*24px);
     text-overflow: ellipsis;
 }
-.dresscode{
-    align-self: center;
-    margin: 0 0 0 .25rem;
-    padding: 0 .25rem;
-}
+// .dresscode{
+//     align-self: center;
+//     margin: 0 0 0 .25rem;
+//     padding: 0 .25rem;
+// }
 
-.baby-dress{
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    margin: 0;
-    padding: 0;
-}
+// .baby-dress{
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 20px;
+//     margin: 0;
+//     padding: 0;
+// }
 .act-dress{
     font-size: 14px;
     font-weight: 400;
@@ -132,4 +146,27 @@
     height: 50%;
     margin-left: 342px;
     padding-top: 26px;
+}
+.rest-nav-bar{
+    // display: flex;
+    color: #2d333f;
+}
+.nav-info{
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    justify-content: space-around;
+    color: #2d333f;
+    margin: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 29px;
+    font-weight: 700;
+    line-height: 56px;
+}
+.ov-l{
+    color: #2d333f;
+}
+.ov-l:hover{
+    color: rgb(100, 95, 95);
 }

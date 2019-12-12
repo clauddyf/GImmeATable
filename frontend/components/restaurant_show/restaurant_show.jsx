@@ -36,23 +36,61 @@ class RestaurantShow extends React.Component{
                                 </div>
                             </div>
                             <hr/>
+                            <div className='baby-cuise'>
+                                <span>Cuisine-Type</span>
+                                <div className= 'din-style'>
+                                    <span>{this.props.restaurant.cuisine_type}</span>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div className='baby-happy'>
+                                <span>Happy-Hour</span>
+                                <div className='happy-hour'>
+                                    <span>{this.props.restaurant.happy_hour}</span>
+                                </div>
+                            </div>
+                            <hr/>
                         </div>
                     </aside>
                     <div className='ove-sect' >
+                      <div className='rest-nav-bar'>
+                          <ul className='nav-info'>
+                              <li id='overview-link'>
+                                  <a className='ov-l' href=""><span>Overview</span></a>
+                              </li>
+                              <li id='photos-link'>
+                                  <a className='ov-l' href=""><span>Photos</span></a>
+                              </li>
+                              <li id='menu-link'>
+                                <a className='ov-l'href=""><span>Menu</span></a>
+                              </li>
+                              <li id='reviews-link'>
+                                <a className='ov-l'href=""><span>Reviews</span></a>
+                              </li>
+                          </ul>
+                      </div>
+                      <hr/>
                       <div className='name-body'>
                         <h1 className='rest-name'>{this.props.restaurant.name}</h1>
                         <hr/>
                         <div className='ratings-bar'>
-                            <div className='reviews'>
-                                <div className='rev-bar'>
-                                    <div className='rev-icon'>
+                            <div className='rte-bar-child'>
+                                <ul className='rev-bar'>
+                                    <li className='rev-icon'>
                                         
-                                    </div>
-                                    <div className='num-revs'>
-                                        <span>{this.props.restaurant.num_of_views}</span>
-                                        <span> Reviews</span>
-                                    </div>
-                                </div>
+                                    </li>
+                                    <li className='c-type'>
+                                        <span className='c-type'>{this.props.restaurant.num_of_views}</span>
+                                        <span className='c-type'> Reviews</span>
+                                    </li>
+                                    
+                                    <li className='ctype-icon'>
+                                        
+                                    </li>
+                                    <li className='c-type'>
+                                        <span className='c-type'>{this.props.restaurant.cuisine_type}</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                       </div>

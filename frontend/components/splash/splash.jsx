@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import SplashContainer from './splash_container';
 
 const Splash = () => {
     return (
@@ -12,8 +13,20 @@ const Splash = () => {
                     </div>
                 </div>
             </div>
-            
+            <hr/>
+            <div className='pop-rests'>
+                <h2>Popular Restaurants in San Francisco</h2>
+            </div>
+            <div className='splashcont'>
+                <SplashContainer />
+            </div>
         </div>
     )
 }
+
+// class Splash extends React.Component {
+//     render() {
+
+//     }
+// }
 export default Splash;

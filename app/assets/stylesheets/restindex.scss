@@ -1,0 +1,51 @@
+.ul-container, .ul-r-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.restaurant-ul-index {
+    display: flex;
+    width: 1400px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.restIndexPlate {
+    background-color: rgb(242, 243, 248);
+    color: #2d333f;
+    border: 1px solid gray;
+    width: 450px;
+    margin: auto;
+    padding: 3px;
+    margin-top: 18px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
+}
+.dafuq{
+    color: #2d333f;
+}
+.restaurant-name {
+    font-size: 25px;
+    font-weight: bold;
+    color: #2d333f;
+}
+
+.pop-rests{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #2d333f;
+}
+
+.rest-splash-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #2d333f;
+}

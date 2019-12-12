@@ -1,1 +1,1 @@
-json.extract! restaurant, :id, :description, :name, :dresscode, :dining_style, :num_of_views
+json.extract! restaurant, :id, :description, :name, :dresscode, :dining_style, :cuisine_type, :happy_hour, :num_of_views
