@@ -5,15 +5,11 @@ class RestaurantShow extends React.Component{
     constructor(props){
         super(props)
     }
-
+    
     componentDidMount(){
         this.props.fetchRestaurant(this.props.match.params.restId)
     }
-//     Good Afternoon Mohammad,
-
-//  I greatly appreciate this opportunity for an interview. I've done research on ITCO and
-//   I am very impressed with the organization and its vast membership of shipping companies. I am available anytime from December 17th and beyond. Thank you!
-
+    
     render(){
         if (this.props.restaurant === undefined) return null; 
         return(
@@ -56,6 +52,9 @@ class RestaurantShow extends React.Component{
                             <hr/>
                         </div>
                     </aside>
+                    <div>
+                        <img src={this.props.restaurant.photoUrls} alt=""/>
+                    </div>
                     <div className='ove-sect' >
                       <div className='rest-nav-bar'>
                           <ul className='nav-info'>

@@ -27,6 +27,7 @@ class RestaurantsIndex extends React.Component {
             </Link>
         )
     }
+    
 }
 
 export default RestaurantsIndex
