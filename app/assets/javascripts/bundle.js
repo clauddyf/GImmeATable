@@ -536,7 +536,10 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchRestaurant(this.props.match.params.restId);
-    }
+    } //     Good Afternoon Mohammad,
+    //  I greatly appreciate this opportunity for an interview. I've done research on ITCO and
+    //   I am very impressed with the organization and its vast membership of shipping companies. I am available anytime from December 17th and beyond. Thank you!
+
   }, {
     key: "render",
     value: function render() {
@@ -37623,7 +37626,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

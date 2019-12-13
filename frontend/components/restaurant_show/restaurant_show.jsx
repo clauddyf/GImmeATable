@@ -9,6 +9,10 @@ class RestaurantShow extends React.Component{
     componentDidMount(){
         this.props.fetchRestaurant(this.props.match.params.restId)
     }
+//     Good Afternoon Mohammad,
+
+//  I greatly appreciate this opportunity for an interview. I've done research on ITCO and
+//   I am very impressed with the organization and its vast membership of shipping companies. I am available anytime from December 17th and beyond. Thank you!
 
     render(){
         if (this.props.restaurant === undefined) return null; 

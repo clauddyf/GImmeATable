@@ -5,6 +5,42 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'csv'
+csv_text = File.read(Rails.root.join('db','lib','master-seeds.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+    t = Restaurant.new
+    t.location = row['location']
+    t.name = row['name']
+    t.description = row['description']
+    t.hours_op = row['hours_op']
+    t.dresscode = row['dresscode']
+    t.address = row['address']
+    t.neighborhood = row['neighborhood']
+    t.website = row['website']
+    t.city_id = row['city_id']
+    t.phone_num= row['phone-number']
+    t.pricing = row['pricing']
+    t.cuisine_type = row['cuisine type']
+    t.num_stars = row['num stars']
+    t.num_of_views = row['num_of_views']
+    t.save!
+    puts "#{t.name}, #{t.location} saved"
+end
+puts "There are now #{Restaurant.count} rows in the Restaurant table"
+
+
+Restaurant.all.each_with_index do |restaurant, idx|
+    file = open('https://gimmeatable.s3-us-west-1.amazonaws.com/res_`#{idx}`.jpg')
+    restaurant.photo.attach(io: file, filename: 'res_`#{idx}`.jpg')
+end
+
+
+
+
+
+
 User.destroy_all
 
 new_guy = User.new(email:'demouser@gmail.com', password: 'password', first_name: 'guest', last_name:'user', city: 'Oakland')
