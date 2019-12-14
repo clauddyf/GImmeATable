@@ -734,7 +734,7 @@ function (_React$Component) {
         className: "rest-splash-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "rest-others"
-      }, this.props.restaurant.cuisine_type)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, this.props.restaurant.cuisine_type)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "rest-others"
       }, this.props.restaurant.dresscode))));
     }

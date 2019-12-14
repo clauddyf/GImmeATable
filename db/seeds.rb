@@ -52,7 +52,22 @@ Restaurant.all.each_with_index do |restaurant, idx|
     restaurant.photos.attach(io: file, filename: "res_#{idx}.jpg")
 end
 
+# Location.destroy_all
+# # sf, phoenix, portland,nola, chicago, Austin, NY, Des Moines, Las Vegas,Denver,Seattle,
+# SanFrancisco = Location.create!(location: 'San Francisco')
+# Phoenix = Location.create!(location: 'Phoenix')
+# Portland = Location.create!(location: 'Portland')
+# NOLA = Location.create!(location: 'NOLA')
+# NewYork = Location.create!(location: 'New York')
+# DesMoines = Location.create!(location: 'Des Moines')
+# LasVegas = Location.create!(location: 'Las Vegas')
+# Denver = Location.create!(location: 'Denver')
+# Seattle = Location.create!(location: 'Seattle')
 
+# Location.all.each_with_index do |location, idx|
+#     file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/loc_#{idx}.jpg")
+#     location.photos.attach(io: file, filename: "loc_#{idx}.jpg")
+# end
 # restaurant.photo.attach(io: file, filename: `res_#{idx}.jpg`)
 
 

@@ -21,6 +21,9 @@ class RestaurantsIndex extends React.Component {
                         <span className='rest-others'>{this.props.restaurant.cuisine_type}</span>
                     </li>
                     <li>
+                        {/* <img src={this.props.restaurant.photoUrls} alt=""/> */}
+                    </li>
+                    <li>
                     <span className='rest-others'>{this.props.restaurant.dresscode}</span>
                     </li>
                 </ul>
