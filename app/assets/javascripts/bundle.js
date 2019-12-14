@@ -107,6 +107,17 @@ var clearErrors = function clearErrors(errors) {
 
 /***/ }),
 
+/***/ "./frontend/actions/location_actions.js":
+/*!**********************************************!*\
+  !*** ./frontend/actions/location_actions.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /home/claudius/Desktop/GimmeATable/GimmeATable/frontend/actions/location_actions.js: Unexpected token, expected \",\" (20:80)\n\n\u001b[0m \u001b[90m 18 | \u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 19 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m fetchLocation \u001b[33m=\u001b[39m locId \u001b[33m=>\u001b[39m dispatch \u001b[33m=>\u001b[39m (\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 | \u001b[39m    \u001b[33mAPIUtil\u001b[39m\u001b[33m.\u001b[39mfetchLocation(locId)\u001b[33m.\u001b[39mthen(locId \u001b[33m=>\u001b[39m dispatch(receiveLocation(locId)))\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n    at Object.raise (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:6931:17)\n    at Object.unexpected (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:8324:16)\n    at Object.expect (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:8310:28)\n    at Object.parseParenAndDistinguishExpression (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:9705:14)\n    at Object.parseExprAtom (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:9504:21)\n    at Object.parseExprAtom (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:4083:20)\n    at Object.parseExprSubscripts (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:9166:23)\n    at Object.parseMaybeUnary (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:9146:21)\n    at Object.parseExprOps (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:9012:23)\n    at Object.parseMaybeConditional (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:8985:23)\n    at Object.parseMaybeAssign (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:8931:21)\n    at Object.parseFunctionBody (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:10160:24)\n    at Object.parseArrowExpression (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:10119:10)\n    at Object.parseExprAtom (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:9457:18)\n    at Object.parseExprAtom (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:4083:20)\n    at Object.parseExprSubscripts (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:9166:23)\n    at Object.parseMaybeUnary (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:9146:21)\n    at Object.parseExprOps (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:9012:23)\n    at Object.parseMaybeConditional (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:8985:23)\n    at Object.parseMaybeAssign (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:8931:21)\n    at Object.parseFunctionBody (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:10160:24)\n    at Object.parseArrowExpression (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:10119:10)\n    at Object.parseExprAtom (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:9457:18)\n    at Object.parseExprAtom (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:4083:20)\n    at Object.parseExprSubscripts (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:9166:23)\n    at Object.parseMaybeUnary (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:9146:21)\n    at Object.parseExprOps (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:9012:23)\n    at Object.parseMaybeConditional (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:8985:23)\n    at Object.parseMaybeAssign (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:8931:21)\n    at Object.parseVar (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:11263:26)");
+
+/***/ }),
+
 /***/ "./frontend/actions/modal_actions.js":
 /*!*******************************************!*\
   !*** ./frontend/actions/modal_actions.js ***!
@@ -1355,12 +1366,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _restaurant_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./restaurant_reducer */ "./frontend/reducers/restaurant_reducer.js");
+/* harmony import */ var _location_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./location_reducer */ "./frontend/reducers/location_reducer.js");
+
 
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  restaurants: _restaurant_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  restaurants: _restaurant_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  locations: _location_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -1383,6 +1397,46 @@ var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"]
   session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (errorsReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/location_reducer.js":
+/*!***********************************************!*\
+  !*** ./frontend/reducers/location_reducer.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_location_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/location_actions */ "./frontend/actions/location_actions.js");
+/* harmony import */ var _actions_location_actions__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_actions_location_actions__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_1__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var LocationReducer = function LocationReducer() {
+  var oldState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(oldState);
+
+  switch (action.type) {
+    case _actions_location_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LOCATIONS"]:
+      return action.locations;
+
+    case _actions_location_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LOCATION"]:
+      var newState = lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, oldState, _defineProperty({}, action.location.id, action.location));
+      return newState;
+
+    default:
+      return oldState;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LocationReducer);
 
 /***/ }),
 
