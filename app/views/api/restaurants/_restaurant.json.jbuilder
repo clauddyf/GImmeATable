@@ -1,1 +1,22 @@
-json.extract! restaurant, :id, :description, :name, :dresscode, :dining_style, :cuisine_type, :happy_hour, :num_of_views, :hours_op, :address, :neighborhood, :phone_num, :website, :pricing, :num_stars
+json.extract! restaurant
+
+
+
+json.restaurant do 
+    json.id restaurant.id
+    json.description restaurant. description
+    json.city restaurant.location
+    json.name  restaurant.name
+    json.dresscode :dresscode
+    json.dining_style restaurant.dining_style
+    json.cuisine_type restaurant.cuisine_type
+    json.happy_hour restaurant.happy_hour
+    json.num_of_views restaurant.num_of_views
+    json.hours_op  restaurant.hours_op
+    json.address restaurant.address
+    json.neighborhood restaurant.neighborhood
+    json.phone_num restaurant.phone_num
+    json.website restaurant.website
+    json.pricing restaurant.pricing
+    json.num_stars restaurant.num_stars
+end

@@ -1,1 +1,1 @@
-json.extract! location, :id, :location
+json.extract! location, :id, :cityname

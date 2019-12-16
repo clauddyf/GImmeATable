@@ -532,7 +532,7 @@ function (_React$Component) {
         className: "overlay"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "loc-text"
-      }, this.props.location.location)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.location.cityname)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hover-l"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "loc-pics",
@@ -542,7 +542,7 @@ function (_React$Component) {
         className: "overlay"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "loc-text"
-      }, this.props.location.location)))))));
+      }, this.props.location.cityname)))))));
     }
   }]);
 
@@ -1389,7 +1389,7 @@ var Splash = function Splash() {
     className: "obama-text"
   }, "Find your table for any occasion")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "pop-rests"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Featured Restaurants in Great American Cities")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Featured Cities")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "splashcont"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
 }; // class Splash extends React.Component {
@@ -1742,7 +1742,8 @@ var RestaurantReducer = function RestaurantReducer() {
       return action.restaurants;
 
     case _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESTAURANT"]:
-      var newState = lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, oldState, _defineProperty({}, action.restaurant.id, action.restaurant));
+      // debugger
+      var newState = lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, oldState, _defineProperty({}, action.restaurant.restaurant.id, action.restaurant.restaurant));
       return newState;
 
     default:
@@ -1982,7 +1983,8 @@ var fetchLocation = function fetchLocation(id) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchRestaurants", function() { return fetchRestaurants; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchRestaurant", function() { return fetchRestaurant; });
-var ApiAction = __webpack_require__(/*! ../actions/restaurant_actions */ "./frontend/actions/restaurant_actions.js");
+var ApiAction = __webpack_require__(/*! ../actions/restaurant_actions */ "./frontend/actions/restaurant_actions.js"); // debugger
+
 
 var fetchRestaurants = function fetchRestaurants(locId) {
   return $.ajax({
@@ -2003,7 +2005,13 @@ var fetchRestaurant = function fetchRestaurant(id) {
     method: 'get',
     url: "api/restaurants/".concat(id)
   });
-};
+}; // @restaurants.each do |restaurant| 
+//     json.set! restaurant.id do 
+//         json.partial! 'restaurant', restaurant: restaurant
+//         json.photoUrls restaurant.photos.map { |file| url_for(file) }
+//     end
+// end
+// json.array! @restaurants, partial: 'api/restaurants/restaurant', as: :restaurant
 
 /***/ }),
 

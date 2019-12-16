@@ -16,12 +16,12 @@ class LocationIndex extends React.Component {
                         <div className='overlay-img'>
                             <img className='loc-pics' src={this.props.location.photoUrls} alt=""/>
                            <div className='overlay'>
-                               <div className='loc-text'>{this.props.location.location}</div>
+                               <div className='loc-text'>{this.props.location.cityname}</div>
                            </div>
                            <div className='hover-l'>
                             <img className='loc-pics' src={this.props.location.photoUrls} alt=""/>
                                 <div className='overlay'>
-                                <div className='loc-text'>{this.props.location.location}</div>
+                                <div className='loc-text'>{this.props.location.cityname}</div>
                             </div>
                            </div>
                         </div>

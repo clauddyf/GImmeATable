@@ -1,6 +1,6 @@
 class Location < ApplicationRecord
-    validates :location, presence: true
-    has_many :restaurants, foreign_key: "location", primary_key: "location"
+    validates :cityname, presence: true
+    has_many :restaurants, foreign_key: "location"
     has_many_attached :photos
 
     def count

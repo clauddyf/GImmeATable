@@ -1,5 +1,5 @@
 var ApiAction = require('../actions/restaurant_actions')
-
+// debugger
 export const fetchRestaurants = locId => (
     $.ajax({
         method: 'get',
@@ -21,3 +21,14 @@ export const fetchRestaurant = id => (
         url: `api/restaurants/${id}`
     })
 );
+
+
+// @restaurants.each do |restaurant| 
+//     json.set! restaurant.id do 
+//         json.partial! 'restaurant', restaurant: restaurant
+//         json.photoUrls restaurant.photos.map { |file| url_for(file) }
+//     end
+// end
+
+// json.array! @restaurants, partial: 'api/restaurants/restaurant', as: :restaurant
+
