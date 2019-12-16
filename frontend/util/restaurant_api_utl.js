@@ -1,17 +1,10 @@
-var ApiAction = require('../actions/restaurant_actions')
+// var ApiAction = require('../actions/restaurant_actions')
 // debugger
 export const fetchRestaurants = locId => (
     $.ajax({
         method: 'get',
         url: 'api/locations/' + locId + '/restaurants',
-        dataType: 'json',
-      success: function (data) {
-          debugger
-        ApiAction.receiveRestaurants(data);
-      },
-      errors: function () {
-        console.log("Restaurant fetch failed");
-      }
+        locId
     })
 );
 
@@ -21,7 +14,16 @@ export const fetchRestaurant = id => (
         url: `api/restaurants/${id}`
     })
 );
-
+// var ApiAction = require('../actions/restaurant_actions')
+// dataType: 'json',
+//       success: function (data) {
+//           debugger
+//         ApiAction.receiveRestaurants(data);
+//       },
+//       errors: function () {
+//         console.log("Restaurant fetch failed");
+//       }
+//     })
 
 // @restaurants.each do |restaurant| 
 //     json.set! restaurant.id do 
