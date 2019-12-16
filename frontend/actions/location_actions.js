@@ -8,10 +8,11 @@ export const receiveLocations = locations => ({
     locations,
 });
 
-export const receiveLocation = ({ location }) => ({
+export const receiveLocation = ({ location, restaurants }) => ({
     
     type: RECEIVE_LOCATION,
-    location
+    location: location,
+    restaurants: restaurants
 });
 
 export const fetchLocations = () => dispatch => (

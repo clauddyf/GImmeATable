@@ -133,10 +133,12 @@ var receiveLocations = function receiveLocations(locations) {
   };
 };
 var receiveLocation = function receiveLocation(_ref) {
-  var location = _ref.location;
+  var location = _ref.location,
+      restaurants = _ref.restaurants;
   return {
     type: RECEIVE_LOCATION,
-    location: location
+    location: location,
+    restaurants: restaurants
   };
 };
 var fetchLocations = function fetchLocations() {
@@ -516,8 +518,8 @@ function (_React$Component) {
   _createClass(LocationIndex, [{
     key: "render",
     value: function render() {
-      var locations = this.props.locations; // debugger
-
+      // debugger
+      var locations = this.props.locations;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/locations/".concat(this.props.location.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1666,9 +1668,9 @@ var LocationReducer = function LocationReducer() {
   switch (action.type) {
     case _actions_location_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LOCATIONS"]:
       return action.locations;
-    // debugger
 
     case _actions_location_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LOCATION"]:
+      // debugger
       var newState = lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, oldState, _defineProperty({}, action.location.id, action.location));
       return newState;
 
@@ -1945,13 +1947,21 @@ var configureStore = function configureStore() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLocations", function() { return fetchLocations; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLocation", function() { return fetchLocation; });
+// import { receiveRestaurant } from '../actions/restaurant_actions';
 var fetchLocations = function fetchLocations(data) {
   return $.ajax({
     method: 'get',
     url: 'api/locations',
     data: data
   });
-};
+}; // success: function (data) {
+//     ApiAction.receiveRestaurant(data);
+//   },
+//   errors: function () {
+//     console.log("City fetch failed");
+//   }
+// })
+
 var fetchLocation = function fetchLocation(id) {
   return $.ajax({
     method: 'get',
@@ -1972,11 +1982,20 @@ var fetchLocation = function fetchLocation(id) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchRestaurants", function() { return fetchRestaurants; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchRestaurant", function() { return fetchRestaurant; });
-var fetchRestaurants = function fetchRestaurants(data) {
+var ApiAction = __webpack_require__(/*! ../actions/restaurant_actions */ "./frontend/actions/restaurant_actions.js");
+
+var fetchRestaurants = function fetchRestaurants(locId) {
   return $.ajax({
     method: 'get',
-    url: 'api/restaurants',
-    data: data
+    url: 'api/locations/' + locId + '/restaurants',
+    dataType: 'json',
+    success: function success(data) {
+      debugger;
+      ApiAction.receiveRestaurants(data);
+    },
+    errors: function errors() {
+      console.log("Restaurant fetch failed");
+    }
   });
 };
 var fetchRestaurant = function fetchRestaurant(id) {
@@ -37948,7 +37967,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

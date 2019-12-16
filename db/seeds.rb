@@ -12,62 +12,62 @@ require 'open-uri'
 require 'csv'
 
 
-Restaurant.destroy_all
+# Restaurant.destroy_all
 
-csv_text = File.read(Rails.root.join('db','lib','seeds_3master.csv'))
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-csv.each do |row|
-    t = Restaurant.new
-    t.location = row['location']
-    t.name = row['name']
-    t.description = row['description']
-    t.hours_op = row['hours_op']
-    t.dresscode = row['dresscode']
-    t.address = row['address']
-    t.neighborhood = row['neighborhood']
-    t.website = row['website']
-    t.city_id = row['city_id']
-    t.phone_num= row['phone-number']
-    t.pricing = row['pricing']
-    t.cuisine_type = row['cuisine type']
-    t.num_stars = row['num stars']
-    t.num_of_views = row['num_of_views']
-    t.save!
-    puts "#{t.name}, #{t.location} saved"
-end
-puts "There are now #{Restaurant.count} rows in the Restaurant table"
+# csv_text = File.read(Rails.root.join('db','lib','seeds_3master.csv'))
+# csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+# csv.each do |row|
+#     t = Restaurant.new
+#     t.location = row['location']
+#     t.name = row['name']
+#     t.description = row['description']
+#     t.hours_op = row['hours_op']
+#     t.dresscode = row['dresscode']
+#     t.address = row['address']
+#     t.neighborhood = row['neighborhood']
+#     t.website = row['website']
+#     t.city_id = row['city_id']
+#     t.phone_num= row['phone-number']
+#     t.pricing = row['pricing']
+#     t.cuisine_type = row['cuisine type']
+#     t.num_stars = row['num stars']
+#     t.num_of_views = row['num_of_views']
+#     t.save!
+#     puts "#{t.name}, #{t.location} saved"
+# end
+# puts "There are now #{Restaurant.count} rows in the Restaurant table"
 
-# first_res.save!
-# p file
-# first_res = Restaurant.create(name: 'Cafe Claudius', description:'Close to Union Square and closer to Paris, 
-# Café Claude has remained an unpretentious neighborhood meeting place nestled amongst the urban skyscrapers. Café Claude is a classic Bistro, Gallic waiters, and Paris Bistro style menu. Enjoy a bubbly atmosphere',
-# dresscode: 'Business Casual', dining_style: 'Casual Elegant', num_of_views: 22, location: 'Oakland', rating: 4.5, cuisine_type: 'Jamaican', happy_hour: '5pm - 8pm')
+# # first_res.save!
+# # p file
+# # first_res = Restaurant.create(name: 'Cafe Claudius', description:'Close to Union Square and closer to Paris, 
+# # Café Claude has remained an unpretentious neighborhood meeting place nestled amongst the urban skyscrapers. Café Claude is a classic Bistro, Gallic waiters, and Paris Bistro style menu. Enjoy a bubbly atmosphere',
+# # dresscode: 'Business Casual', dining_style: 'Casual Elegant', num_of_views: 22, location: 'Oakland', rating: 4.5, cuisine_type: 'Jamaican', happy_hour: '5pm - 8pm')
 
-# file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/res_0.jpg")
-# first_res.photos.attach(io: file, filename: 'res_0.jpg')
-# # p first_res.photos
+# # file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/res_0.jpg")
+# # first_res.photos.attach(io: file, filename: 'res_0.jpg')
+# # # p first_res.photos
 
-Restaurant.all.each_with_index do |restaurant, idx|
-    file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/res_#{idx}.jpg")
-    restaurant.photos.attach(io: file, filename: "res_#{idx}.jpg")
-end
+# Restaurant.all.each_with_index do |restaurant, idx|
+#     file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/res_#{idx}.jpg")
+#     restaurant.photos.attach(io: file, filename: "res_#{idx}.jpg")
+# end
 
 # Location.destroy_all
-# # sf, phoenix, portland,nola, chicago, Austin, NY, Des Moines, Las Vegas,Denver,Seattle,
+# sf, phoenix, portland,nola, chicago, Austin, NY, Des Moines, Las Vegas,Denver,Seattle,
 # SanFrancisco = Location.create!(location: 'San Francisco')
 # Phoenix = Location.create!(location: 'Phoenix')
 # Portland = Location.create!(location: 'Portland')
-# NOLA = Location.create!(location: 'NOLA')
+# NOLA = Location.create!(location: 'New Orleans')
 # NewYork = Location.create!(location: 'New York')
 # DesMoines = Location.create!(location: 'Des Moines')
 # LasVegas = Location.create!(location: 'Las Vegas')
 # Denver = Location.create!(location: 'Denver')
 # Seattle = Location.create!(location: 'Seattle')
 
-# Location.all.each_with_index do |location, idx|
-#     file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/loc_#{idx}.jpg")
-#     location.photos.attach(io: file, filename: "loc_#{idx}.jpg")
-# end
+Location.all.each_with_index do |location, idx|
+    file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/loc_#{idx}.jpg")
+    location.photos.attach(io: file, filename: "loc_#{idx}.jpg")
+end
 # restaurant.photo.attach(io: file, filename: `res_#{idx}.jpg`)
 
 

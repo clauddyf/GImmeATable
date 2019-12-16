@@ -1,3 +1,8 @@
+.splash-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .ul-container, .ul-r-container {
     display: flex;
     align-items: center;
@@ -17,10 +22,16 @@
     background-color: rgb(242, 243, 248);
     color: #2d333f;
     border: 1px solid gray;
-    width: 450px;
-    margin: auto;
+    // width: 450px;
+    width: calc((100% - (16px * 11)) * 4 / 12 + (3 * 16px));
+    // margin: auto;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    flex: 26% 1 1;
+    margin: 0 16px 16px 0;
     padding: 3px;
-    margin-top: 18px;
+    // margin-top: 18px;
+    float: left;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
 }
@@ -73,7 +84,7 @@ opacity: 1;
     transition: .5s ease;
 }
 .overlay-img:hover .overlay {
-    opacity: 0;
+    opacity: 0.605;
 }
 .overlay-image .hover-l {
     background-color: rgba(0,0,0,0.5);

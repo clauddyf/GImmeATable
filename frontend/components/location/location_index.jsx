@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 class LocationIndex extends React.Component {
 
     render() {
-        const {locations} = this.props;
         // debugger
+        const {locations} = this.props;
+        
+        
         return (
             <Link to={`/locations/${this.props.location.id}`}>
                 <ul>
