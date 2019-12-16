@@ -14,7 +14,7 @@ const Splash = () => {
                 </div>
             </div>
             <div className='pop-rests'>
-                <h2>Popular Restaurants in San Francisco</h2>
+                <h2>Featured Restaurants in Great American Cities</h2>
             </div>
             <hr/>
             <div className='splashcont'>

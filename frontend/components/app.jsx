@@ -6,6 +6,7 @@ import GreetingContainer from './greeting/greeting_container';
 import { AuthRoute } from '../util/route_util';
 import Modal from './modal/modal';
 import RestaurantShowContainer from './restaurant_show/restaurant_show_container';
+import LocationShowContainer from './location/location_show_container';
 import Splash from './splash/splash';
 
 
@@ -26,6 +27,9 @@ const App = () => {
                 <ul>
                  <Switch>
                      <Route path="/restaurants/:restId" component={RestaurantShowContainer} />
+                 </Switch>
+                 <Switch>
+                     <Route path="/locations/:locId" component={LocationShowContainer} />
                  </Switch>
                 </ul>
                 <div className='footer-div'>

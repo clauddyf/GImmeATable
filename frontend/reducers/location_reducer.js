@@ -9,6 +9,7 @@ const LocationReducer = (oldState = {}, action) => {
     switch(action.type) {
         case RECEIVE_LOCATIONS:
             return action.locations;
+            // debugger
         case RECEIVE_LOCATION:
             let newState = merge({}, oldState, {[action.location.id]:action.location});
             return newState;

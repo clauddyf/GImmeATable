@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { fetchLocation } from '../../actions/location_actions'
+import { fetchLocation } from '../../actions/location_actions';
+import LocationShow from '../location/location_show';
 
 
 const mSTP = (state, ownProps) => ({

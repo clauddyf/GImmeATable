@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/location_api_utl';
+import * as APIUtil from '../util/location_api_util';
 
 export const RECEIVE_LOCATIONS = 'RECEIVE_LOCATIONS';
 export const RECEIVE_LOCATION = 'RECEIVE_LOCATION';
@@ -9,12 +9,15 @@ export const receiveLocations = locations => ({
 });
 
 export const receiveLocation = ({ location }) => ({
+    
     type: RECEIVE_LOCATION,
     location
 });
 
 export const fetchLocations = () => dispatch => (
-    APIUtil.fetchLocations().then(locations => dispatch(receiveLocations(locations)))
+    APIUtil.fetchLocations().then(locations =>dispatch(receiveLocations(locations)))
 )
+
 export const fetchLocation = locId => dispatch => (
     APIUtil.fetchLocation(locId).then(locId => dispatch(receiveLocation(locId)))
+)

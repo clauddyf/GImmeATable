@@ -1,5 +1,6 @@
-json.array! @locations do |loca|
-    json.id loca.id
-    json.name loca.location
-    json.count loca.count
+@locations.each do |location| 
+    json.set! location.id do 
+        json.partial! 'location', location: location
+        json.photoUrls location.photos.map { |file| url_for(file) }
+    end
 end

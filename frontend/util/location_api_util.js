@@ -6,6 +6,7 @@ export const fetchLocations = data => (
     })
 );
 
+
 export const fetchLocation = id => (
     $.ajax({
         method: 'get',
