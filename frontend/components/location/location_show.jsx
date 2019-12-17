@@ -1,27 +1,39 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import LocationContentContainer from '../location/location_content_container'
+import { connect } from 'react-redux'
+import {withRouter} from 'react-router-dom'
 
-class LocationShow extends React.Component{
-    constructor(props){
-        super(props)
-        
-    }
-    
-    componentDidMount(){
-        // debugger
-        this.props.fetchLocation(this.props.match.params.locId)
-        // debugger
-    }
-
+// const Loc = () => {
+    class Loc extends React.Component {
     render() {
         // debugger
-        if (this.props.location === undefined) return null; 
         return (
-            <div className='loc-show'>
-                {this.props.location.name}
+            <div className="splash">
+                <div className='splashcont'>  
+    
+                    <LocationContentContainer />
+                </div>
             </div>
         )
+
     }
 }
 
-export default LocationShow
+// class Splash extends React.Component {
+//     render() {
+
+//     }
+// }
+
+//     render() {
+//         // debugger
+//         if (this.props.location === undefined) return null; 
+//         return (
+//             <div className='loc-show'>
+//                 {this.props.location.cityname}
+//             </div>
+//         )
+//     }
+// }
+
+export default (connect()(Loc))

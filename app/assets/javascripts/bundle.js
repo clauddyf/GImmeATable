@@ -219,9 +219,9 @@ var receiveRestaurant = function receiveRestaurant(_ref) {
     restaurant: restaurant
   };
 };
-var fetchRestaurants = function fetchRestaurants() {
+var fetchRestaurants = function fetchRestaurants(locId) {
   return function (dispatch) {
-    return _util_restaurant_api_utl__WEBPACK_IMPORTED_MODULE_0__["fetchRestaurants"]().then(function (restaurants) {
+    return _util_restaurant_api_utl__WEBPACK_IMPORTED_MODULE_0__["fetchRestaurants"](locId).then(function (restaurants) {
       return dispatch(receiveRestaurants(restaurants));
     });
   };
@@ -471,6 +471,149 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/location/location_content.jsx":
+/*!***********************************************************!*\
+  !*** ./frontend/components/location/location_content.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _restaurant_show_restaurants_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../restaurant_show/restaurants_index */ "./frontend/components/restaurant_show/restaurants_index.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var LocationContent =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(LocationContent, _React$Component);
+
+  function LocationContent(props) {
+    var _this;
+
+    _classCallCheck(this, LocationContent);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LocationContent).call(this, props));
+    _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this)); // debugger
+
+    return _this;
+  }
+
+  _createClass(LocationContent, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // debugger
+      this.props.fetchRestaurants(this.props.match.params.locId); // this.props.fetchLocations();
+    }
+  }, {
+    key: "handleInput",
+    value: function handleInput(type) {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState(_defineProperty({}, type, e.target.value));
+      };
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      // debugger
+      var restList = Object.values(this.props.restaurants).map(function (restaurant, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "restIndexPlate",
+          key: index
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_show_restaurants_index__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          restaurant: restaurant
+        }));
+      });
+      console.log(restList);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "ul-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "location-ul-index"
+      }, restList)));
+    }
+  }]);
+
+  return LocationContent;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (LocationContent);
+
+/***/ }),
+
+/***/ "./frontend/components/location/location_content_container.js":
+/*!********************************************************************!*\
+  !*** ./frontend/components/location/location_content_container.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_location_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/location_actions */ "./frontend/actions/location_actions.js");
+/* harmony import */ var _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/restaurant_actions */ "./frontend/actions/restaurant_actions.js");
+/* harmony import */ var _location_location_content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../location/location_content */ "./frontend/components/location/location_content.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+
+
+
+var mSTP = function mSTP(state, ownProps) {
+  return {
+    // location: state.entities.locations[ownProps.match.params.locId],
+    // restaurants: state.entities.restaurants[ownProps.match.params.id]
+    restaurants: state.entities.restaurants
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    // fetchLocation: (location) => dispatch(fetchLocation(location)),
+    fetchRestaurants: function fetchRestaurants(locId) {
+      return dispatch(Object(_actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_2__["fetchRestaurants"])(locId));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_location_location_content__WEBPACK_IMPORTED_MODULE_3__["default"])));
+
+/***/ }),
+
 /***/ "./frontend/components/location/location_index.jsx":
 /*!*********************************************************!*\
   !*** ./frontend/components/location/location_index.jsx ***!
@@ -564,7 +707,9 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _location_location_content_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../location/location_content_container */ "./frontend/components/location/location_content_container.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -586,38 +731,49 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var LocationShow =
+ // const Loc = () => {
+
+var Loc =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(LocationShow, _React$Component);
+  _inherits(Loc, _React$Component);
 
-  function LocationShow(props) {
-    _classCallCheck(this, LocationShow);
+  function Loc() {
+    _classCallCheck(this, Loc);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(LocationShow).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Loc).apply(this, arguments));
   }
 
-  _createClass(LocationShow, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      // debugger
-      this.props.fetchLocation(this.props.match.params.locId); // debugger
-    }
-  }, {
+  _createClass(Loc, [{
     key: "render",
     value: function render() {
       // debugger
-      if (this.props.location === undefined) return null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "loc-show"
-      }, this.props.location.name);
+        className: "splash"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splashcont"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_location_location_content_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
     }
   }]);
 
-  return LocationShow;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  return Loc;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); // class Splash extends React.Component {
+//     render() {
+//     }
+// }
+//     render() {
+//         // debugger
+//         if (this.props.location === undefined) return null; 
+//         return (
+//             <div className='loc-show'>
+//                 {this.props.location.cityname}
+//             </div>
+//         )
+//     }
+// }
 
-/* harmony default export */ __webpack_exports__["default"] = (LocationShow);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])()(Loc));
 
 /***/ }),
 
@@ -632,14 +788,17 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_location_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/location_actions */ "./frontend/actions/location_actions.js");
-/* harmony import */ var _location_location_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../location/location_show */ "./frontend/components/location/location_show.jsx");
+/* harmony import */ var _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/restaurant_actions */ "./frontend/actions/restaurant_actions.js");
+/* harmony import */ var _location_location_show__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../location/location_show */ "./frontend/components/location/location_show.jsx");
+
 
 
 
 
 var mSTP = function mSTP(state, ownProps) {
   return {
-    location: state.entities.locations[ownProps.match.params.locId]
+    location: state.entities.locations[ownProps.match.params.locId] // restaurants: state.entities.restaurants[ownProps.match.params.id]
+
   };
 };
 
@@ -647,11 +806,14 @@ var mDTP = function mDTP(dispatch) {
   return {
     fetchLocation: function fetchLocation(location) {
       return dispatch(Object(_actions_location_actions__WEBPACK_IMPORTED_MODULE_1__["fetchLocation"])(location));
+    },
+    fetchRestaurants: function fetchRestaurants(locId) {
+      return dispatch(Object(_actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_2__["fetchRestaurants"])(locId));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_location_location_show__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_location_location_show__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -963,20 +1125,20 @@ function (_React$Component) {
       var restaurants = this.props.restaurants; // debugger
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/restaurants/".concat(this.props.restaurant.id)
+        to: "/restaurants/".concat(this.props.restaurant.restaurant.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "restaurant-name"
-      }, this.props.restaurant.name))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "restaurant.restaurant-name"
+      }, this.props.restaurant.restaurant.name))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "dafuq"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "rest-others"
-      }, this.props.restaurant.num_of_views, " Reviews")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, this.props.restaurant.restaurant.num_of_views, " Reviews")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "rest-splash-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "rest-others"
-      }, this.props.restaurant.cuisine_type)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, this.props.restaurant.restaurant.cuisine_type)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "rest-others"
-      }, this.props.restaurant.dresscode))));
+      }, this.props.restaurant.restaurant.dresscode))));
     }
   }]);
 
@@ -1739,6 +1901,7 @@ var RestaurantReducer = function RestaurantReducer() {
 
   switch (action.type) {
     case _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESTAURANTS"]:
+      debugger;
       return action.restaurants;
 
     case _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESTAURANT"]:
@@ -1990,13 +2153,10 @@ var fetchRestaurants = function fetchRestaurants(locId) {
   return $.ajax({
     method: 'get',
     url: 'api/locations/' + locId + '/restaurants',
-    dataType: 'json',
-    success: function success(data) {
+    data: locId,
+    success: function success(dat) {
       debugger;
-      ApiAction.receiveRestaurants(data);
-    },
-    errors: function errors() {
-      console.log("Restaurant fetch failed");
+      ApiAction.receiveRestaurants(dat);
     }
   });
 };
@@ -2005,7 +2165,13 @@ var fetchRestaurant = function fetchRestaurant(id) {
     method: 'get',
     url: "api/restaurants/".concat(id)
   });
-}; // @restaurants.each do |restaurant| 
+}; // var ApiAction = require('../actions/restaurant_actions')
+// dataType: 'json',
+//       errors: function () {
+//         console.log("Restaurant fetch failed");
+//       }
+//     })
+// @restaurants.each do |restaurant| 
 //     json.set! restaurant.id do 
 //         json.partial! 'restaurant', restaurant: restaurant
 //         json.photoUrls restaurant.photos.map { |file| url_for(file) }
@@ -37975,7 +38141,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

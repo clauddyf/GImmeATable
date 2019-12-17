@@ -8,6 +8,7 @@ const RestaurantReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
     switch(action.type) {
         case RECEIVE_RESTAURANTS:
+            debugger
             return action.restaurants;
         case RECEIVE_RESTAURANT:
             // debugger

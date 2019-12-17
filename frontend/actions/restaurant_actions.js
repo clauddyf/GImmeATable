@@ -14,8 +14,8 @@ export const receiveRestaurant = ({ restaurant }) => ({
     restaurant
 });
 
-export const fetchRestaurants = () => dispatch => (
-    APIUtil.fetchRestaurants().then(restaurants => dispatch(receiveRestaurants(restaurants)))
+export const fetchRestaurants = (locId) => dispatch => (
+    APIUtil.fetchRestaurants(locId).then(restaurants => dispatch(receiveRestaurants(restaurants)))
 )
 export const fetchRestaurant = restId => dispatch => (
     APIUtil.fetchRestaurant(restId).then(restId => dispatch(receiveRestaurant(restId)))
