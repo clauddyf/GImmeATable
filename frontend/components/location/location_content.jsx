@@ -33,9 +33,9 @@ class LocationContent extends React.Component {
         );
         console.log(restList)
         return(
-            <div className='splash-container'>
-                <div className='ul-container'>
-                    <ul className='location-ul-index'>
+            <div className='loc-container'>
+                <div className='loc-ul-container'>
+                    <ul className='resta-ul-index'>
                     {restList}
                     </ul>
                 </div>

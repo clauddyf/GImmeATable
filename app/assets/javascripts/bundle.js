@@ -557,11 +557,11 @@ function (_React$Component) {
       });
       console.log(restList);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-container"
+        className: "loc-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ul-container"
+        className: "loc-ul-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "location-ul-index"
+        className: "resta-ul-index"
       }, restList)));
     }
   }]);
@@ -749,9 +749,9 @@ function (_React$Component) {
     value: function render() {
       // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash"
+        className: "loc-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splashcont"
+        className: "loc-cont"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_location_location_content_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
     }
   }]);
@@ -1126,19 +1126,27 @@ function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/restaurants/".concat(this.props.restaurant.restaurant.id)
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "restaurant.restaurant-name"
-      }, this.props.restaurant.restaurant.name))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "dafuq"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "rest-others"
-      }, this.props.restaurant.restaurant.num_of_views, " Reviews")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "rest-splash-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "rest-others"
-      }, this.props.restaurant.restaurant.cuisine_type)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "rest-others"
-      }, this.props.restaurant.restaurant.dresscode))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "overlay-img"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "rest-pics",
+        src: this.props.restaurant.photoUrls,
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "overlay"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-text"
+      }, this.props.restaurant.restaurant.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hover-l"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "rest-pics",
+        src: this.props.restaurant.restaurant.photoUrls,
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "overlay"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-text"
+      }, this.props.restaurant.restaurant.name)))))));
     }
   }]);
 
@@ -1901,7 +1909,7 @@ var RestaurantReducer = function RestaurantReducer() {
 
   switch (action.type) {
     case _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESTAURANTS"]:
-      debugger;
+      // debugger
       return action.restaurants;
 
     case _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESTAURANT"]:
@@ -2155,7 +2163,7 @@ var fetchRestaurants = function fetchRestaurants(locId) {
     url: 'api/locations/' + locId + '/restaurants',
     data: locId,
     success: function success(dat) {
-      debugger;
+      //   debugger
       ApiAction.receiveRestaurants(dat);
     }
   });
@@ -38141,7 +38149,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

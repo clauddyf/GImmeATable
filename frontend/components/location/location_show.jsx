@@ -8,8 +8,8 @@ import {withRouter} from 'react-router-dom'
     render() {
         // debugger
         return (
-            <div className="splash">
-                <div className='splashcont'>  
+            <div className="loc-index">
+                <div className='loc-cont'>  
     
                     <LocationContentContainer />
                 </div>

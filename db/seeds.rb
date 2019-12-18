@@ -12,26 +12,26 @@ require 'open-uri'
 require 'csv'
 
 
-Location.destroy_all
+# Location.destroy_all
 # Restaurant.destroy_all
 
-SanFrancisco = Location.create!(id: 1,cityname: 'San Francisco')
-Phoenix = Location.create!(id: 2, cityname: 'Phoenix')
-Portland = Location.create!(id: 4,cityname: 'Portland')
-NOLA = Location.create!(id: 3,cityname: 'New Orleans')
-Chicago = Location.create!(id: 5,cityname: 'Chicago')
-Austin = Location.create!(id: 6,cityname: 'Austin')
-NewYork = Location.create!(id: 7,cityname: 'New York')
-DesMoines = Location.create!(id: 8,cityname: 'Des Moines')
-LasVegas = Location.create!(id: 9,cityname: 'Las Vegas')
-Denver = Location.create!(id: 10,cityname: 'Denver')
-Seattle = Location.create!(id: 11, cityname: 'Seattle')
+# SanFrancisco = Location.create!(id: 1,cityname: 'San Francisco')
+# Phoenix = Location.create!(id: 2, cityname: 'Phoenix')
+# Portland = Location.create!(id: 4,cityname: 'Portland')
+# NOLA = Location.create!(id: 3,cityname: 'New Orleans')
+# Chicago = Location.create!(id: 5,cityname: 'Chicago')
+# Austin = Location.create!(id: 6,cityname: 'Austin')
+# NewYork = Location.create!(id: 7,cityname: 'New York')
+# DesMoines = Location.create!(id: 8,cityname: 'Des Moines')
+# LasVegas = Location.create!(id: 9,cityname: 'Las Vegas')
+# Denver = Location.create!(id: 10,cityname: 'Denver')
+# Seattle = Location.create!(id: 11, cityname: 'Seattle')
 
-Location.all.each_with_index do |location, idx|
-    file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/loc_#{idx}.jpg")
-    location.photos.attach(io: file, filename: "loc_#{idx}.jpg")
-    puts "#{location} photos have been saved"
-end
+# Location.all.each_with_index do |location, idx|
+#     file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/loc_#{idx}.jpg")
+#     location.photos.attach(io: file, filename: "loc_#{idx}.jpg")
+#     puts "#{location} photos have been saved"
+# end
 # csv_text = File.read(Rails.root.join('db','lib','seeds_3master.csv'))
 # csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 # csv.each do |row|
@@ -57,6 +57,7 @@ end
 # Restaurant.all.each_with_index do |restaurant, idx|
 #     file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/res_#{idx}.jpg")
 #     restaurant.photos.attach(io: file, filename: "res_#{idx}.jpg")
+#     puts "#{restaurant} photos have been saved"
 # end
 
 # # first_res.save!

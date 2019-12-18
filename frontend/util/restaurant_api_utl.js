@@ -6,7 +6,7 @@ export const fetchRestaurants = locId => (
         url: 'api/locations/' + locId + '/restaurants',
         data: locId,
               success: function (dat) {
-                  debugger
+                //   debugger
                 ApiAction.receiveRestaurants(dat);
               },
     })
