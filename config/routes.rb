@@ -12,10 +12,19 @@ Rails.application.routes.draw do
     resources :locations, only: [:index] do
       resources :restaurants, only: :index
     end
+    resources :restaurants, only: :show do
+      resources :reservations, only: :index
+    end
+    resource :session, only: [:create, :destroy, :show]
+    resources :users, only: [:create, :update, :show]
+    resources :reservations, only: [:create, :destroy] do 
+      collection do 
+        get :temp_get
+        post :temp_set
+      end
+    end
     resources :locations, only: :show
     resources :restaurants, only: :show
-    resources :users, only: [:create]
-    resource :session, only: [:create, :destroy, :show]
   end
 
   root "static_pages#root"

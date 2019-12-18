@@ -13,6 +13,16 @@ class Api::SessionsController < ApplicationController
         end
     end
 
+    def show 
+        if current_user
+            @user = current_user
+            @reservations = @user.reservations.includes(:restaurant).order('date').order('time_id')
+            render "api/users/index"
+        else
+            render json: {}
+        end
+    end
+
     def destroy 
         @user =  current_user
         if @user 
