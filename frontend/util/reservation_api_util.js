@@ -1,16 +1,8 @@
 
-export const setTempReservation = (data,cb) => (
+export const composeReservation = (reservation) => (
     $.ajax({
         method: 'post',
-        url: "api/reservations/temp_set",
-        data: {reservation: data}
-    })
-)
-
-
-export const getTempReservation = () => (
-    $.ajax({
-        method: 'get',
-        url: 'api/reservations/temp_get'
+        url: "api/reservations/",
+        data: {reservation}
     })
 )

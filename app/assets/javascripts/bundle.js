@@ -187,6 +187,45 @@ var closeModal = function closeModal() {
 
 /***/ }),
 
+/***/ "./frontend/actions/reservation_action.js":
+/*!************************************************!*\
+  !*** ./frontend/actions/reservation_action.js ***!
+  \************************************************/
+/*! exports provided: RECEIVE_RESERVATION, receiveReservation, composeReservation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_RESERVATION", function() { return RECEIVE_RESERVATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveReservation", function() { return receiveReservation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "composeReservation", function() { return composeReservation; });
+/* harmony import */ var _util_reservation_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/reservation_api_util */ "./frontend/util/reservation_api_util.js");
+
+var RECEIVE_RESERVATION = 'RECEIVE_RESERVATION'; // export const TEMP_RECEIVE_RESERVATION = 'TEMP_RECEIVE_RESERVATION';
+
+var receiveReservation = function receiveReservation(reservation) {
+  return {
+    type: RECEIVE_RESERVATION,
+    reservation: reservation
+  };
+}; // export const receiveTempReservation = reservation => ({
+//     type: TEMP_RECEIVE_RESERVATION,
+//     reservation,
+// });
+// export const getTempReservation = data => dispatch => (
+//     APIUtil.getTempReservation(data).then(res => dispatch(receiveTempReservation(res)))
+// )
+
+var composeReservation = function composeReservation(reservation) {
+  return function (dispatch) {
+    return _util_reservation_api_util__WEBPACK_IMPORTED_MODULE_0__["composeReservation"](reservation).then(function (res) {
+      return dispatch(receiveReservation(res));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/restaurant_actions.js":
 /*!************************************************!*\
   !*** ./frontend/actions/restaurant_actions.js ***!
@@ -324,6 +363,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _restaurant_show_restaurant_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./restaurant_show/restaurant_show_container */ "./frontend/components/restaurant_show/restaurant_show_container.js");
 /* harmony import */ var _location_location_show_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./location/location_show_container */ "./frontend/components/location/location_show_container.js");
 /* harmony import */ var _splash_splash__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./splash/splash */ "./frontend/components/splash/splash.jsx");
+/* harmony import */ var _reservation_reservation_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./reservation/reservation_container */ "./frontend/components/reservation/reservation_container.js");
+
 
 
 
@@ -359,6 +400,9 @@ var App = function App() {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/locations/:locId",
     component: _location_location_show_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "restaurants/:restId/new_res",
+    component: _reservation_reservation_container__WEBPACK_IMPORTED_MODULE_10__["default"]
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "footer-div"
   }));
@@ -887,6 +931,176 @@ var mDTP = function mDTP(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mSTP, mDTP)(Modal));
+
+/***/ }),
+
+/***/ "./frontend/components/reservation/reservation_compose.jsx":
+/*!*****************************************************************!*\
+  !*** ./frontend/components/reservation/reservation_compose.jsx ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var ReservationCompose =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ReservationCompose, _React$Component);
+
+  function ReservationCompose(props) {
+    var _this;
+
+    _classCallCheck(this, ReservationCompose);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ReservationCompose).call(this, props));
+    _this.state = {
+      date: new Date().toDateString(),
+      time_id: new Date().getHours(),
+      restaurant_id: _this.props.restaurant.id,
+      user_id: _this.props.currentUser ? _this.props.currentUser.id : undefined,
+      head_count: undefined
+    };
+    _this.throughDate = _this.throughDate.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(ReservationCompose, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault(); // let reservation = {
+      //     reserve: this.state.reserve,
+      //     restaurant: this.props.currentRestaurant
+      // };
+
+      if (this.props.currentUser === null) {
+        window.alert('Please close this window and login above');
+      } else if (this.state.head_count === undefined) {
+        window.alert('Select a data and head count');
+      } else {
+        this.props.composeReservation(this.state).then(function () {
+          return _this2.userProfile();
+        });
+      }
+    }
+  }, {
+    key: "userProfile",
+    value: function userProfile() {
+      window.location.href = window.location.origin + "/#user/".concat(this.props.currentUser.id);
+    }
+  }, {
+    key: "update",
+    value: function update(e, field) {
+      this.setState(_defineProperty({}, field, e.currentTarget.value));
+    }
+  }, {
+    key: "throughDate",
+    value: function throughDate(newDate) {
+      var dateString = newDate.toDateString();
+      var time = newDate.getHours();
+      this.setState({
+        date: dateString,
+        time_id: time
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rese-form-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "rese-form",
+        onSubmit: function onSubmit(e) {
+          return _this3.handleSubmit(e);
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "make-rese"
+      }, "Make a Reservation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "baby-rese-cont"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        className: "rese-textarea",
+        value: this.state.head_count,
+        onChange: function onChange(e) {
+          return _this3.update(e, 'head_count');
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "rese-submit",
+        type: "submit",
+        value: "Submit"
+      }))));
+    }
+  }]);
+
+  return ReservationCompose;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (ReservationCompose);
+
+/***/ }),
+
+/***/ "./frontend/components/reservation/reservation_container.js":
+/*!******************************************************************!*\
+  !*** ./frontend/components/reservation/reservation_container.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_reservation_action__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/reservation_action */ "./frontend/actions/reservation_action.js");
+/* harmony import */ var _reservation_compose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reservation_compose */ "./frontend/components/reservation/reservation_compose.jsx");
+
+
+
+
+var mSTP = function mSTP(state, ownProps) {
+  return {
+    currentUser: state.session.user,
+    currentRest: ownProps.rest_id
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    composeReservation: function composeReservation(data) {
+      return dispatch(Object(_actions_reservation_action__WEBPACK_IMPORTED_MODULE_1__["composeReservation"])(data));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_reservation_compose__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -1780,6 +1994,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _restaurant_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./restaurant_reducer */ "./frontend/reducers/restaurant_reducer.js");
 /* harmony import */ var _location_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./location_reducer */ "./frontend/reducers/location_reducer.js");
+/* harmony import */ var _reservation_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reservation_reducer */ "./frontend/reducers/reservation_reducer.js");
+
 
 
 
@@ -1787,7 +2003,8 @@ __webpack_require__.r(__webpack_exports__);
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   restaurants: _restaurant_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
-  locations: _location_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  locations: _location_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  reservations: _reservation_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -1882,6 +2099,42 @@ var modalReducer = function modalReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (modalReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/reservation_reducer.js":
+/*!**************************************************!*\
+  !*** ./frontend/reducers/reservation_reducer.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_reservation_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/reservation_action */ "./frontend/actions/reservation_action.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_1__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var ReservationReducer = function ReservationReducer() {
+  var oldState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(oldState);
+
+  switch (action.type) {
+    case _actions_reservation_action__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESERVATION"]:
+      var newState = lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, oldState, _defineProperty({}, action.reservation.id, action.reservation));
+      return newState;
+
+    default:
+      return oldState;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ReservationReducer);
 
 /***/ }),
 
@@ -2138,6 +2391,28 @@ var fetchLocation = function fetchLocation(id) {
   return $.ajax({
     method: 'get',
     url: "api/locations/".concat(id)
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/reservation_api_util.js":
+/*!***********************************************!*\
+  !*** ./frontend/util/reservation_api_util.js ***!
+  \***********************************************/
+/*! exports provided: composeReservation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "composeReservation", function() { return composeReservation; });
+var composeReservation = function composeReservation(reservation) {
+  return $.ajax({
+    method: 'post',
+    url: "api/reservations/",
+    data: {
+      reservation: reservation
+    }
   });
 };
 
@@ -38149,7 +38424,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

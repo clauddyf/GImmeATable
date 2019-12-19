@@ -1,5 +1,5 @@
-json.array! @results do |result|
-    json.rest_id result.restaurant_id
-    json.date result.date
-    json.time result.time_slot
+@reservations.each do |reservation|
+    json.set! reservation.id do
+        json.partial! "api/reservations/reservation", reservation: reservation
+    end
 end
