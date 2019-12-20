@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ReservationContainer from '../reservation/reservation_container';
 
 class RestaurantShow extends React.Component{
     constructor(props){
@@ -11,11 +12,30 @@ class RestaurantShow extends React.Component{
     }
     
     render(){
+        const restaurant = this.props.restaurant.restaurant;
+        // debugger
+        
+        let open;
+        if (restaurant.open === 24) {
+          open = `12:00 AM`;
+        } else if (restaurant.open > 12) {
+          open = `${(restaurant.open - 12)}:00 PM`;
+        } else if (restaurant.open === 12) {
+            open = `12:00 PM`
+        } else { open = `${(restaurant.open)}:00 AM`; }
+    
+        let close;
+        if (restaurant.close === 24) {
+          close = `12:00 AM`;
+        } else if (restaurant.close > 12) {
+          close = `${(restaurant.close - 12)}:00 PM`;
+        } else { close = `${(restaurant.close)}:00 AM`; }
         if (this.props.restaurant === undefined) return null; 
+
         return(
             <div className='rest-page'>
                 <div className='waffles'>
-                    <img className= 'waffy' src="/waffles.jpg" alt=""/>
+                    <img className= 'waffy' src={this.props.restaurant.photoUrls} alt=""/>
                 </div>
                 <div className='rest-body'>
                     <aside className='right-side'>
@@ -52,9 +72,6 @@ class RestaurantShow extends React.Component{
                             <hr/>
                         </div>
                     </aside>
-                    <div>
-                        <img src={this.props.restaurant.photoUrls} alt=""/>
-                    </div>
                     <div className='ove-sect' >
                       <div className='rest-nav-bar'>
                           <ul className='nav-info'>
@@ -101,6 +118,9 @@ class RestaurantShow extends React.Component{
                         <div >
                             {this.props.restaurant.description}
                         </div>
+                      </div>
+                      <div className='reserve=form'>
+                        <ReservationContainer restaurant={restaurant} currentUser={this.props.currentUser} />
                       </div>
                     </div>
                 </div>

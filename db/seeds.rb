@@ -13,7 +13,7 @@ require 'csv'
 
 
 # Location.destroy_all
-# Restaurant.destroy_all
+Restaurant.destroy_all
 
 # SanFrancisco = Location.create!(id: 1,cityname: 'San Francisco')
 # Phoenix = Location.create!(id: 2, cityname: 'Phoenix')
@@ -22,43 +22,46 @@ require 'csv'
 # Chicago = Location.create!(id: 5,cityname: 'Chicago')
 # Austin = Location.create!(id: 6,cityname: 'Austin')
 # NewYork = Location.create!(id: 7,cityname: 'New York')
-# DesMoines = Location.create!(id: 8,cityname: 'Des Moines')
-# LasVegas = Location.create!(id: 9,cityname: 'Las Vegas')
-# Denver = Location.create!(id: 10,cityname: 'Denver')
-# Seattle = Location.create!(id: 11, cityname: 'Seattle')
+# LasVegas = Location.create!(id: 8,cityname: 'Las Vegas')
+# Denver = Location.create!(id: 9,cityname: 'Denver')
+# Seattle = Location.create!(id: 10, cityname: 'Seattle')
 
 # Location.all.each_with_index do |location, idx|
 #     file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/loc_#{idx}.jpg")
 #     location.photos.attach(io: file, filename: "loc_#{idx}.jpg")
 #     puts "#{location} photos have been saved"
 # end
-# csv_text = File.read(Rails.root.join('db','lib','seeds_3master.csv'))
-# csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-# csv.each do |row|
-#     t = Restaurant.new
+csv_text = File.read(Rails.root.join('db','lib','finalSeed.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+    t = Restaurant.new
 
-#     t.name = row['name']
-#     t.description = row['description']
-#     t.hours_op = row['hours_op']
-#     t.dresscode = row['dresscode']
-#     t.address = row['address']
-#     t.neighborhood = row['neighborhood']
-#     t.website = row['website']
-#     t.city_id = row['city_id']
-#     t.phone_num= row['phone-number']
-#     t.pricing = row['pricing']
-#     t.cuisine_type = row['cuisine type']
-#     t.num_stars = row['num stars']
-#     t.num_of_views = row['num_of_views']
-#     t.save!
-#     puts "#{t.name} saved"
-# end
-# puts "There are now #{Restaurant.count} rows in the Restaurant table"
-# Restaurant.all.each_with_index do |restaurant, idx|
-#     file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/res_#{idx}.jpg")
-#     restaurant.photos.attach(io: file, filename: "res_#{idx}.jpg")
-#     puts "#{restaurant} photos have been saved"
-# end
+    t.name = row['name']
+    t.description = row['description']
+    t.hours_op = row['hours_op']
+    t.dresscode = row['dresscode']
+    t.address = row['address']
+    t.neighborhood = row['neighborhood']
+    t.website = row['website']
+    t.city_id = row['city_id']
+    t.phone_num= row['phone-number']
+    t.pricing = row['pricing']
+    t.cuisine_type = row['cuisine type']
+    t.open = row['open']
+    t.close = row['close']
+    t.num_stars = row['num stars']
+    t.num_of_views = row['num_of_views']
+    t.save!
+    puts "#{t.name} saved"
+end
+puts "There are now #{Restaurant.count} rows in the Restaurant table"
+Restaurant.all.each_with_index do |restaurant, idx|
+    puts "#{idx} for #{restaurant.name}"
+    file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/res_#{idx}.jpg")
+    restaurant.photos.attach(io: file, filename: "res_#{idx}.jpg")
+    puts "#{restaurant.name} photos have been saved"
+end
+puts "All photos have been saved"
 
 # # first_res.save!
 # # p file

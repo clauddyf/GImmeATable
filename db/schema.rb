@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_180722) do
+ActiveRecord::Schema.define(version: 2019_12_19_231944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 2019_12_18_180722) do
     t.string "dresscode"
     t.string "dining_style"
     t.string "happy_hour"
-    t.string "cuise_type"
     t.string "hours_op"
     t.string "address"
     t.string "neighborhood"
@@ -72,6 +71,8 @@ ActiveRecord::Schema.define(version: 2019_12_18_180722) do
     t.integer "pricing"
     t.integer "num_stars"
     t.string "website"
+    t.integer "open"
+    t.integer "close"
   end
 
   create_table "time_slots", force: :cascade do |t|

@@ -19,4 +19,6 @@ json.restaurant do
     json.website restaurant.website
     json.pricing restaurant.pricing
     json.num_stars restaurant.num_stars
+    json.open restaurant.open
+    json.close restaurant.close
 end

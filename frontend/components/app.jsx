@@ -33,7 +33,7 @@ const App = () => {
                      <Route path="/locations/:locId" component={LocationShowContainer} />
                  </Switch>
                  <Switch>
-                     <Route path="restaurants/:restId/new_res" component={ReservationComposeContainer} />
+                     {/* <Route path="restaurants/:restId/new_res" component={ReservationComposeContainer} /> */}
                  </Switch>
                 </ul>
                 <div className='footer-div'>
