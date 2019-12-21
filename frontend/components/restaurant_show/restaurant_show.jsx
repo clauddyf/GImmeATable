@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReservationContainer from '../reservation/reservation_container';
+import ReviewComposeContainer from '../reviews/reviews_compose_container';
+import ReviewIndexContainer from '../reviews/review_index_container';
 
 class RestaurantShow extends React.Component{
     constructor(props){
@@ -121,6 +123,12 @@ class RestaurantShow extends React.Component{
                       </div>
                       <div className='reserve=form'>
                         <ReservationContainer restaurant={restaurant} currentUser={this.props.currentUser} />
+                      </div>
+                      <div>
+                          <ReviewIndexContainer type={'restaurant'}/>
+                      </div>
+                      <div>
+                          <ReviewComposeContainer restaurant={restaurant}/>
                       </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-json.extract! restaurant
+json.extract! restaurant, :reviews
 
 
 

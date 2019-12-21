@@ -17,6 +17,7 @@ const Greeting = ({ currentUser, logout, openModal}) => {
         <hgroup className="header-group">
             <div className='header-name'>
                 Ready to Eat, {currentUser.first_name}?!
+                <Link to={`/user/${currentUser.id}`} className='profile-link'>{currentUser.first_name} Profile</Link>
             </div>
             <button className='header-button' onClick={logout}>Log Out</button>
         </hgroup>

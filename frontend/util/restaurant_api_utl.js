@@ -18,6 +18,15 @@ export const fetchRestaurant = id => (
         url: `api/restaurants/${id}`
     })
 );
+
+export const searchRestaurants = (query) => (
+    $.ajax({
+        method:'get',
+        url:'api/restaurant_searches',
+        data: {search:{query}}
+    })
+)
+
 // var ApiAction = require('../actions/restaurant_actions')
 // dataType: 'json',
 //       errors: function () {

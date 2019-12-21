@@ -20,3 +20,7 @@ export const fetchRestaurants = (locId) => dispatch => (
 export const fetchRestaurant = restId => dispatch => (
     APIUtil.fetchRestaurant(restId).then(restId => dispatch(receiveRestaurant(restId)))
 )
+export const searchRestaurants = (query) => dispatch => (
+    APIUtil.searchRestaurants(query)
+        .then((restaurants) => dispatch(receiveRestaurants(restaurants)))
+  );

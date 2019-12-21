@@ -8,7 +8,8 @@ import Modal from './modal/modal';
 import RestaurantShowContainer from './restaurant_show/restaurant_show_container';
 import LocationShowContainer from './location/location_show_container';
 import Splash from './splash/splash';
-import ReservationComposeContainer from './reservation/reservation_container'
+import ReservationComposeContainer from './reservation/reservation_container';
+import UserProfileContainer from './userprofile/profile_container';
 
 
 const App = () => {
@@ -33,7 +34,7 @@ const App = () => {
                      <Route path="/locations/:locId" component={LocationShowContainer} />
                  </Switch>
                  <Switch>
-                     {/* <Route path="restaurants/:restId/new_res" component={ReservationComposeContainer} /> */}
+                     <Route path="./user/:userId" component={UserProfileContainer} />
                  </Switch>
                 </ul>
                 <div className='footer-div'>

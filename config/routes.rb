@@ -23,6 +23,7 @@ Rails.application.routes.draw do
         post :temp_set
       end
     end
+    resources :reviews, only: [:create,:index]
     resources :locations, only: :show
     resources :restaurants, only: :show
   end

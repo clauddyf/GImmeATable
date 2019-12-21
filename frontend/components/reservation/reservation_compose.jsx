@@ -36,7 +36,7 @@ class ReservationCompose extends React.Component {
     // .then(() => this.userProfile())  add this back to line 31 when you create the user profile
 
     // userProfile() {
-    //     window.location.href = window.location.origin + `/#user/${this.props.currentUser.id}`;
+    //     window.location.href = window.location.origin + `/#uthis.state.startDate._dser/${this.props.currentUser.id}`;
     // }
 
     update(e, field) {

@@ -31,11 +31,11 @@ class ReservationDate extends React.Component {
                 onChange = {this.handleChange}
 
                 showTimeSelect
-                // timeIntervals={30}
-                // minDate = {moment()}
-                // minTime={moment().hours(open).minutes(0)}
-                // maxTime={moment().hours(close).minutes(0)}
-                // dateFormat="LLL"
+                timeIntervals={30}
+                minDate = {this.state.startDate._d}
+                minTime={moment().hours(open).minutes(0)}
+                maxTime={moment().hours(close).minutes(0)}
+                dateFormat="LLL"
             
             />
         )
