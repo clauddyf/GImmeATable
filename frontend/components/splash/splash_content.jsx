@@ -1,6 +1,7 @@
 import React from 'react';
 import RestIndex from '../restaurant_show/restaurants_index'
 import LocationIndex from '../location/location_index';
+import RestaurantSearchContainer from '../search/restaurant_search_container'
 
 class SplashContent extends React.Component {
     constructor(props) {
@@ -38,8 +39,11 @@ class SplashContent extends React.Component {
         //                                 <RestIndex restaurant={restaurant}/>
         //                             </li>
         //                         );
-                                return(
-                                    <div className='splash-container'>
+         return(
+            <div className='splash-container'>
+                <div className='baby-splash'>
+                    <RestaurantSearchContainer/>
+                </div>
                 <div className='ul-container'>
                     <ul className='location-ul-index'>
                         {/* {restList} */}
