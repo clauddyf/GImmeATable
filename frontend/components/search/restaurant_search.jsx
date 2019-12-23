@@ -25,7 +25,6 @@ class RestaurantSearch extends React.Component {
         return (
             <div className='search-form'>
                 <form onSubmit={e => this.handleClick(e)}>
-                    <h2>Find a Restaurant</h2>
                     <span className='search-bar'>
                         <SearchCalendar/>
                         <input

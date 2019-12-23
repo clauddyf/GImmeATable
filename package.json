@@ -6,7 +6,9 @@
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
     "babel-loader": "^8.0.6",
+    "css": "^2.2.4",
     "css-loader": "^3.4.0",
+    "loader": "^2.1.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "react": "^16.11.0",
@@ -15,11 +17,13 @@
     "react-redux": "^7.1.3",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
+    "react-slick": "^0.25.2",
     "react-star-rating-component": "^1.4.1",
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "style-loader": "^1.0.2",
+    "slick-carousel": "^1.8.1",
+    "style-loader": "^1.1.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
@@ -36,10 +40,11 @@
     "postinstall": "webpack"
   },
   "engines": {
-    "node": "10.13.1",
+    "node": "10.13npm i css-loader.1",
     "npm": "6.4.1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {}
 }

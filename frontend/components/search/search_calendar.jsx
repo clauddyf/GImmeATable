@@ -1,6 +1,9 @@
 import React from 'react';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
+// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+// import 'react-datepicker/dist/react-datepicker.css';
+// require('react-datepicker/dist/react-datepicker.css')
 
 class SearchCalendar extends React.Component {
     constructor(props) {
@@ -22,7 +25,7 @@ class SearchCalendar extends React.Component {
         // debugger
         return (
             <DatePicker
-            className='calendar'
+            className='calendar-style'
                 selected = {this.state.startDate._d}
                 onChange = {this.handleChange}
 

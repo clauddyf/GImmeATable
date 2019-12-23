@@ -10,6 +10,9 @@ import LocationShowContainer from './location/location_show_container';
 import Splash from './splash/splash';
 import ReservationComposeContainer from './reservation/reservation_container';
 import UserProfileContainer from './userprofile/profile_container';
+require("react-datepicker/dist/react-datepicker.css");
+// import 'react-datepicker/dist/react-datepicker.css';
+
 
 
 const App = () => {
@@ -18,7 +21,7 @@ const App = () => {
             <div>
                 <header className="nav-bar">
                     <Link to="/" className='header-link'>
-                        Gimme A Table
+                        Gimme A Table 
                     </Link>
                     <GreetingContainer/>
                 </header>

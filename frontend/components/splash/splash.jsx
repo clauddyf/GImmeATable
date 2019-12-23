@@ -1,5 +1,6 @@
 import React from 'react';
 import SplashContainer from './splash_container';
+import RestaurantSearchContainer from '../search/restaurant_search_container'
 
 const Splash = () => {
     return (
@@ -10,6 +11,9 @@ const Splash = () => {
                         <h1 className='obama-text'>
                             Find your table for any occasion
                         </h1>  
+                    </div>
+                    <div className='baby-splash'>
+                        <RestaurantSearchContainer/>
                     </div>
                 </div>
             </div>

@@ -18,6 +18,10 @@ class ReservationCompose extends React.Component {
         // this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    // componentDidMount(){
+    //     this.props.openModal(modal);
+    // }
+
     handleSubmit(e) {
         e.preventDefault();
         // let reservation = {

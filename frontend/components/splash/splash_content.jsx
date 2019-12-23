@@ -41,9 +41,9 @@ class SplashContent extends React.Component {
         //                         );
          return(
             <div className='splash-container'>
-                <div className='baby-splash'>
+                {/* <div className='baby-splash'>
                     <RestaurantSearchContainer/>
-                </div>
+                </div> */}
                 <div className='ul-container'>
                     <ul className='location-ul-index'>
                         {/* {restList} */}

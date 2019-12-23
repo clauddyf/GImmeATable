@@ -121,7 +121,7 @@ class RestaurantShow extends React.Component{
                             {this.props.restaurant.description}
                         </div>
                       </div>
-                      <div className='reserve=form'>
+                      <div className='reserve-form'>
                         <ReservationContainer restaurant={restaurant} currentUser={this.props.currentUser} />
                       </div>
                       <div>

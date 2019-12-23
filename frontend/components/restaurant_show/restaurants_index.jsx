@@ -8,9 +8,9 @@ class RestaurantsIndex extends React.Component {
         // debugger
         return (
             <Link to={`/restaurants/${this.props.restaurant.restaurant.id}`}>
-                <ul>
+                {/* <ul>
                     <li>
-                        {/* <h1 className='location-name'>{this.props.location.location}</h1> */}
+                        <h1 className='location-name'>{this.props.location.location}</h1>
                         <div className='overlay-img'>
                             <img className='rest-pics' src={this.props.restaurant.photoUrls} alt=""/>
                            <div className='overlay'>
@@ -24,7 +24,31 @@ class RestaurantsIndex extends React.Component {
                            </div>
                         </div>
                     </li>
-                </ul>
+                </ul> */}
+
+                <div className='main-div'>
+                    <div className='rest-photo'>
+                        <img className='rest-pics' src={this.props.restaurant.photoUrls} />
+                    </div>
+                    <div className='rest-descr'>
+                        <div>
+                         <h1>{this.props.restaurant.restaurant.name}</h1>
+                        </div>
+                        <hr/>
+                        <div>
+                            <span>{this.props.restaurant.restaurant.dresscode}</span>
+                        </div>
+                        <hr/>
+                        <div>
+                            <span>{this.props.restaurant.restaurant.address}</span>
+                        </div>
+                        <hr/>
+                        <div>
+                            <span>{this.props.restaurant.restaurant.neighborhood}</span>
+                        </div>
+
+                    </div>
+                </div>
             </Link>
         )
     }

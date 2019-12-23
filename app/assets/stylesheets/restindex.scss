@@ -1,7 +1,4 @@
-.splash-container {
-    display: flex;
-    flex-wrap: wrap;
-}
+
 
 .ul-container, .ul-r-container {
     display: flex;
@@ -12,11 +9,11 @@
 
 .location-ul-index {
     display: flex;
-    width: 1400px;
+    // width: 1400px;
     flex-wrap: wrap;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    margin-left: 270px;
+    // margin-top: 10px;
+    // margin-bottom: 20px;
+    // margin-left: 270px;
 }
 
 .locIndexPlate {
@@ -94,6 +91,18 @@ opacity: 1;
 //     height: 216px;
 //     min-width: 100%
 // }
+
+.main-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.rest-descr {
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 .pop-rests{
     display: flex;

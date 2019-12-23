@@ -20,6 +20,17 @@
     margin-top: 10px;
     margin-bottom: 20px;
     margin-left: 270px;
+    flex-direction: column
+}
+
+.restIndexPlate {
+    display: flex;
+    flex-direction: column;
+}
+
+.r-info-list {
+    display: flex;
+    flex-direction: column
 }
 
 .overlay-img{
