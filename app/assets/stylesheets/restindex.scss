@@ -91,6 +91,13 @@ opacity: 1;
 //     height: 216px;
 //     min-width: 100%
 // }
+.rest-pics {
+    display: flex;
+   //  justify-content: baseline;
+    height: 325px;
+    width: 480px;
+    border-radius: 19%;
+ }
 
 .main-div{
     position: relative;
@@ -106,6 +113,14 @@ opacity: 1;
 .rest-descr {
     display: flex;
     flex-direction: column;
+    margin-left: 80px;
+}
+.rest-hood {
+    color: grey
+}
+
+.rest-addy {
+    color:grey;
 }
 
 

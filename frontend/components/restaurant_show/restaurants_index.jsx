@@ -31,22 +31,18 @@ class RestaurantsIndex extends React.Component {
                         <img className='rest-pics' src={this.props.restaurant.photoUrls} />
                     </div>
                     <div className='rest-descr'>
-                        <div>
+                        <div className='rest-name'>
                          <h1>{this.props.restaurant.restaurant.name}</h1>
                         </div>
                         <hr/>
-                        <div>
-                            <span>{this.props.restaurant.restaurant.dresscode}</span>
-                        </div>
-                        <hr/>
-                        <div>
-                            <span>{this.props.restaurant.restaurant.address}</span>
-                        </div>
-                        <hr/>
-                        <div>
+                        <div className='rest-hood'>
+                            <h1>Neighborhood:</h1>
                             <span>{this.props.restaurant.restaurant.neighborhood}</span>
                         </div>
-
+                        <hr/>
+                        <div className='rest-addy'>
+                            <span>{this.props.restaurant.restaurant.address}</span>
+                        </div>
                     </div>
                 </div>
             </Link>
