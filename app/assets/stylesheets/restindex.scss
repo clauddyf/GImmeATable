@@ -93,8 +93,14 @@ opacity: 1;
 // }
 
 .main-div{
+    position: relative;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    padding: .875rem 0;
+    border-top: 1px solid #ccd3de;
+    width: 100%;
 }
 
 .rest-descr {
