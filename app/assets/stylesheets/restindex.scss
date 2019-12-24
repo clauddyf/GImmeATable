@@ -33,6 +33,93 @@
     border: none;
     box-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
 }
+.left-cat {
+    position: sticky;
+    top: 0px;
+    margin-left: 45px;
+}
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    padding: .875rem 0;
+    border-bottom: 1px solid;
+}
+
+.cuise-container {
+    display: flex;
+    flex-direction: column;
+}
+.cuise-row{
+    width: 100%;
+    justify-content: flex-start;
+    padding: .5em .35em;
+}
+
+.cuise-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.cuise-list li label {
+    padding-left: .5em;
+    font-size: 17px;
+    color: #2c333f;
+}
+
+.cuise-list li {
+    list-style: none;
+    padding: 1.2em 0;
+}
+.cuise-list li input {
+    display: none;
+}
+
+.cuise-list li .checklist {
+    display: inline-block;
+    margin-right: .35em;
+    height: 13px;
+    width: 13px;
+    border-radius: 3px;
+    border: 2px solid;
+    background-color: transparent;
+}
+
+.cuise-list li input:checked ~ .checklist {
+    background-color: red;
+}
+
+.price-container button {
+    // text-align: center;
+    // width:50px;
+    // height:35px;
+    background-color: rgb(243, 230, 230);
+    color: red;
+}
+
+.location-show-pic{
+
+}
+
+// .checklist {
+//     display: inline-block;
+//     margin-right: .35em;
+//     height: 13px;
+//     width: 13px;
+//     border-radius: 3px;
+//     border: 2px solid;
+//     background-color: transparent;
+//     // background-color: red
+// }
+
+.price-butt {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    border-radius: 4px;
+}
+
 .dafuq{
     color: #2d333f;
 }
@@ -97,6 +184,12 @@ opacity: 1;
     height: 325px;
     width: 480px;
     border-radius: 19%;
+ }
+
+ .location-show-pic {
+    height: 425px;
+    width: 100%;
+    padding-top: 40px;
  }
 
 .main-div{

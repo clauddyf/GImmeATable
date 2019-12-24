@@ -666,7 +666,8 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       // debugger
-      this.props.fetchRestaurants(this.props.match.params.locId); // this.props.fetchLocations();
+      this.props.fetchRestaurants(this.props.match.params.locId);
+      this.props.fetchLocation(this.props.match.params.locId); // debugger
     }
   }, {
     key: "handleInput",
@@ -686,6 +687,20 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       // debugger
+      var denver;
+
+      if (this.props.location.id === 9) {
+        denver = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: this.props.location.photoUrls[1],
+          className: "location-show-pic"
+        });
+      } else {
+        denver = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: this.props.location.photoUrls[0],
+          className: "location-show-pic"
+        });
+      }
+
       var restList = Object.values(this.props.restaurants).map(function (restaurant, index) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "restIndexPlate",
@@ -697,9 +712,81 @@ function (_React$Component) {
       console.log(restList);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "loc-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, denver, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "loc-ul-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "left-cat"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "price-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Price:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "price-butt"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        value: "$"
+      }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        value: "$$"
+      }, "$$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        value: "$$$"
+      }, "$$$")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cuise-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cuise-row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Cuisine:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "cuise-list"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "false",
+        id: "Jamaican"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "checklist"
+      }), "Jamaican")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "false",
+        id: "Italian"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "checklist"
+      }), "Italian")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "false",
+        id: "American"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "checklist"
+      }), "American")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "false",
+        id: "Southern Comfort"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "checklist"
+      }), "Southern Comfort")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "false",
+        id: "Chinese"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "checklist"
+      }), "Chinese")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "false",
+        id: "Japanese"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "checklist"
+      }), "Japanese")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "false",
+        id: "Thai Food"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "checklist"
+      }), "Thai Food")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "false",
+        id: "Vegan"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "checklist"
+      }), "Vegan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "false",
+        id: "Sushi"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "checklist"
+      }), "Sushi"))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "resta-ul-index"
       }, restList)));
     }
@@ -734,7 +821,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state, ownProps) {
   return {
-    // location: state.entities.locations[ownProps.match.params.locId],
+    location: state.entities.locations[ownProps.match.params.locId],
     // restaurants: state.entities.restaurants[ownProps.match.params.id]
     restaurants: state.entities.restaurants
   };
@@ -742,7 +829,9 @@ var mSTP = function mSTP(state, ownProps) {
 
 var mDTP = function mDTP(dispatch) {
   return {
-    // fetchLocation: (location) => dispatch(fetchLocation(location)),
+    fetchLocation: function fetchLocation(location) {
+      return dispatch(Object(_actions_location_actions__WEBPACK_IMPORTED_MODULE_1__["fetchLocation"])(location));
+    },
     fetchRestaurants: function fetchRestaurants(locId) {
       return dispatch(Object(_actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_2__["fetchRestaurants"])(locId));
     }
@@ -805,25 +894,31 @@ function (_React$Component) {
     value: function render() {
       // debugger
       var locations = this.props.locations;
+      var denver;
+
+      if (this.props.location.id === 9 || this.props.location.id === 8 || this.props.location.id === 7 || this.props.location.id === 10) {
+        denver = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: this.props.location.photoUrls[0],
+          className: "loc-pics"
+        });
+      } else {
+        denver = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: this.props.location.photoUrls[1],
+          className: "loc-pics"
+        });
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/locations/".concat(this.props.location.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "overlay-img"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "loc-pics",
-        src: this.props.location.photoUrls,
-        alt: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, denver, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "overlay"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "loc-text"
       }, this.props.location.cityname)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hover-l"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "loc-pics",
-        src: this.props.location.photoUrls,
-        alt: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, denver, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "overlay"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "loc-text"
@@ -1960,11 +2055,11 @@ function (_React$Component) {
         className: "rest-descr"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-name"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.restaurant.restaurant.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.restaurant.restaurant.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-hood"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Neighborhood:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.restaurant.neighborhood)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Neighborhood:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.restaurant.neighborhood)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-addy"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.restaurant.address)))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Address: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.restaurant.address)))));
     }
   }]);
 

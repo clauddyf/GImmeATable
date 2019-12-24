@@ -8,6 +8,12 @@ class LocationIndex extends React.Component {
 render() {
     // debugger
     const {locations} = this.props;
+    let denver;
+    if (this.props.location.id === 9 || this.props.location.id === 8 || this.props.location.id === 7 || this.props.location.id === 10) {
+        denver = (<img src={this.props.location.photoUrls[0]} className='loc-pics'/>)
+    } else {
+        denver = (<img src={this.props.location.photoUrls[1]} className='loc-pics'/>);
+    }
     
     
     return (
@@ -16,12 +22,14 @@ render() {
                 <li>
                     {/* <h1 className='location-name'>{this.props.location.location}</h1> */}
                     <div className='overlay-img'>
-                        <img className='loc-pics' src={this.props.location.photoUrls} alt=""/>
+                        {/* <img className='loc-pics' src={this.props.location.photoUrls[1]} alt=""/> */}
+                        {denver}
                        <div className='overlay'>
                            <div className='loc-text'>{this.props.location.cityname}</div>
                        </div>
                        <div className='hover-l'>
-                        <img className='loc-pics' src={this.props.location.photoUrls} alt=""/>
+                        {/* <img className='loc-pics' src={this.props.location.photoUrls[1]} alt=""/> */}
+                        {denver}
                             <div className='overlay'>
                             <div className='loc-text'>{this.props.location.cityname}</div>
                         </div>

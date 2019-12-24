@@ -10,7 +10,6 @@ import {withRouter} from 'react-router-dom'
         return (
             <div className="loc-index">
                 <div className='loc-cont'>  
-    
                     <LocationContentContainer />
                 </div>
             </div>

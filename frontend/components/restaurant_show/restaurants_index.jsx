@@ -34,13 +34,16 @@ class RestaurantsIndex extends React.Component {
                         <div className='rest-name'>
                          <h1>{this.props.restaurant.restaurant.name}</h1>
                         </div>
-                        <hr/>
+                        <br/>
+                        <br/>
                         <div className='rest-hood'>
                             <h1>Neighborhood:</h1>
                             <span>{this.props.restaurant.restaurant.neighborhood}</span>
                         </div>
-                        <hr/>
+                        <br/>
+                        <br/>
                         <div className='rest-addy'>
+                            <h1>Address: </h1>
                             <span>{this.props.restaurant.restaurant.address}</span>
                         </div>
                     </div>
