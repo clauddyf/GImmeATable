@@ -12,32 +12,32 @@ require 'open-uri'
 require 'csv'
 
 
-# Location.destroy_all
+Location.destroy_all
 # Restaurant.destroy_all
 
 
 
-# SanFrancisco = Location.create!(id: 1,cityname: 'San Francisco')
-# Phoenix = Location.create!(id: 2, cityname: 'Phoenix')
-# NOLA = Location.create!(id: 3,cityname: 'New Orleans')
-# Portland = Location.create!(id: 4,cityname: 'Portland')
-# Chicago = Location.create!(id: 5,cityname: 'Chicago')
-# Austin = Location.create!(id: 6,cityname: 'Austin')
-# NewYork = Location.create!(id: 7,cityname: 'New York')
-# LasVegas = Location.create!(id: 8,cityname: 'Las Vegas')
-# Denver = Location.create!(id: 9,cityname: 'Denver')
-# Seattle = Location.create!(id: 10, cityname: 'Seattle')
-# puts "photos have been saved"
-# Location.all.each_with_index do |location, idx|
-#     file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/loc_#{idx}.jpg")
-#     location.photos.attach(io: file, filename: "loc_#{idx}.jpg")
-#     puts "#{location} photos have been saved"
-# end
-# Location.all.each_with_index do |location, idx|
-#     file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/locshow_#{idx}.jpg")
-#     location.photos.attach(io: file, filename: "locshow_#{idx}.jpg")
-#     puts "#{location} second photos have been saved"
-# end
+SanFrancisco = Location.create!(id: 1,cityname: 'San Francisco')
+Phoenix = Location.create!(id: 2, cityname: 'Phoenix')
+NOLA = Location.create!(id: 3,cityname: 'New Orleans')
+Portland = Location.create!(id: 4,cityname: 'Portland')
+Chicago = Location.create!(id: 5,cityname: 'Chicago')
+Austin = Location.create!(id: 6,cityname: 'Austin')
+NewYork = Location.create!(id: 7,cityname: 'New York')
+LasVegas = Location.create!(id: 8,cityname: 'Las Vegas')
+Denver = Location.create!(id: 9,cityname: 'Denver')
+Seattle = Location.create!(id: 10, cityname: 'Seattle')
+puts "photos have been saved"
+Location.all.each_with_index do |location, idx|
+    file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/loc_#{idx}.jpg")
+    location.photos.attach(io: file, filename: "loc_#{idx}.jpg")
+    puts "#{location.cityname} photos have been saved"
+end
+Location.all.each_with_index do |location, idx|
+    file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/locshow_#{idx}.jpg")
+    location.photos.attach(io: file, filename: "locshow_#{idx}.jpg")
+    puts "#{location.cityname} second photos have been saved"
+end
 # Location.first.photos.attach(io: open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/locshow_0.jpg"), filename: "locshow_0.jpg")
 # Location.all[1].photos.attach(io: open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/locshow_1.jpg"), filename: "locshow_1.jpg")
 # Location.all[2].photos.attach(io: open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/locshow_2.jpg"), filename: "locshow_2.jpg")

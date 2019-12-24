@@ -19,17 +19,17 @@
 .locIndexPlate {
     background-color: rgb(242, 243, 248);
     color: #2d333f;
-    border: 1px solid gray;
+    // border: 1px solid gray;
     // width: 450px;
     width: calc((100% - (16px * 11)) * 4 / 12 + (3 * 16px));
     // margin: auto;
-    margin-right: 16px;
-    margin-bottom: 16px;
+    // margin-right: 16px;
+    // margin-bottom: 16px;
     flex: 26% 1 1;
-    margin: 0 16px 16px 0;
-    padding: 3px;
+    // margin: 0 16px 16px 0;
+    // padding: 3px;
     // margin-top: 18px;
-    float: left;
+    // float: left;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
 }
@@ -186,10 +186,84 @@ opacity: 1;
     border-radius: 19%;
  }
 
+ .form-parent {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 0%;
+    margin: 0%;
+    padding: 0%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 20px; 
+ }
+ 
+ .search-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    margin-right: 10px;
+    height: 100%;
+    border-radius: 5px;
+    background-color: white;
+ }
+.search-bar-city {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    font-size: 15px;
+    border: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: white;
+}
+
+.search-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    font-size: 15px;
+    border: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 100%;
+    width: 300px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+
+.search-button {
+    margin-left: 10px;
+    height: 100%;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    background-color: #da3742;
+    color: white;
+    text-align: center; 
+}
  .location-show-pic {
     height: 425px;
     width: 100%;
     padding-top: 40px;
+ }
+.calendar-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .calendar-style {
+    border: none;
  }
 
 .main-div{
@@ -214,6 +288,24 @@ opacity: 1;
 
 .rest-addy {
     color:grey;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+}
+
+.daddy-div {
+    position: relative;
+    text-align: center;
+    color: white;  
+}
+
+.baby-div {
+    position: relative;
+  text-align: center;
+  color: white;
 }
 
 

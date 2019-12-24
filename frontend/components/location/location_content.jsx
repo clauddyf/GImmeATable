@@ -1,5 +1,6 @@
 import React from 'react';
 import RestIndex from '../restaurant_show/restaurants_index';
+import RestaurantSearchContainer from '../search/restaurant_search_container'
 
 class LocationContent extends React.Component {
     constructor(props){
@@ -27,10 +28,28 @@ class LocationContent extends React.Component {
     render() {
         // debugger
         let denver;
-        if (this.props.location.id === 9) {
-            denver = (<img src={this.props.location.photoUrls[1]} className='location-show-pic'/>)
+        if (this.props.location.id === 9 || this.props.location.id === 7 || this.props.location.id === 8 || this.props.location.id === 10) {
+            denver = (<div className='loc-pic-container'>
+                        <div className='daddy-div'>
+                            <div className='baby-div'>
+                                <img src={this.props.location.photoUrls[1]} className='location-show-pic'/>
+                                <div className='centered'>
+                                    <RestaurantSearchContainer/>
+                                </div>
+                            </div>
+                        </div>
+                     </div>)
         } else {
-            denver = (<img src={this.props.location.photoUrls[0]} className='location-show-pic'/>);
+            denver = (<div className='loc-pic-container'>
+                        <div className='daddy-div'>
+                            <div className='baby-div'>
+                                <img src={this.props.location.photoUrls[0]} className='location-show-pic'/>
+                                <div className='centered'>
+                                    <RestaurantSearchContainer/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>)
         }
         const restList = Object.values(this.props.restaurants)
         .map((restaurant,index) =>

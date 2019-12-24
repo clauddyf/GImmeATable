@@ -622,6 +622,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _restaurant_show_restaurants_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../restaurant_show/restaurants_index */ "./frontend/components/restaurant_show/restaurants_index.jsx");
+/* harmony import */ var _search_restaurant_search_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../search/restaurant_search_container */ "./frontend/components/search/restaurant_search_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -641,6 +642,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -689,16 +691,32 @@ function (_React$Component) {
       // debugger
       var denver;
 
-      if (this.props.location.id === 9) {
-        denver = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      if (this.props.location.id === 9 || this.props.location.id === 7 || this.props.location.id === 8 || this.props.location.id === 10) {
+        denver = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "loc-pic-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "daddy-div"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "baby-div"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: this.props.location.photoUrls[1],
           className: "location-show-pic"
-        });
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "centered"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_restaurant_search_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)))));
       } else {
-        denver = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        denver = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "loc-pic-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "daddy-div"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "baby-div"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: this.props.location.photoUrls[0],
           className: "location-show-pic"
-        });
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "centered"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_restaurant_search_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)))));
       }
 
       var restList = Object.values(this.props.restaurants).map(function (restaurant, index) {
@@ -898,12 +916,12 @@ function (_React$Component) {
 
       if (this.props.location.id === 9 || this.props.location.id === 8 || this.props.location.id === 7 || this.props.location.id === 10) {
         denver = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: this.props.location.photoUrls[0],
+          src: this.props.location.photoUrls[1],
           className: "loc-pics"
         });
       } else {
         denver = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: this.props.location.photoUrls[1],
+          src: this.props.location.photoUrls[0],
           className: "loc-pics"
         });
       }
@@ -2544,12 +2562,118 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "form-parent",
         onSubmit: function onSubmit(e) {
           return _this2.handleClick(e);
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-bar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_calendar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        className: "search-bar-city",
+        placeholder: "select a city"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Where to?"
+      }, "Where to?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "1"
+      }, "San Francisco"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "2"
+      }, "Phoenix"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "3"
+      }, "NOLA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "4"
+      }, "Portland"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "5"
+      }, "Chicago"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "7"
+      }, "Austin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "8"
+      }, "Seattle"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "9"
+      }, "Las Vegas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "10"
+      }, "New York"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "11"
+      }, "Denver")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "calendar-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_calendar__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        className: "search-bar-city",
+        placeholder: "Select a Time"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Select a Time"
+      }, "Select a Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "12:00 PM"
+      }, "12:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "12:30 PM"
+      }, "12:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "1:00 PM"
+      }, "1:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "1:30 PM"
+      }, "1:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "2:00 PM"
+      }, "2:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "2:30 PM"
+      }, "2:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "3:00 PM"
+      }, "3:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "3:30 PM"
+      }, "3:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "4:00 PM"
+      }, "4:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "4:30 PM"
+      }, "4:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "5:00 PM"
+      }, "5:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "5:30 PM"
+      }, "5:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "6:00 PM"
+      }, "6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "6:30 PM"
+      }, "6:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "7:00 PM"
+      }, "7:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "7:30 PM"
+      }, "7:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "8:00 PM"
+      }, "8:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "8:30 PM"
+      }, "8:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "9:00 PM"
+      }, "9:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "9:30 PM"
+      }, "9:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "10:00 PM"
+      }, "10:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "10:30 PM"
+      }, "10:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "11:00 PM"
+      }, "11:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "11:30 PM"
+      }, "11:30 PM")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        className: "search-bar-city",
+        placeholder: "Party of.."
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Party of..."
+      }, "Party of..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "1"
+      }, "1 guest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "2"
+      }, "2 guest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "3"
+      }, "3 guest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "4"
+      }, "4 guest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "5"
+      }, "5 guest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "6"
+      }, "6 guest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "7"
+      }, "7 guest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "8"
+      }, "8 guest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "9"
+      }, "9 guest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "10"
+      }, "10 guest"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "search-input",
         placeholder: "Restaurant, City, Cuisine",
         value: this.state.search,
@@ -2560,7 +2684,7 @@ function (_React$Component) {
         className: "search-button",
         type: "submit",
         value: "Search"
-      }))));
+      })));
     }
   }]);
 
@@ -2681,12 +2805,13 @@ function (_React$Component) {
         className: "calendar-style",
         selected: this.state.startDate._d,
         onChange: this.handleChange,
+        placeholderText: "MM/DD/YYYY",
         showTimeSelect: true,
         timeIntervals: 30,
         minDate: this.state.startDate._d,
         minTime: moment__WEBPACK_IMPORTED_MODULE_2___default()().hours(11).minutes(0),
         maxTime: moment__WEBPACK_IMPORTED_MODULE_2___default()().hours(22).minutes(0),
-        dateFormat: "LLL"
+        dateFormat: "MM/dd/yyyy"
       });
     }
   }]);
@@ -71534,7 +71659,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

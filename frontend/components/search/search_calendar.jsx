@@ -25,16 +25,16 @@ class SearchCalendar extends React.Component {
         // debugger
         return (
             <DatePicker
-            className='calendar-style'
+                className='calendar-style'
                 selected = {this.state.startDate._d}
                 onChange = {this.handleChange}
-
+                placeholderText= 'MM/DD/YYYY'
                 showTimeSelect
                 timeIntervals={30}
                 minDate = {this.state.startDate._d}
                 minTime={moment().hours(11).minutes(0)}
                 maxTime={moment().hours(22).minutes(0)}
-                dateFormat="LLL"
+                dateFormat="MM/dd/yyyy"
             
             />
         )
