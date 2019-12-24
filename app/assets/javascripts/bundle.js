@@ -1432,20 +1432,85 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "make-rese"
       }, "Make a Reservation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "baby-rese-cont"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_date__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        throughDate: this.throughDate,
-        restaurant: this.props.restaurant
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-        className: "rese-textarea",
-        value: this.state.head_count,
-        onChange: function onChange(e) {
-          return _this2.update(e, 'head_count');
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "rese-submit",
+        id: "section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "dropdown"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "res-head-count",
+        type: "number",
+        placeholder: "Head Count",
+        min: "1",
+        max: "10"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "section",
+        className: "res-section-row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "rese-date"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Date:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "date",
+        placeholder: "Pick a date",
+        value: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "rese-date"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Time:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        className: "search-bar-city",
+        placeholder: "Select a Time"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "Select a Time"
+      }, "Select a Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "12:00 PM"
+      }, "12:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "12:30 PM"
+      }, "12:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "1:00 PM"
+      }, "1:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "1:30 PM"
+      }, "1:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "2:00 PM"
+      }, "2:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "2:30 PM"
+      }, "2:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "3:00 PM"
+      }, "3:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "3:30 PM"
+      }, "3:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "4:00 PM"
+      }, "4:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "4:30 PM"
+      }, "4:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "5:00 PM"
+      }, "5:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "5:30 PM"
+      }, "5:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "6:00 PM"
+      }, "6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "6:30 PM"
+      }, "6:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "7:00 PM"
+      }, "7:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "7:30 PM"
+      }, "7:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "8:00 PM"
+      }, "8:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "8:30 PM"
+      }, "8:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "9:00 PM"
+      }, "9:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "9:30 PM"
+      }, "9:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "10:00 PM"
+      }, "10:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "10:30 PM"
+      }, "10:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "11:00 PM"
+      }, "11:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "11:30 PM"
+      }, "11:30 PM")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
-        value: "Submit"
+        className: "rese-submit-butt",
+        value: "Confirm Reservation"
       }))));
     }
   }]);
@@ -1885,6 +1950,15 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "baby-right-side"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-reserve-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "res-container-header"
+      }, "Make a reservation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "reserve-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_reservation_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        restaurant: restaurant,
+        currentUser: this.props.currentUser
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dresscode"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "baby-dress"
@@ -1954,12 +2028,7 @@ function (_React$Component) {
         className: "c-type"
       }, this.props.restaurant.cuisine_type)))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "desc-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.restaurant.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "reserve-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_reservation_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        restaurant: restaurant,
-        currentUser: this.props.currentUser
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.restaurant.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
         type: 'restaurant'
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_reviews_compose_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         restaurant: restaurant
@@ -71659,7 +71728,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

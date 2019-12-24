@@ -62,7 +62,51 @@ class ReservationCompose extends React.Component {
             <div className='rese-form-container'>
                 <form className="rese-form" onSubmit={e => this.handleSubmit(e)}>
                     <h1 className='make-rese'>Make a Reservation</h1>
-                    <div className='baby-rese-cont'>
+                    <div id='section'>
+                        <label className='dropdown'>
+                            <input className='res-head-count'type="number" placeholder='Head Count' min='1' max='10'/>
+                        </label>
+                    </div>
+                    <div id='section' className='res-section-row'>
+                        <label className='rese-date'>
+                            <div>Date:</div>
+                            <input type="date" placeholder='Pick a date'value=''/>
+                        </label>
+                        <label className='rese-date'>
+                            <div>Time:</div>
+                            <select className="search-bar-city" placeholder="Select a Time">
+                            <option value="Select a Time">Select a Time</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="12:30 PM">12:30 PM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="1:30 PM">1:30 PM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="2:30 PM">2:30 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                            <option value="3:30 PM">3:30 PM</option>
+                            <option value="4:00 PM">4:00 PM</option>
+                            <option value="4:30 PM">4:30 PM</option>
+                            <option value="5:00 PM">5:00 PM</option>
+                            <option value="5:30 PM">5:30 PM</option>
+                            <option value="6:00 PM">6:00 PM</option>
+                            <option value="6:30 PM">6:30 PM</option>
+                            <option value="7:00 PM">7:00 PM</option>
+                            <option value="7:30 PM">7:30 PM</option>
+                            <option value="8:00 PM">8:00 PM</option>
+                            <option value="8:30 PM">8:30 PM</option>
+                            <option value="9:00 PM">9:00 PM</option>
+                            <option value="9:30 PM">9:30 PM</option>
+                            <option value="10:00 PM">10:00 PM</option>
+                            <option value="10:30 PM">10:30 PM</option>
+                            <option value="11:00 PM">11:00 PM</option>
+                            <option value="11:30 PM">11:30 PM</option>
+                        </select>
+                        </label>
+                    </div>
+                    <div id='section'>
+                        <input type="submit" className='rese-submit-butt' value='Confirm Reservation'/>
+                    </div>
+                    {/* <div className='baby-rese-cont'>
                         <ReservationDate
                             throughDate={this.throughDate}
                             restaurant={this.props.restaurant}    
@@ -72,7 +116,7 @@ class ReservationCompose extends React.Component {
                             onChange={e => this.update(e, 'head_count')}>
                         </textarea>
                         <input className = "rese-submit" type="submit" value="Submit"/>
-                    </div>
+                    </div> */}
                 </form>
             </div>
         )

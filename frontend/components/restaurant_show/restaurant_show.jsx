@@ -42,6 +42,12 @@ class RestaurantShow extends React.Component{
                 <div className='rest-body'>
                     <aside className='right-side'>
                         <div className='baby-right-side'>
+                            <div className='rest-reserve-container'>
+                                <div className='res-container-header'>Make a reservation</div>
+                                <div className='reserve-form'>
+                                    <ReservationContainer restaurant={restaurant} currentUser={this.props.currentUser} />
+                                </div>
+                            </div>
                             <div className='dresscode'>
                                 <div className='baby-dress'>
                                     <span>Dresscode</span>
@@ -120,9 +126,6 @@ class RestaurantShow extends React.Component{
                         <div >
                             {this.props.restaurant.description}
                         </div>
-                      </div>
-                      <div className='reserve-form'>
-                        <ReservationContainer restaurant={restaurant} currentUser={this.props.currentUser} />
                       </div>
                       <div>
                           <ReviewIndexContainer type={'restaurant'}/>
