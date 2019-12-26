@@ -1941,7 +1941,7 @@ function (_React$Component) {
         className: "waffles"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "waffy",
-        src: this.props.restaurant.photoUrls,
+        src: "https://gimmeatable-dev.s3-us-west-1.amazonaws.com/rest_show.jpg",
         alt: ""
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-body"
@@ -1982,57 +1982,60 @@ function (_React$Component) {
         className: "rest-nav-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "nav-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         id: "overview-link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "ov-l",
-        href: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Overview"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Overview")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         id: "photos-link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "ov-l",
-        href: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Photos"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        id: "menu-link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "ov-l",
-        href: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Menu"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Photos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        id: "info-link"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Daily Info")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         id: "reviews-link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "ov-l",
-        href: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Reviews"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Reviews")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "rest-name"
-      }, this.props.restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ratings-bar"
+      }, this.props.restaurant.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-show-overview",
+        id: "overview-link"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "rte-bar-child"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "rev-bar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "rev-icon"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "c-type"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "c-type"
-      }, this.props.restaurant.num_of_views), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "c-type"
-      }, " Reviews")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "ctype-icon"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "c-type"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "c-type"
-      }, this.props.restaurant.cuisine_type)))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-section-title"
+      }, "Overview"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "desc-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.restaurant.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, this.props.restaurant.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-show-photos",
+        id: "photos-link"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-section-title"
+      }, "Photos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photos-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.restaurant.photoUrls,
+        alt: ""
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-show-info",
+        id: "info-link"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-section-title"
+      }, "Daily Info"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "info-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-info-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "PhoneNumber:", this.props.restaurant.phone_num)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-info-div"
+      }, "Addy: ", this.props.restaurant.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-info-div"
+      }, "Neighborhood: ", this.props.restaurant.neighborhood), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-info-div"
+      }, "Hours of Operation: ", this.props.restaurant.hours_op))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-show-reviews",
+        id: "reviews-link"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-section-title"
+      }, "Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
         type: 'restaurant'
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_reviews_compose_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         restaurant: restaurant
-      })))));
+      }))))));
     }
   }]);
 
@@ -2040,6 +2043,28 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (RestaurantShow);
+{
+  /* <div className='ratings-bar'>
+     <div className='rte-bar-child'>
+         <ul className='rev-bar'>
+             <li className='rev-icon'>
+                 
+             </li>
+             <li className='c-type'>
+                 <span className='c-type'>{this.props.restaurant.num_of_views}</span>
+                 <span className='c-type'> Reviews</span>
+             </li>
+             
+             <li className='ctype-icon'>
+                 
+             </li>
+             <li className='c-type'>
+                 <span className='c-type'>{this.props.restaurant.cuisine_type}</span>
+             </li>
+         </ul>
+     </div>
+  </div> */
+}
 
 /***/ }),
 
