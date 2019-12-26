@@ -109,16 +109,18 @@
 }
 
  .header-button {
-   background-color: #237b98; 
+   font-family: 'Overpass', sans-serif;;
+   padding-top: 5px;
+   padding-left: 15px;
+   padding-right: 15px;
+   color:black;
+   height: 55px;
+   line-height: 60px;
    border-radius: 15px;
-   border-color: #1c627a;
-   color: whitesmoke;
-   padding: 14px 25px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
    margin: 10px;
-   width: 100px;
+   border: 2px solid;
+   color:gray;
+   border-color: black;
  }
  .header-button:hover {
     background: #3d6f80;
@@ -189,26 +191,26 @@
    font-style: normal;
    cursor: pointer;
 }
-button {
-   border-style: solid;
-   border-width: 0;
-   cursor: pointer;
-   font-weight: 400;
-   font-family: 'Overpass', sans-serif;  
-   line-height: normal;
-   margin:0 0 1rem;
-   position: relative;
-   text-decoration: none;
-   text-align: center;
-   outline: 0;
-   border-radius: 3px;
-   display: inline-block;
-   background-color: #da3743;
-   border-color: #b8222d;
-   color: #fff;
-   padding: .875rem 1.75rem .9375rem;
-   width: 100%;
-}
+// button {
+//    border-style: solid;
+//    border-width: 0;
+//    cursor: pointer;
+//    font-weight: 400;
+//    font-family: 'Overpass', sans-serif;  
+//    line-height: normal;
+//    margin:0 0 1rem;
+//    position: relative;
+//    text-decoration: none;
+//    text-align: center;
+//    outline: 0;
+//    border-radius: 3px;
+//    display: inline-block;
+//    background-color: #da3743;
+//    border-color: #b8222d;
+//    color: #fff;
+//    padding: .875rem 1.75rem .9375rem;
+//    width: 100%;
+// }
 
 
 .login-input{
@@ -316,6 +318,23 @@ a {
 
 .header-group{
    display: flex;
+   flex-direction: row;
+   align-items: baseline;
+ }
+
+ .profile-link-header {
+   font-family: 'Overpass', sans-serif;;
+   padding-top: 5px;
+   padding-left: 15px;
+   padding-right: 15px;
+   color:black;
+   height: 55px;
+   line-height: 60px;
+   border-radius: 15px;
+   margin: 10px;
+   border: 2px solid;
+   color:gray;
+   border-color: black;
  }
 .header-name{
    // font-family: 'Playfair Display', serif;
@@ -323,17 +342,20 @@ a {
    // padding: 23px;
    // font-size: 20px;
    // color: red;
+   // text-decoration: none;
+   // background-color: red;
    font-family: 'Overpass', sans-serif;;
    padding-top: 5px;
    padding-left: 15px;
    padding-right: 15px;
-   text-decoration: none;
-   background-color: red;
-   color: white;
+   color:black;
    height: 55px;
    line-height: 60px;
    border-radius: 15px;
    margin: 10px;
+   // border: 2px solid;
+   color:gray;
+   border-color: black;
 }
 
 .content-block{

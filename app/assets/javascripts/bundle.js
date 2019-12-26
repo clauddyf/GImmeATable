@@ -556,7 +556,9 @@ var Greeting = function Greeting(_ref) {
       className: "header-group"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "header-name"
-    }, "Ready to Eat, ", currentUser.first_name, "?!", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    }, "Ready to Eat, ", currentUser.first_name, "?!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "profile-link-header"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/user/".concat(currentUser.id),
       className: "profile-link"
     }, currentUser.first_name, " Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
