@@ -21,7 +21,12 @@ const App = () => {
             <div>
                 <header className="nav-bar">
                     <Link to="/" className='header-link'>
-                        Gimme A Table 
+                        <div className='logo-img'>
+                            <img src="/table.png" alt=""/>
+                        </div>
+                        <div className='logo-name'>
+                            Gimme A Table 
+                        </div>
                     </Link>
                     <GreetingContainer/>
                 </header>

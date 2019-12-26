@@ -37,19 +37,54 @@
  
  .header-link{
    font-family: 'Playfair Display', serif;
-   padding-top: 5px;
-   padding-left: 15px;
-   padding-right: 15px;
-   text-decoration: none;
-   background-color: red;
-   color: white;
-   height: 70px;
-   line-height: 60px;
-   border-radius: 15px;
-   margin: 10px;
+   // padding-top: 5px;
+   // padding-left: 15px;
+   // padding-right: 15px;
+   // text-decoration: none;
+   // background-color: red;
+   // color: white;
+   // height: 70px;
+   // line-height: 60px;
+   // border-radius: 15px;
+   // margin: 10px;
+
+   margin-left: 50px;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
  }
 .header-link:hover{
-   background: rgb(204, 47, 47);
+   background: rgb(252, 252, 252);
+   
+}
+.logo-img{
+   border: 0px;
+   margin-bottom: 0px;
+   margin-left: 0px;
+   margin-right: 0px;
+   padding: 0px;
+   height: 50px;
+   font-size: 25px;
+}
+
+.logo-img img {
+   height: 43px;
+   margin-right: 5px;
+   margin-top: 7px;
+   margin-right: 5px;
+}
+
+.logo-name{
+   border: 0px;
+   //  margin-bottom: 0px;
+   //  margin-left: 0px;
+   //  margin-right: 0px;
+   //  padding: 0px;
+   //  height: 50px;
+    font-size: 25px;
 }
 
 .splash-container {
