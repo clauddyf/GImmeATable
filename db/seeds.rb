@@ -27,7 +27,7 @@ NewYork = Location.create!(id: 7,cityname: 'New York')
 LasVegas = Location.create!(id: 8,cityname: 'Las Vegas')
 Denver = Location.create!(id: 9,cityname: 'Denver')
 Seattle = Location.create!(id: 10, cityname: 'Seattle')
-puts "photos have been saved"
+
 Location.all.each_with_index do |location, idx|
     file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/loc_#{idx}.jpg")
     location.photos.attach(io: file, filename: "loc_#{idx}.jpg")

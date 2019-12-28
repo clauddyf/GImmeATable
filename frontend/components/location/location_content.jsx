@@ -43,7 +43,7 @@ class LocationContent extends React.Component {
             denver = (<div className='loc-pic-container'>
                         <div className='daddy-div'>
                             <div className='baby-div'>
-                                <img src={this.props.location.photoUrls[0]} className='location-show-pic'/>
+                                <img src={this.props.location.photoUrls[1]} className='location-show-pic'/>
                                 <div className='centered'>
                                     <RestaurantSearchContainer/>
                                 </div>

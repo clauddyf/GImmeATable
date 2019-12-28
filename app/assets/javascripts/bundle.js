@@ -721,7 +721,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "baby-div"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: this.props.location.photoUrls[0],
+          src: this.props.location.photoUrls[1],
           className: "location-show-pic"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "centered"
@@ -925,7 +925,7 @@ function (_React$Component) {
 
       if (this.props.location.id === 9 || this.props.location.id === 8 || this.props.location.id === 7 || this.props.location.id === 10) {
         denver = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: this.props.location.photoUrls[1],
+          src: this.props.location.photoUrls[0],
           className: "loc-pics"
         });
       } else {
