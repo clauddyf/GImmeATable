@@ -61,7 +61,7 @@ class ReservationCompose extends React.Component {
         return (
             <div className='rese-form-container'>
                 <form className="rese-form" onSubmit={e => this.handleSubmit(e)}>
-                    <h1 className='make-rese'>Make a Reservation</h1>
+                    <h1 className='make-rese'></h1>
                     <div id='section'>
                         <label className='dropdown'>
                             <input className='res-head-count'type="number" placeholder='Head Count' min='1' max='10'/>
