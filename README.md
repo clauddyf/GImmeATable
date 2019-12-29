@@ -22,9 +22,9 @@ GimmeATable is a site in which a user can search for a restaurant, reserve a tab
  ![reservation_box](https://github.com/clauddyf/GimmeATable/blob/master/app/assets/images/reservations.png)
 
 ## Technologies
-
+* PostgreSQL
 * Ruby on Rails
 * React/Redux
 * Javascript
-
+* CSS
 
