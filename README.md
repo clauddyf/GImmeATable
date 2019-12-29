@@ -28,3 +28,7 @@ GimmeATable is a site in which a user can search for a restaurant, reserve a tab
 * Javascript
 * CSS
 
+## Future Implementations
+* Style the profile page
+* Allow users to leave a star rating that will update each Restaurants rating
+* Map API for the User to see where exactly the Restaurant is if they arent familiar with the neighborhood
