@@ -1,8 +1,10 @@
-![project logo](GimmeATable/public/Screenshot from 2019-12-26 13-51-14.png)
+![project logo](https://github.com/clauddyf/GimmeATable/blob/master/app/assets/images/Screenshot%20from%202019-12-26%2013-51-14.png)
 
-**GimmeATable
+#GimmeATable
 
 GimmeATable is a site in which a user can search for a restaurant, reserve a table, and leave a review of that same restaurant. This site is inspired by the website OpenTable
+
+![splash page](https://github.com/clauddyf/GimmeATable/blob/master/app/assets/images/home.png)
 
 
 
