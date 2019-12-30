@@ -51,7 +51,7 @@ class RestaurantShow extends React.Component{
         return(
             <div className='rest-page'>
                 <div className='waffles'>
-                    <img className= 'waffy' src='https://gimmeatable-dev.s3-us-west-1.amazonaws.com/rest_show.jpg' alt=""/>
+                    {/* <img className= 'waffy' src='https://gimmeatable-dev.s3-us-west-1.amazonaws.com/rest_show.jpg' alt=""/> */}
                 </div>
                 <div className='rest-body'>
                     <aside className='right-side'>

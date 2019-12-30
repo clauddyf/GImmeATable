@@ -749,11 +749,15 @@ function (_React$Component) {
         className: "price-butt"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         value: "$"
-      }, "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "under $10"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         value: "$$"
-      }, "$$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "$10-$30"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         value: "$$$"
-      }, "$$$")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "$30-$60"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        value: "$$$"
+      }, "$60-$100"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        value: "$$$"
+      }, "$100 and up")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cuise-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cuise-row"
@@ -1960,11 +1964,7 @@ function (_React$Component) {
         className: "rest-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "waffles"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "waffy",
-        src: "https://gimmeatable-dev.s3-us-west-1.amazonaws.com/rest_show.jpg",
-        alt: ""
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("aside", {
         className: "right-side"

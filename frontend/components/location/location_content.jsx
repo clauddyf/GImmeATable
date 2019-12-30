@@ -69,9 +69,15 @@ class LocationContent extends React.Component {
                         <div className='price-container'>
                             <h1>Price:</h1>
                             <div className='price-butt'>
-                                <button value='$'>$</button>
-                                <button value='$$'>$$</button>
-                                <button value='$$$'>$$$</button>
+                                <button value='$'>under $10</button>
+                                <br/>
+                                <button value='$$'>$10-$30</button>
+                                <br/>
+                                <button value='$$$'>$30-$60</button>
+                                <br/>
+                                <button value='$$$'>$60-$100</button>
+                                <br/>
+                                <button value='$$$'>$100 and up</button>
                             </div>
                             <hr/>
                             <div className='cuise-container'>
