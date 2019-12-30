@@ -33,6 +33,20 @@ class RestaurantShow extends React.Component{
           close = `${(restaurant.close - 12)}:00 PM`;
         } else { close = `${(restaurant.close)}:00 AM`; }
         if (this.props.restaurant === undefined) return null; 
+        let happyhour;
+        if ((this.props.restaurant.id) % 2 !== 0 && (this.props.restaurant.id) < 35) {
+            happyhour = (
+                <div className='din-style'>
+                    5pm-8pm
+                </div>
+            )
+        } else {
+            happyhour = (
+                <div className='din-style'>
+                    6pm-8:30pm
+                </div>
+            )
+        }
 
         return(
             <div className='rest-page'>
@@ -50,7 +64,7 @@ class RestaurantShow extends React.Component{
                             </div>
                             <div className='dresscode'>
                                 <div className='baby-dress'>
-                                    <span>Dresscode</span>
+                                    <span classname='side-nav-type'>Dresscode</span>
                                     <div className='act-dress'>
                                         {this.props.restaurant.dresscode}
                                     </div>
@@ -58,23 +72,44 @@ class RestaurantShow extends React.Component{
                             </div>
                             <hr/>
                             <div className='baby-din-style'>
-                                <span>Dining Style</span>
+                                <span classname='side-nav-type'>Dining Style</span>
                                 <div className='din-style'>
-                                    <span>{this.props.restaurant.dining_style}</span>
+                                    <span>Casual Elegant</span>
                                 </div>
                             </div>
                             <hr/>
                             <div className='baby-cuise'>
-                                <span>Cuisine-Type</span>
+                                <span classname='side-nav-type'>Cuisine-Type</span>
                                 <div className= 'din-style'>
                                     <span>{this.props.restaurant.cuisine_type}</span>
                                 </div>
                             </div>
                             <hr/>
                             <div className='baby-happy'>
-                                <span>Happy-Hour</span>
+                                <span classname='side-nav-type'>Happy-Hour</span>
                                 <div className='happy-hour'>
-                                    <span>{this.props.restaurant.happy_hour}</span>
+                                    <span>{happyhour}</span>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div>
+                                <span classname='side-nav-type'>Neighborhood</span>
+                                <div className='din-style'>
+                                    <span>{this.props.restaurant.neighborhood}</span>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div>
+                                <span classname='side-nav-type'>Payment Options</span>
+                                <div className='din-style'>
+                                    Visa,Mastercard,Discover,AMEX
+                                </div>
+                            </div>
+                            <hr/>
+                            <div>
+                                <span classname='side-nav-type'>Hours of Operation</span>
+                                <div className='din-style'>
+                                    <span>{this.props.restaurant.hours_op}</span>
                                 </div>
                             </div>
                             <hr/>

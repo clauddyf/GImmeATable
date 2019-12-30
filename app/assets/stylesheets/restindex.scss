@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: -20px;
 }
 
 .location-ul-index {
@@ -97,9 +97,6 @@
     color: red;
 }
 
-.location-show-pic{
-
-}
 
 .loc-pic-container {
     width: 100%
@@ -259,6 +256,7 @@ opacity: 1;
     height: 425px;
     width: 100%;
     padding-top: 40px;
+    filter: brightness(40%);
  }
 .calendar-box {
     display: flex;

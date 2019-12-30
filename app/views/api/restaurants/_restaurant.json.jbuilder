@@ -4,10 +4,10 @@ json.extract! restaurant, :reviews
 
 json.restaurant do 
     json.id restaurant.id
-    json.description restaurant. description
+    json.description restaurant.description
     json.city restaurant.location
     json.name  restaurant.name
-    json.dresscode :dresscode
+    json.dresscode restaurant.dresscode
     json.dining_style restaurant.dining_style
     json.cuisine_type restaurant.cuisine_type
     json.happy_hour restaurant.happy_hour

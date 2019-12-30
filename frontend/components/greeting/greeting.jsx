@@ -19,7 +19,7 @@ const Greeting = ({ currentUser, logout, openModal}) => {
                 Ready to Eat, {currentUser.first_name}?!
             </div>
             <div className='profile-link-header'>
-                <Link to={`/user/${currentUser.id}`} className='profile-link'>{currentUser.first_name} Profile</Link>
+                <Link to={`/user/${currentUser.id}`} className='profile-link'>{currentUser.first_name}'s Profile</Link>
             </div>
             <button className='header-button' onClick={logout}>Log Out</button>
         </hgroup>

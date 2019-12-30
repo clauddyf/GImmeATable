@@ -561,7 +561,7 @@ var Greeting = function Greeting(_ref) {
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/user/".concat(currentUser.id),
       className: "profile-link"
-    }, currentUser.first_name, " Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    }, currentUser.first_name, "'s Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "header-button",
       onClick: logout
     }, "Log Out"));
@@ -1944,6 +1944,18 @@ function (_React$Component) {
       }
 
       if (this.props.restaurant === undefined) return null;
+      var happyhour;
+
+      if (this.props.restaurant.id % 2 !== 0 && this.props.restaurant.id < 35) {
+        happyhour = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "din-style"
+        }, "5pm-8pm");
+      } else {
+        happyhour = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "din-style"
+        }, "6pm-8:30pm");
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1971,21 +1983,41 @@ function (_React$Component) {
         className: "dresscode"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "baby-dress"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dresscode"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        classname: "side-nav-type"
+      }, "Dresscode"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "act-dress"
       }, this.props.restaurant.dresscode))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "baby-din-style"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dining Style"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        classname: "side-nav-type"
+      }, "Dining Style"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.dining_style))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Casual Elegant"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "baby-cuise"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Cuisine-Type"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        classname: "side-nav-type"
+      }, "Cuisine-Type"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.cuisine_type))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "baby-happy"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Happy-Hour"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        classname: "side-nav-type"
+      }, "Happy-Hour"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "happy-hour"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.happy_hour))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, happyhour))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        classname: "side-nav-type"
+      }, "Neighborhood"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "din-style"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.neighborhood))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        classname: "side-nav-type"
+      }, "Payment Options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "din-style"
+      }, "Visa,Mastercard,Discover,AMEX")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        classname: "side-nav-type"
+      }, "Hours of Operation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "din-style"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.hours_op))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ove-sect"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-nav-bar"

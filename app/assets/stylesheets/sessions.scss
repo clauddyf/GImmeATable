@@ -93,6 +93,9 @@
    justify-content: space-evenly;
    margin: 62px;
 }
+a.profile-link {
+   color: grey
+}
 
 
 
@@ -114,12 +117,12 @@
    padding-left: 15px;
    padding-right: 15px;
    color:black;
+   background-color: white;
    height: 55px;
    line-height: 60px;
    border-radius: 15px;
    margin: 10px;
    border: 2px solid;
-   color:gray;
    border-color: black;
  }
  .header-button:hover {
@@ -382,7 +385,7 @@ a {
    height: 100%;
    // opacity: 0.6;
    // margin-bottom: -61px;
-   background-image: url('/group-table.jpg');
+   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url('/group-table.jpg');
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
