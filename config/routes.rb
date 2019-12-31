@@ -25,7 +25,8 @@ Rails.application.routes.draw do
     end
     resources :reviews, only: [:create,:index]
     resources :locations, only: :show
-    resources :restaurants, only: :show
+    resources :restaurants, only: [:show,:index]
+    resources :searches, only: [:index]
   end
 
   root "static_pages#root"

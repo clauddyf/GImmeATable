@@ -5,7 +5,7 @@ class Restaurant < ApplicationRecord
     has_many :reviews
     has_many_attached :photos
     
-    # debugger
+    
     def self.search_by_city(query)
       param = '%' + query.downcase + '%'
       Location.where('lower(cityname) LIKE ?', param).limit(10)

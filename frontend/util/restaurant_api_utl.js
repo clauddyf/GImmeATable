@@ -22,7 +22,7 @@ export const fetchRestaurant = id => (
 export const searchRestaurants = (query) => (
     $.ajax({
         method:'get',
-        url:'api/restaurant_searches',
+        url:'api/searches',
         data: {search:{query}}
     })
 )
