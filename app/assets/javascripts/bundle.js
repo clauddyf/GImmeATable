@@ -2536,11 +2536,11 @@ function (_React$Component) {
       var content;
       debugger;
 
-      if (this.props.type === 'restaurant' && this.props.review.restaurant_id === parseInt(this.props.restaurant)) {
+      if (this.props.type === 'restaurant') {
         content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "rev-ind-cont"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Review by ", this.props.users[this.props.review.user_id].name, ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.review.body);
-      } else if (this.props.type === 'user' && this.props.review.user_id === parseInt(this.props.user)) {
+      } else if (this.props.type === 'user') {
         content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "rev-ind-cont"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Review for ", this.props.restaurants[this.props.review.restaurant_id].name, ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.review.body);
@@ -2555,7 +2555,8 @@ function (_React$Component) {
   return ReviewIndexContent;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (ReviewIndexContent);
+/* harmony default export */ __webpack_exports__["default"] = (ReviewIndexContent); // && this.props.review.restaurant_id === parseInt(this.props.restaurant)
+// && this.props.review.user_id === parseInt(this.props.user)
 
 /***/ }),
 
@@ -71802,7 +71803,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

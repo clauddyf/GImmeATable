@@ -20,7 +20,7 @@ class ReviewIndexContent extends React.Component {
 
      let content;
          debugger
-     if(this.props.type === 'restaurant' && this.props.review.restaurant_id === parseInt(this.props.restaurant)){
+     if(this.props.type === 'restaurant'){
         content = (
             <div className = 'rev-ind-cont'>
                 <h3>Review by {this.props.users[this.props.review.user_id].name}:</h3>
@@ -29,7 +29,7 @@ class ReviewIndexContent extends React.Component {
                 {this.props.review.body}
             </div>
         );
-     } else if (this.props.type === 'user' && this.props.review.user_id === parseInt(this.props.user)) {
+     } else if (this.props.type === 'user') {
          content = (
              <div className='rev-ind-cont'>
                  <h3>Review for {this.props.restaurants[this.props.review.restaurant_id].name}:</h3>
@@ -50,3 +50,6 @@ class ReviewIndexContent extends React.Component {
 }
 
 export default ReviewIndexContent
+
+// && this.props.review.restaurant_id === parseInt(this.props.restaurant)
+// && this.props.review.user_id === parseInt(this.props.user)
