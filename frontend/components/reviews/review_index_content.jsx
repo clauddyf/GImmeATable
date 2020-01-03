@@ -19,17 +19,17 @@ class ReviewIndexContent extends React.Component {
      
 
      let content;
-         debugger
-     if(this.props.type === 'restaurant'){
+        //  debugger
+     if(this.props.type === 'restaurant' && this.props.review.restaurant_id === parseInt(this.props.restaurant)){
         content = (
             <div className = 'rev-ind-cont'>
-                <h3>Review by {this.props.users[this.props.review.user_id].name}:</h3>
+                <h3>Review by {this.props.users[this.props.review.user_id].first_name}:</h3>
                 <hr/>
                 <br/>
                 {this.props.review.body}
             </div>
         );
-     } else if (this.props.type === 'user') {
+     } else if (this.props.type === 'user' && this.props.review.user_id === parseInt(this.props.user)) {
          content = (
              <div className='rev-ind-cont'>
                  <h3>Review for {this.props.restaurants[this.props.review.restaurant_id].name}:</h3>
@@ -39,7 +39,7 @@ class ReviewIndexContent extends React.Component {
              </div>
          );
      } else {
-         content = <div>Not grabbing anything</div>
+         content = <div></div>
      }
      return (
          <div>

@@ -3,6 +3,7 @@ import ReservationShow from './user_reservation_show';
 
 class ReservationIndex extends React.Component {
     render() {
+        debugger
         let reservations = this.props.user.reservations;
 
         let noReservations;

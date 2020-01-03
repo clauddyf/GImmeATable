@@ -1717,6 +1717,7 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
+      debugger;
       var reservations = this.props.user.reservations;
       var noReservations;
 
@@ -1849,6 +1850,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      debugger;
       if (!this.props.restaurant) return null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "rese message"
@@ -2387,6 +2389,7 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
+      // debugger
       if (this.props.reviews.length === 0) {
         return null;
       }
@@ -2445,7 +2448,7 @@ var mSTP = function mSTP(state, ownProps) {
     users: state.entities.users,
     restaurants: state.entities.restaurants,
     user: ownProps.match.params.userId,
-    restaurant: ownProps.match.params.restaurantId // type: {}
+    restaurant: ownProps.match.params.restId // type: {}
 
   };
 };
@@ -2533,19 +2536,18 @@ function (_React$Component) {
         return null;
       }
 
-      var content;
-      debugger;
+      var content; //  debugger
 
-      if (this.props.type === 'restaurant') {
+      if (this.props.type === 'restaurant' && this.props.review.restaurant_id === parseInt(this.props.restaurant)) {
         content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "rev-ind-cont"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Review by ", this.props.users[this.props.review.user_id].name, ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.review.body);
-      } else if (this.props.type === 'user') {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Review by ", this.props.users[this.props.review.user_id].first_name, ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.review.body);
+      } else if (this.props.type === 'user' && this.props.review.user_id === parseInt(this.props.user)) {
         content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "rev-ind-cont"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Review for ", this.props.restaurants[this.props.review.restaurant_id].name, ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.review.body);
       } else {
-        content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Not grabbing anything");
+        content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, content);
@@ -71803,7 +71805,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

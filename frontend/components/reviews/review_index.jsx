@@ -2,14 +2,12 @@ import React from 'react';
 import ReviewIndexContent from './review_index_content';
 
 class ReviewIndex extends React.Component {
-    
     componentDidMount() {
-        this.props.fetchReviews();
-    }
+        this.props.fetchReviews();    }
 
     render() {
+        // debugger
         if(this.props.reviews.length === 0) {return null;}
-
         return (
             <div className='rev-index'>
                 <h2>Reviews:</h2>
