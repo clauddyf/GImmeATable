@@ -4,7 +4,7 @@ class Api::SearchController < ApplicationController
         @restaurants = Restaurant.search_results(search_params[:query])
         render :index
     end
-    debugger
+    
     def search_params
         params.require(:search).permit(:query)
     end

@@ -15,7 +15,7 @@ class ReviewIndex extends React.Component {
                 <h2>Reviews:</h2>
                 {
                     this.props.reviews.map(review => (
-                        <ReviewIndexItem
+                        <ReviewIndexContent
                             key={review.id}
                             review={review}
                             fetchUser={this.props.fetchUser}

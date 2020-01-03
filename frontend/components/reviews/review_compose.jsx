@@ -5,18 +5,18 @@ class ReviewCompose extends React.Component {
         super(props);
             this.state = {
                 body: '',
-                user_id: this.props.currentUser ? this.props.currentUser.id: undefined,
+                user_id: this.props.currentUser ? this.props.currentUser : undefined,
                 restaurant_id: this.props.restaurant.id
             };
+            debugger
     }
 
     handleSubmit(e) {
         e.preventDefault();
-
-        if (this.state.user_id === undefined) {
-            windows.alert('Naw bruh')
+        if (!this.props.loggedIn) {
+            this.props.openModal('login')
         } else if (this.state.body === '') {
-            window.alert('Hey, you forgot to write a review!')
+            return
         } else {
             this.props.composeReview(this.state).then(() => this.setState({body: ''}));
         }

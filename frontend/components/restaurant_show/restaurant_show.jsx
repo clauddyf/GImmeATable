@@ -64,7 +64,7 @@ class RestaurantShow extends React.Component{
                             </div>
                             <div className='dresscode'>
                                 <div className='baby-dress'>
-                                    <span classname='side-nav-type'>Dresscode</span>
+                                    <span className='side-nav-type'>Dresscode</span>
                                     <div className='act-dress'>
                                         {this.props.restaurant.dresscode}
                                     </div>
@@ -72,42 +72,42 @@ class RestaurantShow extends React.Component{
                             </div>
                             <hr/>
                             <div className='baby-din-style'>
-                                <span classname='side-nav-type'>Dining Style</span>
+                                <span className='side-nav-type'>Dining Style</span>
                                 <div className='din-style'>
                                     <span>Casual Elegant</span>
                                 </div>
                             </div>
                             <hr/>
                             <div className='baby-cuise'>
-                                <span classname='side-nav-type'>Cuisine-Type</span>
+                                <span className='side-nav-type'>Cuisine-Type</span>
                                 <div className= 'din-style'>
                                     <span>{this.props.restaurant.cuisine_type}</span>
                                 </div>
                             </div>
                             <hr/>
                             <div className='baby-happy'>
-                                <span classname='side-nav-type'>Happy-Hour</span>
+                                <span className='side-nav-type'>Happy-Hour</span>
                                 <div className='happy-hour'>
                                     <span>{happyhour}</span>
                                 </div>
                             </div>
                             <hr/>
                             <div>
-                                <span classname='side-nav-type'>Neighborhood</span>
+                                <span className='side-nav-type'>Neighborhood</span>
                                 <div className='din-style'>
                                     <span>{this.props.restaurant.neighborhood}</span>
                                 </div>
                             </div>
                             <hr/>
                             <div>
-                                <span classname='side-nav-type'>Payment Options</span>
+                                <span className='side-nav-type'>Payment Options</span>
                                 <div className='din-style'>
                                     Visa,Mastercard,Discover,AMEX
                                 </div>
                             </div>
                             <hr/>
                             <div>
-                                <span classname='side-nav-type'>Hours of Operation</span>
+                                <span className='side-nav-type'>Hours of Operation</span>
                                 <div className='din-style'>
                                     <span>{this.props.restaurant.hours_op}</span>
                                 </div>

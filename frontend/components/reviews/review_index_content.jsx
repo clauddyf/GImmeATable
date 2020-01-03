@@ -13,7 +13,7 @@ class ReviewIndexContent extends React.Component {
          if (Object.keys(this.props.users).length === 0) {
              return null;
          }
-         if (Object.heys(this.props.restaurants).length === 0) {
+         if (Object.keys(this.props.restaurants).length === 0) {
              return null;
          }
      

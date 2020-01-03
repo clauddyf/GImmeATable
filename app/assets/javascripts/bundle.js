@@ -422,7 +422,7 @@ var receiveUser = function receiveUser(user) {
 };
 var fetchUser = function fetchUser(id) {
   return function (dispatch) {
-    getsUser(id).then(function (user) {
+    Object(_util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["getUser"])(id).then(function (user) {
       return dispatch(receiveUser(user));
     });
   };
@@ -1984,37 +1984,37 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "baby-dress"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        classname: "side-nav-type"
+        className: "side-nav-type"
       }, "Dresscode"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "act-dress"
       }, this.props.restaurant.dresscode))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "baby-din-style"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        classname: "side-nav-type"
+        className: "side-nav-type"
       }, "Dining Style"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Casual Elegant"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "baby-cuise"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        classname: "side-nav-type"
+        className: "side-nav-type"
       }, "Cuisine-Type"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.cuisine_type))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "baby-happy"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        classname: "side-nav-type"
+        className: "side-nav-type"
       }, "Happy-Hour"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "happy-hour"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, happyhour))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        classname: "side-nav-type"
+        className: "side-nav-type"
       }, "Neighborhood"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.neighborhood))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        classname: "side-nav-type"
+        className: "side-nav-type"
       }, "Payment Options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
       }, "Visa,Mastercard,Discover,AMEX")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        classname: "side-nav-type"
+        className: "side-nav-type"
       }, "Hours of Operation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.hours_op))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2223,10 +2223,10 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/components/reviews/review_compose.js":
-/*!*******************************************************!*\
-  !*** ./frontend/components/reviews/review_compose.js ***!
-  \*******************************************************/
+/***/ "./frontend/components/reviews/review_compose.jsx":
+/*!********************************************************!*\
+  !*** ./frontend/components/reviews/review_compose.jsx ***!
+  \********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2267,9 +2267,10 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ReviewCompose).call(this, props));
     _this.state = {
       body: '',
-      user_id: _this.props.currentUser ? _this.props.currentUser.id : undefined,
+      user_id: _this.props.currentUser ? _this.props.currentUser : undefined,
       restaurant_id: _this.props.restaurant.id
     };
+    debugger;
     return _this;
   }
 
@@ -2280,10 +2281,10 @@ function (_React$Component) {
 
       e.preventDefault();
 
-      if (this.state.user_id === undefined) {
-        windows.alert('Naw bruh');
+      if (!this.props.loggedIn) {
+        this.props.openModal('login');
       } else if (this.state.body === '') {
-        window.alert('Hey, you forgot to write a review!');
+        return;
       } else {
         this.props.composeReview(this.state).then(function () {
           return _this2.setState({
@@ -2394,7 +2395,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rev-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Reviews:"), this.props.reviews.map(function (review) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ReviewIndexItem, {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_index_content__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: review.id,
           review: review,
           fetchUser: _this.props.fetchUser,
@@ -2528,7 +2529,7 @@ function (_React$Component) {
         return null;
       }
 
-      if (Object.heys(this.props.restaurants).length === 0) {
+      if (Object.keys(this.props.restaurants).length === 0) {
         return null;
       }
 
@@ -2568,14 +2569,17 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_review_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/review_actions */ "./frontend/actions/review_actions.js");
-/* harmony import */ var _review_compose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./review_compose */ "./frontend/components/reviews/review_compose.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _review_compose__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./review_compose */ "./frontend/components/reviews/review_compose.jsx");
+
 
 
 
 
 var mSTP = function mSTP(state) {
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    loggedIn: Boolean(state.session.id)
   };
 };
 
@@ -2583,11 +2587,14 @@ var mDTP = function mDTP(dispatch) {
   return {
     composeReview: function composeReview(review) {
       return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_1__["composeReview"])(review));
+    },
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_review_compose__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_review_compose__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -4213,7 +4220,7 @@ var composeReview = function composeReview(review) {
 var fetchReviews = function fetchReviews() {
   return $.ajax({
     method: 'get',
-    url: 'a[i/reviews'
+    url: 'api/reviews'
   });
 };
 
@@ -4323,7 +4330,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUser", function() { return getUser; });
 var getUser = function getUser(id) {
   return $.ajax({
-    url: "/api/user/".concat(id),
+    url: "/api/users/".concat(id),
     method: 'get'
   });
 };
@@ -71794,7 +71801,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

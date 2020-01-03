@@ -12,7 +12,7 @@ export const fetchReviews = () => {
     return (
         $.ajax ({
             method: 'get',
-            url: 'a[i/reviews',
+            url: 'api/reviews',
         })
     );
 };

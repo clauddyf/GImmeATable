@@ -8,6 +8,6 @@ export const receiveUser = (user) => ({
 });
 
 export const fetchUser =(id) => dispatch => {
-    getsUser(id).then((user) => dispatch(receiveUser(user)));
+    getUser(id).then((user) => dispatch(receiveUser(user)));
 };
 
