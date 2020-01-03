@@ -15,14 +15,14 @@ class Api::UsersController < ApplicationController
     def show
         @user = User.find(current_user.id)
         @reservations = @user.reservations.includes(:restaurant).order('date').order('time_id')
-        render :index
+        render :show
     end
 
     def update
         @user = current_user
         @user.udpate(user_params)
         @reservations = @user.reservations.includes(:restaurant).order('date').order('time_id')
-        render :index
+        render :show
     end
 
     private

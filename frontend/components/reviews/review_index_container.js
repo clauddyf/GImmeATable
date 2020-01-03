@@ -14,7 +14,8 @@ const mSTP =(state,ownProps) => ({
     users: state.entities.users,
     restaurants: state.entities.restaurants,
     user: ownProps.match.params.userId,
-    restaurant: ownProps.match.params.restaurantId
+    restaurant: ownProps.match.params.restaurantId,
+    // type: {}
 });
 
 const mDTP = (dispatch) => ({

@@ -2270,7 +2270,6 @@ function (_React$Component) {
       user_id: _this.props.currentUser ? _this.props.currentUser : undefined,
       restaurant_id: _this.props.restaurant.id
     };
-    debugger;
     return _this;
   }
 
@@ -2446,7 +2445,8 @@ var mSTP = function mSTP(state, ownProps) {
     users: state.entities.users,
     restaurants: state.entities.restaurants,
     user: ownProps.match.params.userId,
-    restaurant: ownProps.match.params.restaurantId
+    restaurant: ownProps.match.params.restaurantId // type: {}
+
   };
 };
 
@@ -2534,6 +2534,7 @@ function (_React$Component) {
       }
 
       var content;
+      debugger;
 
       if (this.props.type === 'restaurant' && this.props.review.restaurant_id === parseInt(this.props.restaurant)) {
         content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2544,7 +2545,7 @@ function (_React$Component) {
           className: "rev-ind-cont"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Review for ", this.props.restaurants[this.props.review.restaurant_id].name, ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.review.body);
       } else {
-        content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+        content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Not grabbing anything");
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, content);
@@ -71801,7 +71802,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

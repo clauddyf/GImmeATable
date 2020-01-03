@@ -8,7 +8,6 @@ class ReviewCompose extends React.Component {
                 user_id: this.props.currentUser ? this.props.currentUser : undefined,
                 restaurant_id: this.props.restaurant.id
             };
-            debugger
     }
 
     handleSubmit(e) {
