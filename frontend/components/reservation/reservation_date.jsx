@@ -6,7 +6,7 @@ class ReservationDate extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            startDate: moment(),
+            startDate: new Date(),
             open: this.props.restaurant.open,
             close: this.props.restaurant.close
         }
@@ -19,11 +19,11 @@ class ReservationDate extends React.Component {
             startDate: date
         });
         // debugger
-        this.props.throughDate(date._d);
+        this.props.throughDate(date);
     }
 
     render() {
-        // debugger
+        debugger
         return (
             <DatePicker
             className='calendar'
@@ -32,7 +32,8 @@ class ReservationDate extends React.Component {
 
                 showTimeSelect
                 timeIntervals={30}
-                minDate = {this.state.startDate._d}
+                // minDate = {this.state.startDate._d}
+                minDate={moment()}
                 minTime={moment().hours(open).minutes(0)}
                 maxTime={moment().hours(close).minutes(0)}
                 dateFormat="LLL"

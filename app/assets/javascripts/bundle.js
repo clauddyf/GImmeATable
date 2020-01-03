@@ -1383,7 +1383,10 @@ function (_React$Component) {
       time_id: now.getHours(),
       restaurant_id: _this.props.restaurant.id,
       user_id: _this.props.currentUser ? _this.props.currentUser.id : undefined,
-      head_count: undefined
+      head_count: undefined // date: '',
+      // time_id:'',
+      // head_count:''
+
     };
     _this.throughDate = _this.throughDate.bind(_assertThisInitialized(_this)); // debugger
     // this.handleSubmit = this.handleSubmit.bind(this)
@@ -1397,7 +1400,8 @@ function (_React$Component) {
   _createClass(ReservationCompose, [{
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      e.preventDefault(); // let reservation = {
+      e.preventDefault(); // let dateTime = `${this.state.date}` + ` ` + `${this.state.time_id}`
+      // let reservation = {
       //     reserve: this.state.reserve,
       //     restaurant: this.props.currentRestaurant
       // };
@@ -1407,9 +1411,15 @@ function (_React$Component) {
       } else if (this.state.head_count === undefined) {
         window.alert('Select a data and head count');
       } else {
+        // this.props.composeReservation({
+        //     restaurant_id: this.state.restaurant_id,
+        //     date: dateTime,
+        //     head_count: this.state.head_count
+        // });
         this.props.composeReservation(this.state);
       }
-    } // .then(() => this.userProfile())  add this back to line 31 when you create the user profile
+    } // .then(() => this.props.history.push('/profile')).fail(() => this.render());
+    // .then(() => this.userProfile())  add this back to line 31 when you create the user profile
     // userProfile() {
     //     window.location.href = window.location.origin + `/#uthis.state.startDate._dser/${this.props.currentUser.id}`;
     // }
@@ -1422,6 +1432,7 @@ function (_React$Component) {
   }, {
     key: "throughDate",
     value: function throughDate(newDate) {
+      // debugger
       var dateString = newDate.toDateString();
       var time = newDate.getHours();
       this.setState({
@@ -1451,7 +1462,9 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "res-head-count",
         type: "number",
-        placeholder: "Head Count",
+        placeholder: "Head Count" //    value={this.state.head_count}
+        //    onChange={this.update('head_count')}
+        ,
         min: "1",
         max: "10"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1459,66 +1472,19 @@ function (_React$Component) {
         className: "res-section-row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "rese-date"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Date:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "date",
-        placeholder: "Pick a date",
-        value: ""
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "rese-date"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Time:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        className: "search-bar-city",
-        placeholder: "Select a Time"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Select a Time"
-      }, "Select a Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "12:00 PM"
-      }, "12:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "12:30 PM"
-      }, "12:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "1:00 PM"
-      }, "1:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "1:30 PM"
-      }, "1:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "2:00 PM"
-      }, "2:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "2:30 PM"
-      }, "2:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "3:00 PM"
-      }, "3:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "3:30 PM"
-      }, "3:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "4:00 PM"
-      }, "4:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "4:30 PM"
-      }, "4:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "5:00 PM"
-      }, "5:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "5:30 PM"
-      }, "5:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "6:00 PM"
-      }, "6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "6:30 PM"
-      }, "6:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "7:00 PM"
-      }, "7:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "7:30 PM"
-      }, "7:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "8:00 PM"
-      }, "8:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "8:30 PM"
-      }, "8:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "9:00 PM"
-      }, "9:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "9:30 PM"
-      }, "9:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "10:00 PM"
-      }, "10:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "10:30 PM"
-      }, "10:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "11:00 PM"
-      }, "11:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "11:30 PM"
-      }, "11:30 PM")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Date:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_date__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        throughDate: this.throughDate,
+        restaurant: this.props.restaurant
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "rese-textarea",
+        placeholder: "Head Count",
+        min: "1",
+        type: "number",
+        value: this.state.head_count,
+        onChange: function onChange(e) {
+          return _this2.update(e, 'head_count');
+        }
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
@@ -1625,7 +1591,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ReservationDate).call(this, props));
     _this.state = {
-      startDate: moment__WEBPACK_IMPORTED_MODULE_2___default()(),
+      startDate: new Date(),
       open: _this.props.restaurant.open,
       close: _this.props.restaurant.close
     };
@@ -1641,19 +1607,20 @@ function (_React$Component) {
         startDate: date
       }); // debugger
 
-      this.props.throughDate(date._d);
+      this.props.throughDate(date);
     }
   }, {
     key: "render",
     value: function render() {
-      // debugger
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_datepicker__WEBPACK_IMPORTED_MODULE_1___default.a, {
         className: "calendar",
         selected: this.state.startDate._d,
         onChange: this.handleChange,
         showTimeSelect: true,
-        timeIntervals: 30,
-        minDate: this.state.startDate._d,
+        timeIntervals: 30 // minDate = {this.state.startDate._d}
+        ,
+        minDate: moment__WEBPACK_IMPORTED_MODULE_2___default()(),
         minTime: moment__WEBPACK_IMPORTED_MODULE_2___default()().hours(open).minutes(0),
         maxTime: moment__WEBPACK_IMPORTED_MODULE_2___default()().hours(close).minutes(0),
         dateFormat: "LLL"

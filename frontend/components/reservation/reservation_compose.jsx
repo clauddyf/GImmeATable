@@ -12,6 +12,9 @@ class ReservationCompose extends React.Component {
             restaurant_id: this.props.restaurant.id,
             user_id: this.props.currentUser ? this.props.currentUser.id: undefined,
             head_count: undefined
+            // date: '',
+            // time_id:'',
+            // head_count:''
         };
         this.throughDate = this.throughDate.bind(this)
         // debugger
@@ -24,6 +27,7 @@ class ReservationCompose extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // let dateTime = `${this.state.date}` + ` ` + `${this.state.time_id}`
         // let reservation = {
         //     reserve: this.state.reserve,
         //     restaurant: this.props.currentRestaurant
@@ -33,10 +37,15 @@ class ReservationCompose extends React.Component {
         } else if (this.state.head_count === undefined) {
             window.alert('Select a data and head count')
         } else {
-            this.props.composeReservation(this.state);
+            // this.props.composeReservation({
+            //     restaurant_id: this.state.restaurant_id,
+            //     date: dateTime,
+            //     head_count: this.state.head_count
+            // });
+            this.props.composeReservation(this.state)
         }
     }
-
+    // .then(() => this.props.history.push('/profile')).fail(() => this.render());
     // .then(() => this.userProfile())  add this back to line 31 when you create the user profile
 
     // userProfile() {
@@ -50,6 +59,7 @@ class ReservationCompose extends React.Component {
     }
 
     throughDate(newDate) {
+        // debugger
         let dateString = newDate.toDateString();
         let time = newDate.getHours();
         this.setState({date: dateString, time_id: time});
@@ -64,15 +74,33 @@ class ReservationCompose extends React.Component {
                     <h1 className='make-rese'></h1>
                     <div id='section'>
                         <label className='dropdown'>
-                            <input className='res-head-count'type="number" placeholder='Head Count' min='1' max='10'/>
+                            <input className='res-head-count'
+                                   type="number" 
+                                   placeholder='Head Count' 
+                                //    value={this.state.head_count}
+                                //    onChange={this.update('head_count')}
+                                   min='1' 
+                                   max='10'
+                            />
                         </label>
                     </div>
                     <div id='section' className='res-section-row'>
                         <label className='rese-date'>
                             <div>Date:</div>
-                            <input type="date" placeholder='Pick a date'value=''/>
+                            <ReservationDate
+                            
+                                throughDate={this.throughDate}
+                                restaurant={this.props.restaurant}    
+                            />
+                            <input className="rese-textarea" 
+                                placeholder='Head Count'
+                                min='1'
+                                type='number'
+                                value={this.state.head_count} 
+                                onChange={e => this.update(e, 'head_count')}>
+                            </input>
                         </label>
-                        <label className='rese-date'>
+                        {/* <label className='rese-date'>
                             <div>Time:</div>
                             <select className="search-bar-city" placeholder="Select a Time">
                             <option value="Select a Time">Select a Time</option>
@@ -101,22 +129,31 @@ class ReservationCompose extends React.Component {
                             <option value="11:00 PM">11:00 PM</option>
                             <option value="11:30 PM">11:30 PM</option>
                         </select>
-                        </label>
+                        </label> */}
                     </div>
                     <div id='section'>
                         <input type="submit" className='rese-submit-butt' value='Confirm Reservation'/>
                     </div>
-                    {/* <div className='baby-rese-cont'>
-                        <ReservationDate
-                            throughDate={this.throughDate}
-                            restaurant={this.props.restaurant}    
-                        />
-                        <textarea className="rese-textarea" 
-                            value={this.state.head_count} 
-                            onChange={e => this.update(e, 'head_count')}>
-                        </textarea>
-                        <input className = "rese-submit" type="submit" value="Submit"/>
-                    </div> */}
+                    {/* <ReservationDate
+                            
+                                throughDate={this.throughDate}
+                                restaurant={this.props.restaurant}    
+                            />
+                            <input className="rese-textarea" 
+                                placeholder='Head Count'
+                                min='1'
+                                type='number'
+                                value={this.state.head_count} 
+                                onChange={e => this.update(e, 'head_count')}>
+                            </input> */}
+                            {/* <input type="date" 
+                                   placeholder='Pick a date' 
+                                //    value={this.state.date} 
+                                //    onChange={this.update('date')}
+                            />
+                            <div className='baby-rese-cont'> 
+                            {/* <input className = "rese-submit" type="submit" value="Submit"/> */}
+                            {/* </div> */}
                 </form>
             </div>
         )

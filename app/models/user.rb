@@ -12,7 +12,7 @@ class User < ApplicationRecord
         foreign_key: :user_id
 
     has_many :reservations,
-        foreign_key: :reservation_id
+        foreign_key: :user_id
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
