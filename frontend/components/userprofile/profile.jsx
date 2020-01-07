@@ -5,14 +5,16 @@ import UserReservationIndexContainer from '../reservation/user_reservation_index
 class Profile extends React.Component {
     constructor(props) {
         super(props);
+        debugger
         this.state = this.props.user;
     }
 
     componentDidMount() {
-        this.props.receiveCurrentUser(this.props.match.params.userId)
+        this.props.fetchUser(this.props.match.params.userId)
     }
 
     render() {
+        debugger
         if(!this.props.user) return null;
 
         let user = this.props.user;

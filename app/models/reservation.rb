@@ -2,6 +2,8 @@ class Reservation < ApplicationRecord
     validates :restaurant_id, :user_id, :date, :time_id, null: false
 
     belongs_to :user
+   
+
 end
 
 # belongs_to :time_slot, 

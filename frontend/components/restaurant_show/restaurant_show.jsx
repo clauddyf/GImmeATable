@@ -7,10 +7,13 @@ import ReviewIndexContainer from '../reviews/review_index_container';
 class RestaurantShow extends React.Component{
     constructor(props){
         super(props)
+        // debugger
     }
     
     componentDidMount(){
+        // debugger
         this.props.fetchRestaurant(this.props.match.params.restId)
+        
     }
     
     render(){

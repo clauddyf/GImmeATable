@@ -500,7 +500,7 @@ var App = function App() {
     path: "/locations/:locId",
     component: _location_location_show_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "./user/:userId",
+    path: "/user/:userId",
     component: _userprofile_profile_container__WEBPACK_IMPORTED_MODULE_11__["default"]
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "footer-div"
@@ -1382,8 +1382,10 @@ function (_React$Component) {
       date: now.toDateString(),
       time_id: now.getHours(),
       restaurant_id: _this.props.restaurant.id,
-      user_id: _this.props.currentUser ? _this.props.currentUser.id : undefined,
-      head_count: undefined // date: '',
+      user_id: _this.props.currentUser,
+      head_count: '' // selectedDate: '',
+      // selectedTime: ''
+      // date: '',
       // time_id:'',
       // head_count:''
 
@@ -1398,8 +1400,15 @@ function (_React$Component) {
 
 
   _createClass(ReservationCompose, [{
+    key: "profileRedirect",
+    value: function profileRedirect() {
+      window.location.href = window.location.origin + "/#/user/".concat(this.props.currentUser);
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault(); // let dateTime = `${this.state.date}` + ` ` + `${this.state.time_id}`
       // let reservation = {
       //     reserve: this.state.reserve,
@@ -1416,8 +1425,11 @@ function (_React$Component) {
         //     date: dateTime,
         //     head_count: this.state.head_count
         // });
-        this.props.composeReservation(this.state);
-      }
+        this.props.composeReservation(this.state).then(function () {
+          return _this2.profileRedirect();
+        });
+      } // debugger
+
     } // .then(() => this.props.history.push('/profile')).fail(() => this.render());
     // .then(() => this.userProfile())  add this back to line 31 when you create the user profile
     // userProfile() {
@@ -1443,7 +1455,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1451,7 +1463,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "rese-form",
         onSubmit: function onSubmit(e) {
-          return _this2.handleSubmit(e);
+          return _this3.handleSubmit(e);
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "make-rese"
@@ -1459,20 +1471,14 @@ function (_React$Component) {
         id: "section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "dropdown"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "res-head-count",
-        type: "number",
-        placeholder: "Head Count" //    value={this.state.head_count}
-        //    onChange={this.update('head_count')}
-        ,
-        min: "1",
-        max: "10"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "section",
         className: "res-section-row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "rese-date"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Date:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_date__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Date:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_date__WEBPACK_IMPORTED_MODULE_2__["default"] // selectedDate={this.state.selectedDate}
+      // selectedTime={this.state.selectedTime}
+      , {
         throughDate: this.throughDate,
         restaurant: this.props.restaurant
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -1482,7 +1488,7 @@ function (_React$Component) {
         type: "number",
         value: this.state.head_count,
         onChange: function onChange(e) {
-          return _this2.update(e, 'head_count');
+          return _this3.update(e, 'head_count');
         }
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "section"
@@ -1521,7 +1527,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state, ownProps) {
   return {
-    currentUser: state.session.user,
+    currentUser: state.session.id,
     currentRest: ownProps.rest_id,
     formType: 'reserve'
   };
@@ -1589,22 +1595,32 @@ function (_React$Component) {
 
     _classCallCheck(this, ReservationDate);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(ReservationDate).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ReservationDate).call(this, props)); // debugger
+
     _this.state = {
-      startDate: new Date(),
+      // startDate: this.props.selectedDate,
+      startDate: moment__WEBPACK_IMPORTED_MODULE_2___default()()._d,
       open: _this.props.restaurant.open,
       close: _this.props.restaurant.close
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this)); // debugger
 
     return _this;
-  }
+  } // componentWillReceiveProps(nextProps) {
+  //     this.setState({startDate: nextProps.selectedDate})
+  // }
+
 
   _createClass(ReservationDate, [{
     key: "handleChange",
-    value: function handleChange(date) {
+    value: function handleChange(date
+    /*,time_id*/
+    ) {
+      console.log(date); // debugger
+
       this.setState({
-        startDate: date
+        startDate: date // time: time_id
+
       }); // debugger
 
       this.props.throughDate(date);
@@ -1612,18 +1628,25 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
+      var _this2 = this;
+
+      // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_datepicker__WEBPACK_IMPORTED_MODULE_1___default.a, {
         className: "calendar",
-        selected: this.state.startDate._d,
-        onChange: this.handleChange,
-        showTimeSelect: true,
-        timeIntervals: 30 // minDate = {this.state.startDate._d}
+        selected: this.state.startDate,
+        onChange: function onChange(date) {
+          return _this2.handleChange(date);
+        } // onChangeRaw={(e) => this.handleChange(e.target.value)}
+        // value={this.state.startDate}
+        // showTimeSelect
+        // timeIntervals={60}
+        // // minDate = {this.state.startDate._d}
+        // minDate={moment()}
+        // minTime={moment().hours(open).minutes(0)}
+        // maxTime={moment().hours(close).minutes(0)}
         ,
-        minDate: moment__WEBPACK_IMPORTED_MODULE_2___default()(),
-        minTime: moment__WEBPACK_IMPORTED_MODULE_2___default()().hours(open).minutes(0),
-        maxTime: moment__WEBPACK_IMPORTED_MODULE_2___default()().hours(close).minutes(0),
-        dateFormat: "LLL"
+        dateFormat: "MMMM d, yyyy h:mm aa",
+        required: true
       });
     }
   }]);
@@ -1881,12 +1904,13 @@ function (_React$Component) {
   function RestaurantShow(props) {
     _classCallCheck(this, RestaurantShow);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(RestaurantShow).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(RestaurantShow).call(this, props)); // debugger
   }
 
   _createClass(RestaurantShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      // debugger
       this.props.fetchRestaurant(this.props.match.params.restId);
     }
   }, {
@@ -2091,6 +2115,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/restaurant_actions */ "./frontend/actions/restaurant_actions.js");
 /* harmony import */ var _restaurant_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./restaurant_show */ "./frontend/components/restaurant_show/restaurant_show.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+
 
 
 
@@ -2099,7 +2125,7 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownProps) {
   return {
     restaurant: state.entities.restaurants[ownProps.match.params.restId],
-    currentUser: state.session.currentUser
+    currentUser: state.session.id
   };
 };
 
@@ -2107,9 +2133,11 @@ var mDTP = function mDTP(dispatch) {
   return {
     fetchRestaurant: function fetchRestaurant(restaurant) {
       return dispatch(Object(_actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_1__["fetchRestaurant"])(restaurant));
-    }
+    } // receiveCurrentUser: (currentUser) => dispatch(receiveCurrentUser(currentUser))
+
   };
-};
+}; // debugger
+
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_restaurant_show__WEBPACK_IMPORTED_MODULE_2__["default"])));
 
@@ -3475,10 +3503,10 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/components/userprofile/profile.js":
-/*!****************************************************!*\
-  !*** ./frontend/components/userprofile/profile.js ***!
-  \****************************************************/
+/***/ "./frontend/components/userprofile/profile.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/userprofile/profile.jsx ***!
+  \*****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3519,6 +3547,7 @@ function (_React$Component) {
     _classCallCheck(this, Profile);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Profile).call(this, props));
+    debugger;
     _this.state = _this.props.user;
     return _this;
   }
@@ -3526,11 +3555,12 @@ function (_React$Component) {
   _createClass(Profile, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.receiveCurrentUser(this.props.match.params.userId);
+      this.props.fetchUser(this.props.match.params.userId);
     }
   }, {
     key: "render",
     value: function render() {
+      debugger;
       if (!this.props.user) return null;
       var user = this.props.user;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3564,8 +3594,12 @@ function (_React$Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _profile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile */ "./frontend/components/userprofile/profile.js");
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _profile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile */ "./frontend/components/userprofile/profile.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+
+
 
 
 
@@ -3578,13 +3612,13 @@ var mSTP = function mSTP(state, ownProps) {
 
 var mDTP = function mDTP(dispatch) {
   return {
-    receiveCurrentUser: function receiveCurrentUser(id) {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["receiveCurrentUser"])(id));
+    fetchUser: function fetchUser(id) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["fetchUser"])(id));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_profile__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_profile__WEBPACK_IMPORTED_MODULE_1__["default"])));
 
 /***/ }),
 

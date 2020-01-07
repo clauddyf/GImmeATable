@@ -10,8 +10,10 @@ class ReservationCompose extends React.Component {
             date: now.toDateString(),
             time_id: now.getHours(),
             restaurant_id: this.props.restaurant.id,
-            user_id: this.props.currentUser ? this.props.currentUser.id: undefined,
-            head_count: undefined
+            user_id: this.props.currentUser,
+            head_count: '',
+            // selectedDate: '',
+            // selectedTime: ''
             // date: '',
             // time_id:'',
             // head_count:''
@@ -24,6 +26,9 @@ class ReservationCompose extends React.Component {
     // componentDidMount(){
     //     this.props.openModal(modal);
     // }
+    profileRedirect() {
+        window.location.href = window.location.origin + `/#/user/${this.props.currentUser}`;
+      }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -42,8 +47,9 @@ class ReservationCompose extends React.Component {
             //     date: dateTime,
             //     head_count: this.state.head_count
             // });
-            this.props.composeReservation(this.state)
+            this.props.composeReservation(this.state).then(() => this.profileRedirect())
         }
+        // debugger
     }
     // .then(() => this.props.history.push('/profile')).fail(() => this.render());
     // .then(() => this.userProfile())  add this back to line 31 when you create the user profile
@@ -74,21 +80,22 @@ class ReservationCompose extends React.Component {
                     <h1 className='make-rese'></h1>
                     <div id='section'>
                         <label className='dropdown'>
-                            <input className='res-head-count'
+                            {/* <input className='res-head-count'
                                    type="number" 
                                    placeholder='Head Count' 
                                 //    value={this.state.head_count}
                                 //    onChange={this.update('head_count')}
                                    min='1' 
                                    max='10'
-                            />
+                            /> */}
                         </label>
                     </div>
                     <div id='section' className='res-section-row'>
                         <label className='rese-date'>
                             <div>Date:</div>
                             <ReservationDate
-                            
+                                // selectedDate={this.state.selectedDate}
+                                // selectedTime={this.state.selectedTime}
                                 throughDate={this.throughDate}
                                 restaurant={this.props.restaurant}    
                             />

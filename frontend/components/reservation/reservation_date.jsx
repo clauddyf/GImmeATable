@@ -5,8 +5,10 @@ import moment from 'moment';
 class ReservationDate extends React.Component {
     constructor(props) {
         super(props);
+        // debugger
         this.state = {
-            startDate: new Date(),
+            // startDate: this.props.selectedDate,
+            startDate: moment()._d,
             open: this.props.restaurant.open,
             close: this.props.restaurant.close
         }
@@ -14,31 +16,39 @@ class ReservationDate extends React.Component {
         // debugger
     }
 
-    handleChange(date) {
+    // componentWillReceiveProps(nextProps) {
+    //     this.setState({startDate: nextProps.selectedDate})
+    // }
+
+    handleChange(date/*,time_id*/) {
+        console.log(date)
+        // debugger
         this.setState({
-            startDate: date
+            startDate: date,
+            // time: time_id
         });
         // debugger
         this.props.throughDate(date);
     }
 
     render() {
-        debugger
+        // debugger
         return (
             <DatePicker
             className='calendar'
-                selected = {this.state.startDate._d}
-                onChange = {this.handleChange}
-
-                showTimeSelect
-                timeIntervals={30}
-                // minDate = {this.state.startDate._d}
-                minDate={moment()}
-                minTime={moment().hours(open).minutes(0)}
-                maxTime={moment().hours(close).minutes(0)}
-                dateFormat="LLL"
+                selected = {this.state.startDate}
+                onChange = {(date) => this.handleChange(date)}
+                // onChangeRaw={(e) => this.handleChange(e.target.value)}
+                // value={this.state.startDate}
+                // showTimeSelect
+                // timeIntervals={60}
+                // // minDate = {this.state.startDate._d}
+                // minDate={moment()}
+                // minTime={moment().hours(open).minutes(0)}
+                // maxTime={moment().hours(close).minutes(0)}
+                dateFormat="MMMM d, yyyy h:mm aa"
             
-            />
+            required/>
         )
     }
 }

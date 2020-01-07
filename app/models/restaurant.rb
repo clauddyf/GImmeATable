@@ -4,6 +4,8 @@ class Restaurant < ApplicationRecord
     belongs_to :location, class_name: :Location, foreign_key: :city_id
     has_many :reviews
     has_many_attached :photos
+    has_many :reservations,
+        foreign_key: :restaurant_id
     
     
     def self.search_by_city(query)

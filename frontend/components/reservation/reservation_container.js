@@ -6,7 +6,7 @@ import { openModal } from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => {
     return ({
-        currentUser: state.session.user,
+        currentUser: state.session.id,
         currentRest: ownProps.rest_id,
         formType: 'reserve'
     })

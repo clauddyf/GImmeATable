@@ -1,6 +1,9 @@
 class Location < ApplicationRecord
     validates :cityname, presence: true
     has_many :restaurants, class_name: :Restaurant, foreign_key: :city_id
+    # has_many :reservations,
+    #     through: :restaurants,
+    #     foreign_key: :restaurant_id
     has_many_attached :photos
 
     def count

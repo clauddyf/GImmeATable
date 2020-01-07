@@ -42,7 +42,7 @@ const App = () => {
                      <Route path="/locations/:locId" component={LocationShowContainer} />
                  </Switch>
                  <Switch>
-                     <Route path="./user/:userId" component={UserProfileContainer} />
+                     <Route path="/user/:userId" component={UserProfileContainer} />
                  </Switch>
                 </ul>
                 <div className='footer-div'>
