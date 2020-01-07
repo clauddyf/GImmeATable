@@ -19,7 +19,7 @@ class ReviewIndexContent extends React.Component {
      
 
      let content;
-        //  debugger
+         debugger
      if(this.props.type === 'restaurant' && this.props.review.restaurant_id === parseInt(this.props.restaurant)){
         content = (
             <div className = 'rev-ind-cont'>

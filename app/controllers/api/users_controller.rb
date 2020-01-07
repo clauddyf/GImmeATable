@@ -18,6 +18,11 @@ class Api::UsersController < ApplicationController
         render :show
     end
 
+    def index 
+        @users = User.all
+        render :index
+    end
+
     def update
         @user = current_user
         @user.udpate(user_params)

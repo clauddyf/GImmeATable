@@ -7,7 +7,7 @@ import ReviewIndexContainer from '../reviews/review_index_container';
 class RestaurantShow extends React.Component{
     constructor(props){
         super(props)
-        // debugger
+        debugger
         this.state = this.props.restaurant;
     }
     
@@ -19,7 +19,7 @@ class RestaurantShow extends React.Component{
     
     render(){
         const restaurant = this.props.restaurant.restaurant;
-        // debugger
+        debugger
         
         let open;
         if (restaurant.open === 24) {
@@ -36,9 +36,9 @@ class RestaurantShow extends React.Component{
         } else if (restaurant.close > 12) {
           close = `${(restaurant.close - 12)}:00 PM`;
         } else { close = `${(restaurant.close)}:00 AM`; }
-        if (this.props.restaurant === undefined) return null; 
+        if (this.props.restaurant.restaurant === undefined) return null; 
         let happyhour;
-        if ((this.props.restaurant.id) % 2 !== 0 && (this.props.restaurant.id) < 35) {
+        if ((this.props.restaurant.restaurant.id) % 2 !== 0 && (this.props.restaurant.restaurant.id) < 35) {
             happyhour = (
                 <div className='din-style'>
                     5pm-8pm
@@ -185,7 +185,7 @@ class RestaurantShow extends React.Component{
                             Reviews
                         </div>
                         <div>
-                            <ReviewIndexContainer type={'restaurant'}/>
+                            <ReviewIndexContainer type={'restaurant'} reviews={this.props.restaurant.reviews}/>
                         </div>
                         <div>
                             <ReviewComposeContainer restaurant={restaurant}/>

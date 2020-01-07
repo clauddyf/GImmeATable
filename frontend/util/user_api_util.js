@@ -4,3 +4,12 @@ export const getUser = (id) => (
         method: 'get'
     })
 );
+
+export const getUsers = () => {
+    return (
+        $.ajax ({
+            method: 'get',
+            url: 'api/users',
+        })
+    );
+};

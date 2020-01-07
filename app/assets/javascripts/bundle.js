@@ -403,30 +403,10 @@ var logout = function logout() {
 /*!******************************************!*\
   !*** ./frontend/actions/user_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_USER, receiveUser, fetchUser */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! exports provided: RECEIVE_USER, receiveUser, fetchUser, fetchReviews */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USER", function() { return RECEIVE_USER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveUser", function() { return receiveUser; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUser", function() { return fetchUser; });
-/* harmony import */ var _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/user_api_util */ "./frontend/util/user_api_util.js");
-
-var RECEIVE_USER = 'RECEIVE_USER';
-var receiveUser = function receiveUser(user) {
-  return {
-    type: RECEIVE_USER,
-    user: user
-  };
-};
-var fetchUser = function fetchUser(id) {
-  return function (dispatch) {
-    Object(_util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["getUser"])(id).then(function (user) {
-      return dispatch(receiveUser(user));
-    });
-  };
-};
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /home/claudius/Desktop/GimmeATable/GimmeATable/frontend/actions/user_actions.js: Identifier 'getUsers' has already been declared (18:13)\n\n\u001b[0m \u001b[90m 16 | \u001b[39m}\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 17 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m getUsers \u001b[33m=\u001b[39m () \u001b[33m=>\u001b[39m dispatch \u001b[33m=>\u001b[39m (\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 | \u001b[39m    getUsers()\u001b[33m.\u001b[39mthen((users) \u001b[33m=>\u001b[39m dispatch(receiveUsers(users)))\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n    at Object.raise (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:6931:17)\n    at ScopeHandler.checkRedeclarationInScope (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:4241:12)\n    at ScopeHandler.declareName (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:4207:12)\n    at Object.checkLVal (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:8764:22)\n    at Object.parseVarId (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:11285:10)\n    at Object.parseVar (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:11260:12)\n    at Object.parseVarStatement (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:11082:10)\n    at Object.parseStatementContent (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:10679:21)\n    at Object.parseStatement (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:10612:17)\n    at Object.parseExportDeclaration (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:11798:17)\n    at Object.maybeParseExportDeclaration (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:11754:31)\n    at Object.parseExport (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:11684:29)\n    at Object.parseStatementContent (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:10716:27)\n    at Object.parseStatement (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:10612:17)\n    at Object.parseBlockOrModuleBlockBody (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:11188:25)\n    at Object.parseBlockBody (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:11175:10)\n    at Object.parseTopLevel (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:10543:10)\n    at Object.parse (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:12052:10)\n    at parse (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/parser/lib/index.js:12103:38)\n    at parser (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/core/lib/transformation/normalize-file.js:168:34)\n    at normalizeFile (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/core/lib/transformation/normalize-file.js:102:11)\n    at runSync (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/home/claudius/Desktop/GimmeATable/GimmeATable/node_modules/@babel/core/lib/transform.js:34:34)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
 
 /***/ }),
 
@@ -1940,8 +1920,8 @@ function (_React$Component) {
 
     _classCallCheck(this, RestaurantShow);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(RestaurantShow).call(this, props)); // debugger
-
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(RestaurantShow).call(this, props));
+    debugger;
     _this.state = _this.props.restaurant;
     return _this;
   }
@@ -1955,8 +1935,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var restaurant = this.props.restaurant.restaurant; // debugger
-
+      var restaurant = this.props.restaurant.restaurant;
+      debugger;
       var open;
 
       if (restaurant.open === 24) {
@@ -1979,10 +1959,10 @@ function (_React$Component) {
         close = "".concat(restaurant.close, ":00 AM");
       }
 
-      if (this.props.restaurant === undefined) return null;
+      if (this.props.restaurant.restaurant === undefined) return null;
       var happyhour;
 
-      if (this.props.restaurant.id % 2 !== 0 && this.props.restaurant.id < 35) {
+      if (this.props.restaurant.restaurant.id % 2 !== 0 && this.props.restaurant.restaurant.id < 35) {
         happyhour = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "din-style"
         }, "5pm-8pm");
@@ -2105,7 +2085,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-section-title"
       }, "Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        type: 'restaurant'
+        type: 'restaurant',
+        reviews: this.props.restaurant.reviews
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_reviews_compose_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         restaurant: restaurant
       }))))));
@@ -2423,7 +2404,8 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      // debugger
+      debugger;
+
       if (this.props.reviews.length === 0) {
         return null;
       }
@@ -2478,7 +2460,7 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownProps) {
   return {
     currentUser: state.session.currentUser,
-    reviews: Object.values(state.entities.reviews) || [],
+    // reviews: Object.values(state.entities.reviews) || [],
     users: state.entities.users,
     restaurants: state.entities.restaurants,
     user: ownProps.match.params.userId,
@@ -2570,7 +2552,8 @@ function (_React$Component) {
         return null;
       }
 
-      var content; //  debugger
+      var content;
+      debugger;
 
       if (this.props.type === 'restaurant' && this.props.review.restaurant_id === parseInt(this.props.restaurant)) {
         content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -4086,19 +4069,22 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.js");
 
 
 var usersReducer = function usersReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  var newstate = Object.assign({}, state);
 
   switch (action.type) {
-    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      return Object.assign({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
+    case _actions_user_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_USER"]:
+      newstate[action.user.id] = action.user;
+      return newstate;
+
+    case _actions_user_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_USERS"]:
+      return action.users;
 
     default:
       return state;
@@ -4368,25 +4354,6 @@ var logout = function logout() {
   return $.ajax({
     url: '/api/session',
     method: 'DELETE'
-  });
-};
-
-/***/ }),
-
-/***/ "./frontend/util/user_api_util.js":
-/*!****************************************!*\
-  !*** ./frontend/util/user_api_util.js ***!
-  \****************************************/
-/*! exports provided: getUser */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUser", function() { return getUser; });
-var getUser = function getUser(id) {
-  return $.ajax({
-    url: "/api/users/".concat(id),
-    method: 'get'
   });
 };
 
