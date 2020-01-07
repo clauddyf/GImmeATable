@@ -5,7 +5,7 @@ import UserReservationIndexContainer from '../reservation/user_reservation_index
 class Profile extends React.Component {
     constructor(props) {
         super(props);
-        debugger
+        // debugger
         this.state = this.props.user;
     }
 
@@ -20,10 +20,11 @@ class Profile extends React.Component {
         let user = this.props.user;
 
         return (
-            <div clasName='middleit'>
+            <div className='middleit'>
                 <div className='user-profile'>
                     <div className='user-detail'>
                         <span className= 'rest-prof-pos'>
+                            <img className='user-profile-image' src="/user.png" alt=""/>
                             <h2>{user.first_name}</h2>
                         </span>
                     </div>

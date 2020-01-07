@@ -1720,7 +1720,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "res-index-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "upcoming res"
+        className: "upcoming-res"
       }, "Your Reservations:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, reservations.map(function (reservation) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_user_reservation_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
           restaurant: _this.props.restaurants[reservation.restaurant_id],
@@ -1786,7 +1786,7 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _restaurant_show_restaurant_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../restaurant_show/restaurant_show */ "./frontend/components/restaurant_show/restaurant_show.jsx");
+/* harmony import */ var _restaurant_show_restaurant_profile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../restaurant_show/restaurant_profile */ "./frontend/components/restaurant_show/restaurant_profile.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1843,8 +1843,8 @@ function (_React$Component) {
       debugger;
       if (!this.props.restaurant) return null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "rese message"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "You have a reservation for ", this.props.reservation.head_count, " on"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.reservation.date.slice(5), " at ", this.convertTime(this.props.reservation.time_id))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_show_restaurant_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        className: "rese-message"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "You have a reservation for ", this.props.reservation.head_count, " on"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.reservation.date.slice(5), " at ", this.convertTime(this.props.reservation.time_id))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_show_restaurant_profile__WEBPACK_IMPORTED_MODULE_1__["default"], {
         restaurant: this.props.restaurant
       }));
     }
@@ -1854,6 +1854,37 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (ReservationShow);
+
+/***/ }),
+
+/***/ "./frontend/components/restaurant_show/restaurant_profile.jsx":
+/*!********************************************************************!*\
+  !*** ./frontend/components/restaurant_show/restaurant_profile.jsx ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var RestaurantProfile = function RestaurantProfile(_ref) {
+  var restaurant = _ref.restaurant;
+  debugger;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "restaurant-profile-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/restaurants/".concat(restaurant.id)
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "restaurant-info"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "City:"), restaurant.city.cityname, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Cuisine:"), restaurant.cuisine_type, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Description:"), restaurant.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (RestaurantProfile);
 
 /***/ }),
 
@@ -2190,8 +2221,8 @@ function (_React$Component) {
   _createClass(RestaurantsIndex, [{
     key: "render",
     value: function render() {
-      var restaurants = this.props.restaurants; // debugger
-
+      var restaurants = this.props.restaurants;
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/restaurants/".concat(this.props.restaurant.restaurant.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3546,8 +3577,8 @@ function (_React$Component) {
 
     _classCallCheck(this, Profile);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Profile).call(this, props));
-    debugger;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Profile).call(this, props)); // debugger
+
     _this.state = _this.props.user;
     return _this;
   }
@@ -3564,14 +3595,18 @@ function (_React$Component) {
       if (!this.props.user) return null;
       var user = this.props.user;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        clasName: "middleit"
+        className: "middleit"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-profile"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-detail"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "rest-prof-pos"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, user.first_name)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_user_reservation_index_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "user-profile-image",
+        src: "/user.png",
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, user.first_name)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation_user_reservation_index_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         user: user
       }));
     }

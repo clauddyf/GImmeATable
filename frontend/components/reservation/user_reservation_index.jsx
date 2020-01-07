@@ -15,7 +15,7 @@ class ReservationIndex extends React.Component {
 
         return (
             <div className='res-index-main'>
-                <h2 className='upcoming res'>
+                <h2 className='upcoming-res'>
                     Your Reservations:
                 </h2>
                 <hr/>

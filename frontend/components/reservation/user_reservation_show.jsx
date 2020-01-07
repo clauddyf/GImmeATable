@@ -1,5 +1,5 @@
 import React from 'react';
-import RestaurantShow from '../restaurant_show/restaurant_show';
+import RestaurantProfile from '../restaurant_show/restaurant_profile';
 
 class ReservationShow extends React.Component {
     constructor(props) {
@@ -26,7 +26,7 @@ class ReservationShow extends React.Component {
 
         return(
             <div>
-                <span className = 'rese message'>
+                <span className = 'rese-message'>
                     <h2>
                         You have a reservation for {this.props.reservation.head_count} on
                     </h2>
@@ -34,7 +34,7 @@ class ReservationShow extends React.Component {
                         {(this.props.reservation.date.slice(5))} at {this.convertTime(this.props.reservation.time_id)}
                     </h3>
                 </span>
-                <RestaurantShow restaurant={this.props.restaurant}/>
+                <RestaurantProfile restaurant={this.props.restaurant}/>
             </div>
         )
     }

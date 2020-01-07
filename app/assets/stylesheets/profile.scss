@@ -2,3 +2,67 @@
     max-width: 1114px;
     margin: auto;
 }
+
+.user-detail{
+    // background-image: url('/bndo.jpg');
+    background-color: rgb(75, 71, 71); 
+    display: flex;
+    height: 250px;
+    margin-bottom: 80px;
+    width: inherit;
+}
+
+.rest-prof-pos{
+    justify-content: flex-start;
+    position: relative;
+    top: 50px;
+    margin: 30px;
+}
+
+.res-index-main{
+    max-width: 1140px;
+    margin: auto;
+    padding: 0px 80px;
+    background-color: #f7f7f7;
+    padding-bottom: 80px;
+}
+
+.upcoming-res {
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 40px;
+}
+
+.rese-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.restaurant-profile-item {
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+.restaurant-info {
+    font-family: helvetica;
+    font-size: 15px;
+    margin-left: 10px;
+    max-width: 600px;
+    line-height: 1.2;
+    margin-top: 5px;
+}
+
+.user-profile-image {
+    height: 220px;
+    width: 220px;
+}
+
+.user-detail h2 {
+    margin-left: 240px;
+    font-size: 35px;
+    font-family: helvetica;
+    margin-top: -210px;
+    color:white;
+    font-weight: 200;
+    width: 600px;
+}
