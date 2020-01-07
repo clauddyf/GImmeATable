@@ -2,7 +2,8 @@ class Restaurant < ApplicationRecord
     validates :description, :name, :num_of_views, presence: true
     
     belongs_to :location, class_name: :Location, foreign_key: :city_id
-    has_many :reviews
+    has_many :reviews,
+      foreign_key: :restaurant_id
     has_many_attached :photos
     has_many :reservations,
         foreign_key: :restaurant_id

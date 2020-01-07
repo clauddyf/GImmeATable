@@ -8,6 +8,7 @@ class RestaurantShow extends React.Component{
     constructor(props){
         super(props)
         // debugger
+        this.state = this.props.restaurant;
     }
     
     componentDidMount(){

@@ -7,9 +7,9 @@ const RestaurantProfile = ({restaurant}) => {
         <div className='restaurant-profile-item'>
             <span>
                 <Link to={`/restaurants/${restaurant.id}`}>
-                    {/* <img className='restaurant-profile_image'
-                        src={restaurant.photoUrls}
-                    /> */}
+                    <img className='restaurant-profile-image'
+                        src="./profile-plate.jpg"
+                    />
                 </Link>
             </span>
             <span className='restaurant-info'>
@@ -19,7 +19,7 @@ const RestaurantProfile = ({restaurant}) => {
                 <br/>
                 <span>Cuisine:</span>{restaurant.cuisine_type}
                 <br/>
-                <h3>Description:</h3>{restaurant.description}
+                <h3>Neighborhood:</h3>{restaurant.neighborhood}
             </span>
             <br/>
             <br/>

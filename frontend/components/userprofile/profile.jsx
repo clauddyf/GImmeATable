@@ -11,6 +11,7 @@ class Profile extends React.Component {
 
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.userId)
+        this.props.fetchRestaurant(this.props.match.params.restId)
     }
 
     render() {

@@ -5,7 +5,7 @@ class RestaurantsIndex extends React.Component {
 
     render() {
         const {restaurants} = this.props;
-        debugger
+        // debugger
         return (
             <Link to={`/restaurants/${this.props.restaurant.restaurant.id}`}>
                 {/* <ul>

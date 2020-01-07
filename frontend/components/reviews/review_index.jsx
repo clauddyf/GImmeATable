@@ -3,7 +3,8 @@ import ReviewIndexContent from './review_index_content';
 
 class ReviewIndex extends React.Component {
     componentDidMount() {
-        this.props.fetchReviews();    }
+        this.props.fetchReviews();
+    }
 
     render() {
         // debugger
