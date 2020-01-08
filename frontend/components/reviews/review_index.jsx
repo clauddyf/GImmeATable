@@ -4,6 +4,7 @@ import ReviewIndexContent from './review_index_content';
 class ReviewIndex extends React.Component {
     componentDidMount() {
         this.props.fetchReviews();
+        this.props.fetchUsers();
     }
 
     render() {
@@ -18,6 +19,7 @@ class ReviewIndex extends React.Component {
                             key={review.id}
                             review={review}
                             fetchUser={this.props.fetchUser}
+                            fetchUsers={this.props.fetchUsers}
                             type={this.props.type}
                             users={this.props.users}
                             restaurants={this.props.restaurants}

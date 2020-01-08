@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       resources :reservations, only: :index
     end
     resource :session, only: [:create, :destroy, :show]
-    resources :users, only: [:create, :update, :show]
+    resources :users, only: [:create, :update, :show, :index]
     resources :reservations, only: [:create, :destroy] do 
       collection do 
         get :temp_get

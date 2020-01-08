@@ -4,6 +4,7 @@ class ReviewIndexContent extends React.Component {
      componentWillMount() {
          if (this.props.type == 'restaurant') {
              this.props.fetchUser(this.props.review.user_id);
+            //  this.props.fetchUsers();
          } else {
              this.props.receiveRestaurant(this.props.review.restaurant_id);
          }
