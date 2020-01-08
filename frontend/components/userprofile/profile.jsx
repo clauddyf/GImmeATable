@@ -1,5 +1,6 @@
 import React from 'react';
 import UserReservationIndexContainer from '../reservation/user_reservation_index_container';
+import ReviewIndexContainer from '../reviews/review_index_container';
 
 
 class Profile extends React.Component {
@@ -30,7 +31,12 @@ class Profile extends React.Component {
                         </span>
                     </div>
                 </div>
-                <UserReservationIndexContainer user={user}/>
+                <div>
+                  <UserReservationIndexContainer user={user}/>
+                </div>
+                <div>
+                    <ReviewIndexContainer type={'user'} reviews={user.reviews}/>
+                </div>
             </div>
         )
     }

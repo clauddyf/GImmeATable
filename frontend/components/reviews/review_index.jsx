@@ -5,6 +5,7 @@ class ReviewIndex extends React.Component {
     componentDidMount() {
         this.props.fetchReviews();
         this.props.fetchUsers();
+        this.props.fetchRestaurants();
     }
 
     render() {
@@ -23,7 +24,8 @@ class ReviewIndex extends React.Component {
                             type={this.props.type}
                             users={this.props.users}
                             restaurants={this.props.restaurants}
-                            receiveRestaurant={this.props.receiveRestaurant}
+                            fetchRestaurant={this.props.fetchRestaurant}
+                            fetchRestaurants={this.props.fetchRestaurants}
                             restaurant={this.props.restaurant}
                             user={this.props.user}
                         />

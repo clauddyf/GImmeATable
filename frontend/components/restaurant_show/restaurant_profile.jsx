@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const RestaurantProfile = ({restaurant}) => {
-    debugger
+    // debugger
     return (
         <div className='restaurant-profile-item'>
             <span>

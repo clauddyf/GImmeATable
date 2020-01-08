@@ -21,7 +21,7 @@ class ReservationShow extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         if (!this.props.restaurant) return null;
 
         return(

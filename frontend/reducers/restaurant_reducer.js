@@ -6,6 +6,7 @@ import merge from 'lodash/merge';
 
 const RestaurantReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
+    // debugger
     switch(action.type) {
         case RECEIVE_RESTAURANTS:
             // debugger

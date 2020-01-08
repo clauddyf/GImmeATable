@@ -46,7 +46,7 @@ class ReservationDate extends React.Component {
                 // minDate={moment()}
                 // minTime={moment().hours(open).minutes(0)}
                 // maxTime={moment().hours(close).minutes(0)}
-                dateFormat="MMMM d, yyyy h:mm aa"
+                dateFormat="MMMM d, yyyy"
             
             required/>
         )

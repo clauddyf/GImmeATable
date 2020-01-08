@@ -8,7 +8,7 @@ class ReservationCompose extends React.Component {
         const now = new Date();
         this.state ={
             date: now.toDateString(),
-            time_id: now.getHours(),
+            time_id: '',
             restaurant_id: this.props.restaurant.id,
             user_id: this.props.currentUser,
             head_count: '',
@@ -67,27 +67,43 @@ class ReservationCompose extends React.Component {
     throughDate(newDate) {
         // debugger
         let dateString = newDate.toDateString();
-        let time = newDate.getHours();
-        this.setState({date: dateString, time_id: time});
+        // let time = newDate.getHours();
+        this.setState({date: dateString});
         // debugger
     }
 
     render() {
         // debugger
+        const timeIntervals = ["12:00 PM", "12:30PM"];
+        let time;
+        for (let i = 1; i < 12; i++) {
+            for (let j = 0; j < 2; j++) {
+                time = "";
+                time = time.concat(`${i}`)
+
+                if (j === 0) {
+                    time = time.concat(":00 PM")
+                } else {
+                    time = time.concat(":30 PM")
+                }
+                
+                timeIntervals.push(time)
+            }
+        }
+
         return (
             <div className='rese-form-container'>
                 <form className="rese-form" onSubmit={e => this.handleSubmit(e)}>
                     <h1 className='make-rese'></h1>
                     <div id='section'>
                         <label className='dropdown'>
-                            {/* <input className='res-head-count'
-                                   type="number" 
-                                   placeholder='Head Count' 
-                                //    value={this.state.head_count}
-                                //    onChange={this.update('head_count')}
-                                   min='1' 
-                                   max='10'
-                            /> */}
+                            <input className="rese-textarea" 
+                                placeholder='Head Count'
+                                min='1'
+                                type='number'
+                                value={this.state.head_count} 
+                                onChange={e => this.update(e, 'head_count')}>
+                            </input>
                         </label>
                     </div>
                     <div id='section' className='res-section-row'>
@@ -99,68 +115,22 @@ class ReservationCompose extends React.Component {
                                 throughDate={this.throughDate}
                                 restaurant={this.props.restaurant}    
                             />
-                            <input className="rese-textarea" 
-                                placeholder='Head Count'
-                                min='1'
-                                type='number'
-                                value={this.state.head_count} 
-                                onChange={e => this.update(e, 'head_count')}>
-                            </input>
                         </label>
-                        {/* <label className='rese-date'>
+                        <label className='rese-date'>
                             <div>Time:</div>
-                            <select className="search-bar-city" placeholder="Select a Time">
-                            <option value="Select a Time">Select a Time</option>
-                            <option value="12:00 PM">12:00 PM</option>
-                            <option value="12:30 PM">12:30 PM</option>
-                            <option value="1:00 PM">1:00 PM</option>
-                            <option value="1:30 PM">1:30 PM</option>
-                            <option value="2:00 PM">2:00 PM</option>
-                            <option value="2:30 PM">2:30 PM</option>
-                            <option value="3:00 PM">3:00 PM</option>
-                            <option value="3:30 PM">3:30 PM</option>
-                            <option value="4:00 PM">4:00 PM</option>
-                            <option value="4:30 PM">4:30 PM</option>
-                            <option value="5:00 PM">5:00 PM</option>
-                            <option value="5:30 PM">5:30 PM</option>
-                            <option value="6:00 PM">6:00 PM</option>
-                            <option value="6:30 PM">6:30 PM</option>
-                            <option value="7:00 PM">7:00 PM</option>
-                            <option value="7:30 PM">7:30 PM</option>
-                            <option value="8:00 PM">8:00 PM</option>
-                            <option value="8:30 PM">8:30 PM</option>
-                            <option value="9:00 PM">9:00 PM</option>
-                            <option value="9:30 PM">9:30 PM</option>
-                            <option value="10:00 PM">10:00 PM</option>
-                            <option value="10:30 PM">10:30 PM</option>
-                            <option value="11:00 PM">11:00 PM</option>
-                            <option value="11:30 PM">11:30 PM</option>
-                        </select>
-                        </label> */}
+                            <select value={this.state.time_id.value} onChange={e => this.update(e,'time_id')}>
+                                <option value="Select a Time">Select a Time</option>
+                                {
+                                        timeIntervals.map((el, i) => {
+                                            return <option key={i} value={el}>{el}</option>
+                                        })
+                                    }
+                            </select>
+                        </label>
                     </div>
                     <div id='section'>
                         <input type="submit" className='rese-submit-butt' value='Confirm Reservation'/>
                     </div>
-                    {/* <ReservationDate
-                            
-                                throughDate={this.throughDate}
-                                restaurant={this.props.restaurant}    
-                            />
-                            <input className="rese-textarea" 
-                                placeholder='Head Count'
-                                min='1'
-                                type='number'
-                                value={this.state.head_count} 
-                                onChange={e => this.update(e, 'head_count')}>
-                            </input> */}
-                            {/* <input type="date" 
-                                   placeholder='Pick a date' 
-                                //    value={this.state.date} 
-                                //    onChange={this.update('date')}
-                            />
-                            <div className='baby-rese-cont'> 
-                            {/* <input className = "rese-submit" type="submit" value="Submit"/> */}
-                            {/* </div> */}
                 </form>
             </div>
         )

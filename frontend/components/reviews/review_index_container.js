@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import { composeReview, fetchReviews } from '../../actions/review_actions';
 import ReviewIndex from './review_index';
 import {fetchUser, fetchUsers} from '../../actions/user_actions';
-import { receiveRestaurant} from '../../actions/restaurant_actions';
+import { fetchRestaurant, fetchRestaurants} from '../../actions/restaurant_actions';
 import { withRouter } from 'react-router-dom';
 
 
@@ -24,7 +24,8 @@ const mDTP = (dispatch) => ({
     fetchReviews: (reviews) => dispatch(fetchReviews(reviews)),
     fetchUser: (user) => dispatch(fetchUser(user)),
     fetchUsers: (users) => dispatch(fetchUsers(users)),
-    receiveRestaurant: (restaurant) => dispatch(receiveRestaurant(restaurant))
+    fetchRestaurant: (restaurant) => dispatch(fetchRestaurant(restaurant)),
+    fetchRestaurants: (restaurants) => dispatch(fetchRestaurants(restaurants))
 });
 
 export default withRouter(connect(mSTP,mDTP)(ReviewIndex))

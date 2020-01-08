@@ -1,11 +1,11 @@
 .calendar {
-  margin-left: 20px;
-  height: 34px;
-  font-weight: 400;
-  font-family: helvetica;
-  padding-left: 15px;
-  width: 170px;
+  height: 20px;
+  width: 90%;
   color: grey;
+  box-shadow: none;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 4px;
+  font-size: 11px;
 }
 
 .rese-textarea{
@@ -14,7 +14,8 @@
   font-weight: 400;
   font-family: helvetica;
   padding-left: 15px;
-  width: 70px;
+  border: 1px solid rgba(232,232,255,0.9);
+  border-radius: 9px;
 }
 
 .react-datepicker-wrapper{
