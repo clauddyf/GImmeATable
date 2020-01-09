@@ -9,7 +9,7 @@ class SearchCalendar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            startDate: moment(),
+            startDate: moment()._d,
         }
         this.handleChange = this.handleChange.bind(this);
         // debugger
@@ -19,6 +19,7 @@ class SearchCalendar extends React.Component {
         this.setState({
             startDate: date
         });
+        this.props.throughDate(date);
     }
 
     render() {
@@ -26,14 +27,14 @@ class SearchCalendar extends React.Component {
         return (
             <DatePicker
                 className='calendar-style'
-                selected = {this.state.startDate._d}
-                onChange = {this.handleChange}
-                placeholderText= 'MM/DD/YYYY'
-                showTimeSelect
-                timeIntervals={30}
-                minDate = {this.state.startDate._d}
-                minTime={moment().hours(11).minutes(0)}
-                maxTime={moment().hours(22).minutes(0)}
+                selected = {this.state.startDate}
+                onChange = {date => this.handleChange(date)}
+                // placeholderText= 'MM/DD/YYYY'
+                // showTimeSelect
+                // timeIntervals={30}
+                // minDate = {this.state.startDate._d}
+                // minTime={moment().hours(11).minutes(0)}
+                // maxTime={moment().hours(22).minutes(0)}
                 dateFormat="MM/dd/yyyy"
             
             />

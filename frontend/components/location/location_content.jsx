@@ -26,7 +26,7 @@ class LocationContent extends React.Component {
     }
 
     render() {
-        // debugger
+        debugger
         let denver;
         if (this.props.location.id === 9 || this.props.location.id === 7 || this.props.location.id === 8 || this.props.location.id === 10) {
             denver = (<div className='loc-pic-container'>
@@ -58,7 +58,7 @@ class LocationContent extends React.Component {
                                     </li>
         );
 
-        console.log(restList)
+        // console.log(restList)
         return(
             <div className='loc-container'>
                 {/* <img src='https://gimmeatable-dev.s3-us-west-1.amazonaws.com/locshow_0.jpg' className='location-show-pic'/> */}

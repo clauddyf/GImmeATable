@@ -5,28 +5,57 @@ import SearchCalendar from './search_calendar';
 class RestaurantSearch extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {search: ''};
+        this.state = {
+            city:'',
+            date:'',
+            time:'',
+            numPeople:'',
+            restaurant:''
+        };
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
-        this.props.fetchRestaurants();
+        this.props.searchRestaurants();
+        this.props.fetchLocations();
     }
 
-    handleClick(e) {
+    // handleClick(e) {
+    //     e.preventDefault();
+    //     this.props.searchRestaurants(this.state.search)
+    // }
+
+    update(field) {
+        return e => {
+            this.setState({[field]:e.currentTarget.value});
+        }
+    }
+    throughDate(newDate) {
+        // debugger
+        let dateString = newDate.toDateString();
+        // let time = newDate.getHours();
+        this.setState({date: dateString});
+        // debugger
+    }
+
+    handleSubmit(e) {
         e.preventDefault();
-        this.props.searchRestaurants(this.state.search)
-    }
+        let cityId = this.state.city ? this.state.city : 1;
 
-    update(e) {
-        this.setState({search:e.target.value});
+        this.props.history.push(`/restaurants?city_id=${cityId}` 
+            + `&time=${this.state.time}`
+            + `&date=${this.state.date}`
+            + `&guests=${this.state.numPeople}`
+            + `&restaurant=${this.state.restaurant}`
+        )
     }
 
     render() {
         return (
             <div className='search-form'>
-                <form className='form-parent' onSubmit={e => this.handleClick(e)}>
+                <form className='form-parent' onSubmit={this.handleSubmit}>
                     <div className='search-bar'>
-                        <select className='search-bar-city' placeholder='select a city'>
+                        <select className='search-bar-city' placeholder='select a city' onChange={this.update('city')} value={this.state.city}>
                             <option value="Where to?">Where to?</option>
                             <option value="1">San Francisco</option>
                             <option value="2">Phoenix</option>
@@ -39,8 +68,9 @@ class RestaurantSearch extends React.Component {
                             <option value="10">New York</option>
                             <option value="11">Denver</option>
                         </select>
-                        <label className='calendar-box'><SearchCalendar/></label>
-                        <select className="search-bar-city" placeholder="Select a Time">
+                        <label className='calendar-box'><SearchCalendar throughDate={this.throughDate}/>
+                        </label>
+                        <select className="search-bar-city" placeholder="Select a Time" onChange={this.update("time")} >
                             <option value="Select a Time">Select a Time</option>
                             <option value="12:00 PM">12:00 PM</option>
                             <option value="12:30 PM">12:30 PM</option>
@@ -67,7 +97,7 @@ class RestaurantSearch extends React.Component {
                             <option value="11:00 PM">11:00 PM</option>
                             <option value="11:30 PM">11:30 PM</option>
                         </select>
-                        <select className="search-bar-city" placeholder="Party of..">
+                        <select className="search-bar-city" placeholder="Party of.."  onChange={this.update("numPeople")}>
                             <option value="Party of...">Party of...</option>
                             <option value="1">1 guest</option>
                             <option value="2">2 guest</option>
@@ -84,8 +114,8 @@ class RestaurantSearch extends React.Component {
                         <input
                             className='search-input'
                             placeholder='Restaurant, City, Cuisine'
-                            value={this.state.search}
-                            onChange={e => this.update(e)}
+                            type='text'
+                            onChange={this.update("restaurant")}
                         />
                         <input className='search-button' type="submit" value='Search'/>
                 </form>
