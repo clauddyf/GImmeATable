@@ -440,7 +440,8 @@ var fetchUser = function fetchUser(id) {
 var fetchUsers = function fetchUsers() {
   return function (dispatch) {
     return Object(_util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["getUsers"])().then(function (users) {
-      return dispatch(receiveUsers(users));
+      console.log(users);
+      dispatch(receiveUsers(users));
     });
   };
 };
@@ -2630,17 +2631,23 @@ function (_React$Component) {
         return null;
       }
 
+      var userList = this.props.users;
+      var reviewerId = this.props.review.user_id;
+      var reviewer = userList[reviewerId] ? userList[reviewerId].first_name : '';
+      var restaurantList = this.props.restaurants;
+      var restaurantId = this.props.review.restaurant_id;
+      var reviewedRestaurant = restaurantList[restaurantId] ? restaurantList[restaurantId].name : '';
       var content;
       debugger;
 
       if (this.props.type === 'restaurant' && this.props.review.restaurant_id === parseInt(this.props.restaurant)) {
         content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "rev-ind-cont"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Review by ", ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.review.body);
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Review by ", reviewer, ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.review.body);
       } else if (this.props.type === 'user' && this.props.review.user_id === parseInt(this.props.user)) {
         content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "rev-ind-cont"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Review for ", ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.review.body);
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Review for ", reviewedRestaurant, ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.review.body);
       } else {
         content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
       }

@@ -17,5 +17,8 @@ export const fetchUser =(id) => dispatch => {
 };
 
 export const fetchUsers = () => dispatch => (
-    getUsers().then((users) => dispatch(receiveUsers(users)))
+    getUsers().then((users) => {
+        console.log(users)
+        dispatch(receiveUsers(users))
+    }) 
 );
