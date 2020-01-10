@@ -38,10 +38,7 @@ class RestaurantShow extends React.Component{
     }
     
     render(){
-        if (!this.props.restaurant.restaurant) {
-            return null
-        }
-        const restaurant = this.props.restaurant.restaurant;
+        let restaurant = this.props.restaurant ? this.props.restaurant.restaurant : {};
         debugger
         
         let open;
@@ -59,9 +56,9 @@ class RestaurantShow extends React.Component{
         } else if (restaurant.close > 12) {
           close = `${(restaurant.close - 12)}:00 PM`;
         } else { close = `${(restaurant.close)}:00 AM`; }
-        if (this.props.restaurant.restaurant === undefined) return null; 
+        // if (this.props.restaurant.restaurant === undefined) return null; 
         let happyhour;
-        if ((this.props.restaurant.restaurant.id) % 2 !== 0 && (this.props.restaurant.restaurant.id) < 35) {
+        if ((restaurant.id) % 2 !== 0 && (restaurant.id) < 35) {
             happyhour = (
                 <div className='din-style'>
                     5pm-8pm
@@ -93,7 +90,7 @@ class RestaurantShow extends React.Component{
                                 <div className='baby-dress'>
                                     <span className='side-nav-type'>Dresscode</span>
                                     <div className='act-dress'>
-                                        {this.props.restaurant.dresscode}
+                                        {restaurant.dresscode}
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +105,7 @@ class RestaurantShow extends React.Component{
                             <div className='baby-cuise'>
                                 <span className='side-nav-type'>Cuisine-Type</span>
                                 <div className= 'din-style'>
-                                    <span>{this.props.restaurant.cuisine_type}</span>
+                                    <span>{restaurant.cuisine_type}</span>
                                 </div>
                             </div>
                             <hr/>
@@ -122,7 +119,7 @@ class RestaurantShow extends React.Component{
                             <div>
                                 <span className='side-nav-type'>Neighborhood</span>
                                 <div className='din-style'>
-                                    <span>{this.props.restaurant.neighborhood}</span>
+                                    <span>{restaurant.neighborhood}</span>
                                 </div>
                             </div>
                             <hr/>
@@ -136,7 +133,7 @@ class RestaurantShow extends React.Component{
                             <div>
                                 <span className='side-nav-type'>Hours of Operation</span>
                                 <div className='din-style'>
-                                    <span>{this.props.restaurant.hours_op}</span>
+                                    <span>{restaurant.hours_op}</span>
                                 </div>
                             </div>
                             <hr/>
@@ -161,14 +158,14 @@ class RestaurantShow extends React.Component{
                       </div>
                       <hr/>
                       <div className='name-body'>
-                        <h1 className='rest-name'>{this.props.restaurant.name}</h1>
+                        <h1 className='rest-name'>{restaurant.name}</h1>
                       </div>
                         <div className='rest-show-overview' id='overview-link'>
                             <div className='rest-section-title'>
                                 Overview
                             </div>
                             <div className='desc-div'>
-                                {this.props.restaurant.description}
+                                {restaurant.description}
                             </div>
                         </div>
                         <hr/>
@@ -177,7 +174,7 @@ class RestaurantShow extends React.Component{
                             Photos
                         </div>
                         <div className='photos-div'>
-                            <img src={this.props.restaurant.photoUrls} alt=""/>
+                            <img src={restaurant.photoUrls} alt=""/>
                         </div>
                       </div>
                       <hr/>
@@ -188,17 +185,17 @@ class RestaurantShow extends React.Component{
                         <div className='info-div'>
                             <div className='rest-info-div'>
                                 <span>
-                                    PhoneNumber:{this.props.restaurant.phone_num}
+                                    PhoneNumber:{restaurant.phone_num}
                                 </span>
                             </div>
                             <div className='rest-info-div'>
-                                Addy: {this.props.restaurant.address}
+                                Addy: {restaurant.address}
                             </div>
                             <div className='rest-info-div'>
-                                Neighborhood: {this.props.restaurant.neighborhood}
+                                Neighborhood: {restaurant.neighborhood}
                             </div>
                             <div className='rest-info-div'>
-                                Hours of Operation: {this.props.restaurant.hours_op}
+                                Hours of Operation: {restaurant.hours_op}
                             </div>
                         </div>
                       </div>

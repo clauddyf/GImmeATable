@@ -35,11 +35,13 @@ class LocationContent extends React.Component {
     render() {
         debugger
         let denver;
-        if (this.props.location.id === 9 || this.props.location.id === 7 || this.props.location.id === 8 || this.props.location.id === 10) {
+        let location = this.props.location ? this.props.location.id : {};
+        let photo = this.props.location ? this.props.location.photoUrls[1] : ''
+        if (location === 9 || location === 7 || location === 8 || location === 10) {
             denver = (<div className='loc-pic-container'>
                         <div className='daddy-div'>
                             <div className='baby-div'>
-                                <img src={this.props.location.photoUrls[1]} className='location-show-pic'/>
+                                <img src={photo} className='location-show-pic'/>
                                 <div className='centered'>
                                     <RestaurantSearchContainer/>
                                 </div>
@@ -50,7 +52,7 @@ class LocationContent extends React.Component {
             denver = (<div className='loc-pic-container'>
                         <div className='daddy-div'>
                             <div className='baby-div'>
-                                <img src={this.props.location.photoUrls[1]} className='location-show-pic'/>
+                                <img src={photo} className='location-show-pic'/>
                                 <div className='centered'>
                                     <RestaurantSearchContainer/>
                                 </div>

@@ -726,8 +726,10 @@ function (_React$Component) {
     value: function render() {
       debugger;
       var denver;
+      var location = this.props.location ? this.props.location.id : {};
+      var photo = this.props.location ? this.props.location.photoUrls[1] : '';
 
-      if (this.props.location.id === 9 || this.props.location.id === 7 || this.props.location.id === 8 || this.props.location.id === 10) {
+      if (location === 9 || location === 7 || location === 8 || location === 10) {
         denver = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "loc-pic-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -735,7 +737,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "baby-div"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: this.props.location.photoUrls[1],
+          src: photo,
           className: "location-show-pic"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "centered"
@@ -748,7 +750,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "baby-div"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: this.props.location.photoUrls[1],
+          src: photo,
           className: "location-show-pic"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "centered"
@@ -2035,11 +2037,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      if (!this.props.restaurant.restaurant) {
-        return null;
-      }
-
-      var restaurant = this.props.restaurant.restaurant;
+      var restaurant = this.props.restaurant ? this.props.restaurant.restaurant : {};
       debugger;
       var open;
 
@@ -2061,12 +2059,12 @@ function (_React$Component) {
         close = "".concat(restaurant.close - 12, ":00 PM");
       } else {
         close = "".concat(restaurant.close, ":00 AM");
-      }
+      } // if (this.props.restaurant.restaurant === undefined) return null; 
 
-      if (this.props.restaurant.restaurant === undefined) return null;
+
       var happyhour;
 
-      if (this.props.restaurant.restaurant.id % 2 !== 0 && this.props.restaurant.restaurant.id < 35) {
+      if (restaurant.id % 2 !== 0 && restaurant.id < 35) {
         happyhour = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "din-style"
         }, "5pm-8pm");
@@ -2103,7 +2101,7 @@ function (_React$Component) {
         className: "side-nav-type"
       }, "Dresscode"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "act-dress"
-      }, this.props.restaurant.dresscode))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, restaurant.dresscode))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "baby-din-style"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "side-nav-type"
@@ -2115,7 +2113,7 @@ function (_React$Component) {
         className: "side-nav-type"
       }, "Cuisine-Type"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.cuisine_type))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, restaurant.cuisine_type))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "baby-happy"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "side-nav-type"
@@ -2125,7 +2123,7 @@ function (_React$Component) {
         className: "side-nav-type"
       }, "Neighborhood"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.neighborhood))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, restaurant.neighborhood))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "side-nav-type"
       }, "Payment Options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
@@ -2133,7 +2131,7 @@ function (_React$Component) {
         className: "side-nav-type"
       }, "Hours of Operation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.hours_op))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, restaurant.hours_op))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ove-sect"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-nav-bar"
@@ -2151,14 +2149,14 @@ function (_React$Component) {
         className: "name-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "rest-name"
-      }, this.props.restaurant.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, restaurant.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-show-overview",
         id: "overview-link"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-section-title"
       }, "Overview"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "desc-div"
-      }, this.props.restaurant.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, restaurant.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-show-photos",
         id: "photos-link"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2166,7 +2164,7 @@ function (_React$Component) {
       }, "Photos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "photos-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.props.restaurant.photoUrls,
+        src: restaurant.photoUrls,
         alt: ""
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-show-info",
@@ -2177,13 +2175,13 @@ function (_React$Component) {
         className: "info-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-info-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "PhoneNumber:", this.props.restaurant.phone_num)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "PhoneNumber:", restaurant.phone_num)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-info-div"
-      }, "Addy: ", this.props.restaurant.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Addy: ", restaurant.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-info-div"
-      }, "Neighborhood: ", this.props.restaurant.neighborhood), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Neighborhood: ", restaurant.neighborhood), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-info-div"
-      }, "Hours of Operation: ", this.props.restaurant.hours_op))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Hours of Operation: ", restaurant.hours_op))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-show-reviews",
         id: "reviews-link"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
