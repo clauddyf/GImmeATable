@@ -2002,6 +2002,12 @@ function (_React$Component) {
       this.props.fetchRestaurant(this.props.match.params.restId);
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      console.log(prevProps);
+      console.log(prevState);
+    }
+  }, {
     key: "render",
     value: function render() {
       var restaurant = this.props.restaurant.restaurant;
@@ -2825,7 +2831,10 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var cityId = this.state.city ? this.state.city : 1;
-      this.props.history.push("/restaurants?city_id=".concat(cityId) + "&time=".concat(this.state.time) + "&date=".concat(this.state.date) + "&guests=".concat(this.state.numPeople) + "&restaurant=".concat(this.state.restaurant));
+      this.props.history.push("/locations/".concat(cityId)); // + `&time=${this.state.time}`
+      // + `&date=${this.state.date}`
+      // + `&guests=${this.state.numPeople}`
+      // + `&restaurant=${this.state.restaurant}`
     }
   }, {
     key: "render",
@@ -2855,16 +2864,16 @@ function (_React$Component) {
       }, "Portland"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "5"
       }, "Chicago"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "7"
+        value: "6"
       }, "Austin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "8"
-      }, "Seattle"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "9"
-      }, "Las Vegas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "10"
+        value: "7"
       }, "New York"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "11"
-      }, "Denver")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        value: "8"
+      }, "Las Vegas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "9"
+      }, "Denver"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "10"
+      }, "Seattle")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "calendar-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_calendar__WEBPACK_IMPORTED_MODULE_1__["default"], {
         throughDate: this.throughDate
@@ -4339,20 +4348,24 @@ var fetchRestaurant = function fetchRestaurant(id) {
     method: 'get',
     url: "api/restaurants/".concat(id)
   });
-};
-var searchRestaurants = function searchRestaurants(cityId, restaurantName) {
-  return $.ajax({
-    method: 'get',
-    url: "api/restaurants?city_id=".concat(cityId, "&restaurant_name=").concat(restaurantName)
-  });
-}; // export const searchRestaurants = (query) => (
+}; // export const searchRestaurants = (cityId,restaurantName) => (
 //     $.ajax({
 //         method:'get',
-//         url:'api/searches',
-//         data: {search:{query}}
-//     })
+//         url:`api/restaurants?city_id=${cityId}&restaurant_name=${restaurantName}`
+//         })
 // )
-// var ApiAction = require('../actions/restaurant_actions')
+
+var searchRestaurants = function searchRestaurants(query) {
+  return $.ajax({
+    method: 'get',
+    url: 'api/restaurants',
+    data: {
+      search: {
+        query: query
+      }
+    }
+  });
+}; // var ApiAction = require('../actions/restaurant_actions')
 // dataType: 'json',
 //       errors: function () {
 //         console.log("Restaurant fetch failed");

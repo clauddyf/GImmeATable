@@ -42,12 +42,12 @@ class RestaurantSearch extends React.Component {
         e.preventDefault();
         let cityId = this.state.city ? this.state.city : 1;
 
-        this.props.history.push(`/restaurants?city_id=${cityId}` 
-            + `&time=${this.state.time}`
-            + `&date=${this.state.date}`
-            + `&guests=${this.state.numPeople}`
-            + `&restaurant=${this.state.restaurant}`
+        this.props.history.push(`/locations/${cityId}` 
         )
+        // + `&time=${this.state.time}`
+        // + `&date=${this.state.date}`
+        // + `&guests=${this.state.numPeople}`
+        // + `&restaurant=${this.state.restaurant}`
     }
 
     render() {
@@ -62,11 +62,11 @@ class RestaurantSearch extends React.Component {
                             <option value="3">NOLA</option>
                             <option value="4">Portland</option>
                             <option value="5">Chicago</option>
-                            <option value="7">Austin</option>
-                            <option value="8">Seattle</option>
-                            <option value="9">Las Vegas</option>
-                            <option value="10">New York</option>
-                            <option value="11">Denver</option>
+                            <option value="6">Austin</option>
+                            <option value="7">New York</option>
+                            <option value="8">Las Vegas</option>
+                            <option value="9">Denver</option>
+                            <option value="10">Seattle</option>
                         </select>
                         <label className='calendar-box'><SearchCalendar throughDate={this.throughDate}/>
                         </label>
