@@ -8,20 +8,39 @@ class RestaurantShow extends React.Component{
     constructor(props){
         super(props)
         debugger
-        this.state = this.props.restaurant;
+        // this.state = {
+        //     restaurant: this.props.restaurant.restaurant
+        // }
     }
     
     componentDidMount(){
-        // debugger
+        debugger
         this.props.fetchRestaurant(this.props.match.params.restId)
+        // .then(restaurants => {
+        //     this.setState({
+        //         restaurants:restaurants
+        //     })
+        // })
     }
 
-    componentDidUpdate(prevProps,prevState) {
-        console.log(prevProps);
-        console.log(prevState);
+    // componentWillReceiveProps(nextProps) {
+    //     debugger
+    //     this.setState({
+    //         restaurant: nextProps.restaurant.restaurant
+    //     })
+    // }
+
+    componentDidUpdate(prevState) {
+        debugger
+        if (prevState.match.params.restId !== this.props.match.params.restId) {
+            this.props.fetchRestaurant(this.props.match.params.restId)
+        }
     }
     
     render(){
+        if (!this.props.restaurant.restaurant) {
+            return null
+        }
         const restaurant = this.props.restaurant.restaurant;
         debugger
         

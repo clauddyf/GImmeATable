@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const RestaurantProfile = ({restaurant}) => {
-    // debugger
+    debugger
     return (
         <div className='restaurant-profile-item'>
             <span>
                 <Link to={`/restaurants/${restaurant.id}`}>
                     <img className='restaurant-profile-image'
-                        src="./profile-plate.jpg"
+                        src='./profile-plate.jpg'
                     />
                 </Link>
             </span>

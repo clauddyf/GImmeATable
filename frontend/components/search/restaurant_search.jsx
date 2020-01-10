@@ -111,12 +111,12 @@ class RestaurantSearch extends React.Component {
                             <option value="10">10 guest</option>
                         </select>
                     </div>
-                        <input
+                        {/* <input
                             className='search-input'
                             placeholder='Restaurant, City, Cuisine'
                             type='text'
                             onChange={this.update("restaurant")}
-                        />
+                        /> */}
                         <input className='search-button' type="submit" value='Search'/>
                 </form>
             </div>

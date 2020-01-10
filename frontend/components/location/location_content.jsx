@@ -16,6 +16,13 @@ class LocationContent extends React.Component {
         this.props.fetchLocation(this.props.match.params.locId);
         // debugger
     }
+
+    componentDidUpdate(prevState) {
+        debugger
+        if (prevState.match.params.locId !== this.props.match.params.locId) {
+            this.props.fetchRestaurants(this.props.match.params.locId)
+        }
+    }
     
     handleInput(type) {
         return (e) => this.setState({ [type]: e.target.value });

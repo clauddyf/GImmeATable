@@ -21,7 +21,7 @@ class ReservationShow extends React.Component {
     }
 
     render() {
-        // debugger
+        debugger
         if (!this.props.restaurant) return null;
 
         return(
@@ -34,7 +34,7 @@ class ReservationShow extends React.Component {
                         {(this.props.reservation.date.slice(5))} at {this.convertTime(this.props.reservation.time_id)}
                     </h3>
                 </span>
-                <RestaurantProfile restaurant={this.props.restaurant}/>
+                <RestaurantProfile photo={this.props.photo} restaurant={this.props.restaurant}/>
             </div>
         )
     }

@@ -699,6 +699,15 @@ function (_React$Component) {
       this.props.fetchLocation(this.props.match.params.locId); // debugger
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevState) {
+      debugger;
+
+      if (prevState.match.params.locId !== this.props.match.params.locId) {
+        this.props.fetchRestaurants(this.props.match.params.locId);
+      }
+    }
+  }, {
     key: "handleInput",
     value: function handleInput(type) {
       var _this2 = this;
@@ -1756,7 +1765,7 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      // debugger
+      debugger;
       var reservations = this.props.user.reservations;
       var noReservations;
 
@@ -1889,11 +1898,12 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // debugger
+      debugger;
       if (!this.props.restaurant) return null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "rese-message"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "You have a reservation for ", this.props.reservation.head_count, " on"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.reservation.date.slice(5), " at ", this.convertTime(this.props.reservation.time_id))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_show_restaurant_profile__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        photo: this.props.photo,
         restaurant: this.props.restaurant
       }));
     }
@@ -1923,7 +1933,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var RestaurantProfile = function RestaurantProfile(_ref) {
   var restaurant = _ref.restaurant;
-  // debugger
+  debugger;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "restaurant-profile-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -1990,26 +2000,45 @@ function (_React$Component) {
     _classCallCheck(this, RestaurantShow);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(RestaurantShow).call(this, props));
-    debugger;
-    _this.state = _this.props.restaurant;
+    debugger; // this.state = {
+    //     restaurant: this.props.restaurant.restaurant
+    // }
+
     return _this;
   }
 
   _createClass(RestaurantShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // debugger
-      this.props.fetchRestaurant(this.props.match.params.restId);
-    }
+      debugger;
+      this.props.fetchRestaurant(this.props.match.params.restId); // .then(restaurants => {
+      //     this.setState({
+      //         restaurants:restaurants
+      //     })
+      // })
+    } // componentWillReceiveProps(nextProps) {
+    //     debugger
+    //     this.setState({
+    //         restaurant: nextProps.restaurant.restaurant
+    //     })
+    // }
+
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps, prevState) {
-      console.log(prevProps);
-      console.log(prevState);
+    value: function componentDidUpdate(prevState) {
+      debugger;
+
+      if (prevState.match.params.restId !== this.props.match.params.restId) {
+        this.props.fetchRestaurant(this.props.match.params.restId);
+      }
     }
   }, {
     key: "render",
     value: function render() {
+      if (!this.props.restaurant.restaurant) {
+        return null;
+      }
+
       var restaurant = this.props.restaurant.restaurant;
       debugger;
       var open;
@@ -2958,11 +2987,6 @@ function (_React$Component) {
       }, "9 guest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "10"
       }, "10 guest"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "search-input",
-        placeholder: "Restaurant, City, Cuisine",
-        type: "text",
-        onChange: this.update("restaurant")
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "search-button",
         type: "submit",
         value: "Search"
