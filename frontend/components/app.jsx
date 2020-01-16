@@ -8,6 +8,7 @@ import Modal from './modal/modal';
 import RestaurantShowContainer from './restaurant_show/restaurant_show_container';
 import LocationShowContainer from './location/location_show_container';
 import Splash from './splash/splash';
+import Footer from './footer/footer';
 import ReservationComposeContainer from './reservation/reservation_container';
 import UserProfileContainer from './userprofile/profile_container';
 require("react-datepicker/dist/react-datepicker.css");
@@ -45,14 +46,7 @@ const App = () => {
                      <Route path="/user/:userId" component={UserProfileContainer} />
                  </Switch>
                 </ul>
-                <div className='footer-div'>
-                {/* <footer className='footy'>
-                    <p>Created by Claudius Solomon</p>
-                    <a href="#" class="fa fa-linkedin"></a>
-                    <hr/>
-                    <a href="#" class="fa fa-google"></a>
-                </footer> */}
-            </div>
+                <Footer/>
             </div>
         );
 }

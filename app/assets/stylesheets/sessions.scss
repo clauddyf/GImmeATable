@@ -116,14 +116,13 @@ a.profile-link {
    padding-top: 5px;
    padding-left: 15px;
    padding-right: 15px;
-   color:black;
+   color:grey;
    background-color: white;
-   height: 55px;
+   height: 63px;
    line-height: 60px;
    border-radius: 15px;
    margin: 10px;
-   border: 2px solid;
-   border-color: black;
+   border: 2px grey solid;
  }
  .header-button:hover {
     background: #3d6f80;
@@ -337,7 +336,7 @@ a {
    margin: 10px;
    border: 2px solid;
    color:gray;
-   border-color: black;
+   // border-color: black;
  }
 .header-name{
    // font-family: 'Playfair Display', serif;
@@ -356,9 +355,9 @@ a {
    line-height: 60px;
    border-radius: 15px;
    margin: 10px;
-   // border: 2px solid;
+   border: 2px solid;
    color:gray;
-   border-color: black;
+   // border-color: black;
 }
 
 .content-block{

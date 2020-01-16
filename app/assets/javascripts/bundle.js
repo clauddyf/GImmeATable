@@ -468,8 +468,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _restaurant_show_restaurant_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./restaurant_show/restaurant_show_container */ "./frontend/components/restaurant_show/restaurant_show_container.js");
 /* harmony import */ var _location_location_show_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./location/location_show_container */ "./frontend/components/location/location_show_container.js");
 /* harmony import */ var _splash_splash__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./splash/splash */ "./frontend/components/splash/splash.jsx");
-/* harmony import */ var _reservation_reservation_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./reservation/reservation_container */ "./frontend/components/reservation/reservation_container.js");
-/* harmony import */ var _userprofile_profile_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./userprofile/profile_container */ "./frontend/components/userprofile/profile_container.js");
+/* harmony import */ var _footer_footer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./footer/footer */ "./frontend/components/footer/footer.jsx");
+/* harmony import */ var _reservation_reservation_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./reservation/reservation_container */ "./frontend/components/reservation/reservation_container.js");
+/* harmony import */ var _userprofile_profile_container__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./userprofile/profile_container */ "./frontend/components/userprofile/profile_container.js");
+
 
 
 
@@ -519,13 +521,80 @@ var App = function App() {
     component: _location_location_show_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/user/:userId",
-    component: _userprofile_profile_container__WEBPACK_IMPORTED_MODULE_11__["default"]
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-div"
-  }));
+    component: _userprofile_profile_container__WEBPACK_IMPORTED_MODULE_12__["default"]
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer_footer__WEBPACK_IMPORTED_MODULE_10__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(App));
+
+/***/ }),
+
+/***/ "./frontend/components/footer/footer.jsx":
+/*!***********************************************!*\
+  !*** ./frontend/components/footer/footer.jsx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var Footer = function Footer() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "main-footer-div"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "\xA9GimmeATable Created by Claudius E. Solomon"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-div"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "technology-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Technology Used"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tech-list"
+  }, "PostgreSQL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tech-list"
+  }, "Ruby on Rails"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tech-list"
+  }, "Javascript"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tech-list"
+  }, "React/Redux"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tech-list"
+  }, "HTML"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tech-list"
+  }, "CSS")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bio-div"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "About Me"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Born and raised in Silver Spring, MD."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "National Society of Black Engineers LSU 2016."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Currently residing in San Francisco."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Software Engineer App Academy."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "about-me"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "GimmeATable is inspired by OpenTale.com"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "contact-me"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://www.linkedin.com/in/claudius-solomon-ba3a2494/"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "linkedin.png",
+    className: "contact-img",
+    alt: ""
+  }), "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "contact-me"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/clauddyf"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "github.png",
+    className: "contact-img",
+    alt: ""
+  }), "GitHub")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "contact-me"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://angel.co/claudius-solomon"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "angellist.png",
+    className: "contact-img",
+    alt: ""
+  }), "AngelList")))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Footer);
 
 /***/ }),
 
@@ -2094,48 +2163,62 @@ function (_React$Component) {
         restaurant: restaurant,
         currentUser: this.props.currentUser
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dresscode"
+        className: "dre"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "baby-dress"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "side-nav-type"
-      }, "Dresscode"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dresscode"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "necktie.png",
+        className: "side-div-img",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "act-dress"
       }, restaurant.dresscode))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dresscode"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "side-nav-type"
-      }, "Dining Style"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "diningstyle.png",
+        className: "side-div-img",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Casual Elegant"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dresscode"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "side-nav-type"
-      }, "Cuisine-Type"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "cutlerytype.png",
+        className: "side-div-img",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, restaurant.cuisine_type))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dresscode"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "side-nav-type"
-      }, "Happy-Hour"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "happyhour.png",
+        className: "side-div-img",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "happy-hour"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, happyhour))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dresscode"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "side-nav-type"
-      }, "Neighborhood"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "neighborhood.png",
+        className: "side-div-img",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, restaurant.neighborhood))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dresscode"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "side-nav-type"
-      }, "Payment Options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "payment.png",
+        className: "side-div-img",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
       }, "Visa,Mastercard,Discover,AMEX")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dresscode"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "side-nav-type"
-      }, "Hours of Operation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "hofop.png",
+        className: "side-div-img",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, restaurant.hours_op))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ove-sect"
@@ -2144,13 +2227,13 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "nav-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
-        id: "overview-link"
+        to: "#overview-link"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Overview")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
-        id: "photos-link"
+        to: "#photos-link"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Photos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
-        id: "info-link"
+        to: "#info-link"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Daily Info")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
-        id: "reviews-link"
+        to: "#reviews-link"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Reviews")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -2335,9 +2418,17 @@ function (_React$Component) {
         className: "rest-name"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.restaurant.restaurant.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-hood"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Neighborhood:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.restaurant.neighborhood)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "neighborhood.png",
+        className: "side-div-img",
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Neighborhood"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.restaurant.neighborhood)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-addy"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Address: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.restaurant.address)))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "hofop.png",
+        className: "side-div-img",
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hours of Operation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.restaurant.hours_op)))));
     }
   }]);
 

@@ -87,9 +87,12 @@ class RestaurantShow extends React.Component{
                                     <ReservationContainer restaurant={restaurant} currentUser={this.props.currentUser} />
                                 </div>
                             </div>
-                            <div className='dresscode'>
-                                <div className='baby-dress'>
-                                    <span className='side-nav-type'>Dresscode</span>
+                            <div className='dre'>
+                                <div className='dresscode'>
+                                    <div>
+                                        <img src="necktie.png" className='side-div-img' alt=""/>
+                                    </div>
+                                    {/* <span className='side-nav-type'>Dresscode</span> */}
                                     <div className='act-dress'>
                                         {restaurant.dresscode}
                                     </div>
@@ -97,42 +100,60 @@ class RestaurantShow extends React.Component{
                             </div>
                             <hr/>
                             <div className='dresscode'>
-                                <span className='side-nav-type'>Dining Style</span>
+                                <div>
+                                    <img src="diningstyle.png" className='side-div-img' alt=""/>
+                                </div>
+                                {/* <span className='side-nav-type'>Dining Style</span> */}
                                 <div className='din-style'>
                                     <span>Casual Elegant</span>
                                 </div>
                             </div>
                             <hr/>
                             <div className='dresscode'>
-                                <span className='side-nav-type'>Cuisine-Type</span>
+                                <div>
+                                    <img src="cutlerytype.png" className='side-div-img' alt=""/>
+                                </div>
+                                {/* <span className='side-nav-type'>Cuisine-Type</span> */}
                                 <div className= 'din-style'>
                                     <span>{restaurant.cuisine_type}</span>
                                 </div>
                             </div>
                             <hr/>
                             <div className='dresscode'>
-                                <span className='side-nav-type'>Happy-Hour</span>
+                                <div>
+                                    <img src="happyhour.png" className='side-div-img' alt=""/>
+                                </div>
+                                {/* <span className='side-nav-type'>Happy-Hour</span> */}
                                 <div className='happy-hour'>
                                     <span>{happyhour}</span>
                                 </div>
                             </div>
                             <hr/>
                             <div className='dresscode'>
-                                <span className='side-nav-type'>Neighborhood</span>
+                                <div>
+                                    <img src="neighborhood.png" className='side-div-img' alt=""/>
+                                </div>
+                                {/* <span className='side-nav-type'>Neighborhood</span> */}
                                 <div className='din-style'>
                                     <span>{restaurant.neighborhood}</span>
                                 </div>
                             </div>
                             <hr/>
                             <div className='dresscode'>
-                                <span className='side-nav-type'>Payment Options</span>
+                               <div>
+                                    <img src="payment.png" className='side-div-img' alt=""/>
+                                </div>
+                                {/* <span className='side-nav-type'>Payment Options</span> */}
                                 <div className='din-style'>
                                     Visa,Mastercard,Discover,AMEX
                                 </div>
                             </div>
                             <hr/>
                             <div className='dresscode'>
-                                <span className='side-nav-type'>Hours of Operation</span>
+                                <div>
+                                    <img src="hofop.png" className='side-div-img' alt=""/>
+                                </div>
+                                {/* <span className='side-nav-type'>Hours of Operation</span> */}
                                 <div className='din-style'>
                                     <span>{restaurant.hours_op}</span>
                                 </div>
@@ -143,16 +164,16 @@ class RestaurantShow extends React.Component{
                     <div className='ove-sect' >
                       <div className='rest-nav-bar'>
                           <ul className='nav-info'>
-                              <Link id='overview-link'>
+                              <Link to='#overview-link'>
                                   <div>Overview</div>
                               </Link>
-                              <Link id='photos-link'>
+                              <Link to='#photos-link'>
                                   <div>Photos</div>
                               </Link>
-                              <Link id='info-link'>
+                              <Link to='#info-link'>
                                 <div>Daily Info</div>
                               </Link>
-                              <Link id='reviews-link'>
+                              <Link to='#reviews-link'>
                                 <div>Reviews</div>
                               </Link>
                           </ul>

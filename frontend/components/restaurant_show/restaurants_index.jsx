@@ -19,14 +19,16 @@ class RestaurantsIndex extends React.Component {
                         <br/>
                         <br/>
                         <div className='rest-hood'>
-                            <h1>Neighborhood:</h1>
+                            <img src="neighborhood.png" className='side-div-img'alt=""/>
+                            <h1>Neighborhood</h1>
                             <span>{this.props.restaurant.restaurant.neighborhood}</span>
                         </div>
                         <br/>
                         <br/>
                         <div className='rest-addy'>
-                            <h1>Address: </h1>
-                            <span>{this.props.restaurant.restaurant.address}</span>
+                            <img src="hofop.png" className='side-div-img'alt=""/>
+                            <h1>Hours of Operation</h1>
+                            <span>{this.props.restaurant.restaurant.hours_op}</span>
                         </div>
                     </div>
                 </div>

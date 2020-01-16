@@ -72,6 +72,7 @@
     padding-left: .5em;
     font-size: 17px;
     color: #2c333f;
+    display: flex;
 }
 
 .cuise-list li {
@@ -134,7 +135,7 @@
 .price-butt {
     display: flex;
     flex-direction: column;
-    // align-items: stretch;
+    align-items: flex-start;
     // width: 100%;
     // border-radius: 4px;
 }
@@ -313,7 +314,6 @@ opacity: 1;
 .centered {
     position: absolute;
     top: 50%;
-    left: 5%;
 }
 
 .daddy-div {
@@ -326,6 +326,9 @@ opacity: 1;
     position: relative;
   text-align: center;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
