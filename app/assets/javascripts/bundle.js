@@ -1963,7 +1963,8 @@ var RestaurantProfile = function RestaurantProfile(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-hash-link */ "./node_modules/react-router-hash-link/lib/index.js");
+/* harmony import */ var react_router_hash_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _reservation_reservation_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reservation/reservation_container */ "./frontend/components/reservation/reservation_container.js");
 /* harmony import */ var _reviews_reviews_compose_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reviews/reviews_compose_container */ "./frontend/components/reviews/reviews_compose_container.js");
 /* harmony import */ var _reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reviews/review_index_container */ "./frontend/components/reviews/review_index_container.js");
@@ -1985,6 +1986,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+ // import { Link } from 'react-router-dom';
 
 
 
@@ -2037,9 +2039,9 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var restaurant = this.props.restaurant ? this.props.restaurant.restaurant : {};
+      var restaurant = this.props.restaurant ? this.props.restaurant.restaurant : '';
+      var restReviews = this.props.restaurant ? this.props.restaurant : '';
       debugger;
-      var open;
 
       if (restaurant.open === 24) {
         open = "12:00 AM";
@@ -2050,8 +2052,6 @@ function (_React$Component) {
       } else {
         open = "".concat(restaurant.open, ":00 AM");
       }
-
-      var close;
 
       if (restaurant.close === 24) {
         close = "12:00 AM";
@@ -2102,32 +2102,38 @@ function (_React$Component) {
       }, "Dresscode"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "act-dress"
       }, restaurant.dresscode))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "baby-din-style"
+        className: "dresscode"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "side-nav-type"
       }, "Dining Style"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Casual Elegant"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "baby-cuise"
+        className: "dresscode"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "side-nav-type"
       }, "Cuisine-Type"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, restaurant.cuisine_type))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "baby-happy"
+        className: "dresscode"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "side-nav-type"
       }, "Happy-Hour"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "happy-hour"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, happyhour))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, happyhour))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dresscode"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "side-nav-type"
       }, "Neighborhood"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, restaurant.neighborhood))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, restaurant.neighborhood))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dresscode"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "side-nav-type"
       }, "Payment Options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
-      }, "Visa,Mastercard,Discover,AMEX")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, "Visa,Mastercard,Discover,AMEX")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dresscode"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "side-nav-type"
       }, "Hours of Operation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "din-style"
@@ -2137,13 +2143,13 @@ function (_React$Component) {
         className: "rest-nav-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "nav-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
         id: "overview-link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Overview")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Overview")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
         id: "photos-link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Photos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Photos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
         id: "info-link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Daily Info")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Daily Info")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
         id: "reviews-link"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Reviews")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name-body"
@@ -2188,7 +2194,7 @@ function (_React$Component) {
         className: "rest-section-title"
       }, "Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
         type: 'restaurant',
-        reviews: this.props.restaurant.reviews
+        reviews: restReviews.reviews
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_reviews_compose_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         restaurant: restaurant
       }))))));
@@ -2509,14 +2515,15 @@ function (_React$Component) {
       var _this = this;
 
       debugger;
+      var reviews = this.props.reviews ? this.props.reviews : {};
 
-      if (this.props.reviews.length === 0) {
+      if (reviews.length === 0) {
         return null;
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rev-index"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Reviews:"), this.props.reviews.map(function (review) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Reviews:"), reviews.map(function (review) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_index_content__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: review.id,
           review: review,
@@ -72377,6 +72384,134 @@ if (true) {
 
 //# sourceMappingURL=react-router-dom.js.map
 
+
+/***/ }),
+
+/***/ "./node_modules/react-router-hash-link/lib/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-router-hash-link/lib/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+exports.genericHashLink = genericHashLink;
+exports.HashLink = HashLink;
+exports.NavHashLink = NavHashLink;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var hashFragment = '';
+var observer = null;
+var asyncTimerId = null;
+var scrollFunction = null;
+
+function reset() {
+  hashFragment = '';
+  if (observer !== null) observer.disconnect();
+  if (asyncTimerId !== null) {
+    window.clearTimeout(asyncTimerId);
+    asyncTimerId = null;
+  }
+}
+
+function getElAndScroll() {
+  var element = document.getElementById(hashFragment);
+  if (element !== null) {
+    scrollFunction(element);
+    reset();
+    return true;
+  }
+  return false;
+}
+
+function hashLinkScroll() {
+  // Push onto callback queue so it runs after the DOM is updated
+  window.setTimeout(function () {
+    if (getElAndScroll() === false) {
+      if (observer === null) {
+        observer = new MutationObserver(getElAndScroll);
+      }
+      observer.observe(document, {
+        attributes: true,
+        childList: true,
+        subtree: true
+      });
+      // if the element doesn't show up in 10 seconds, stop checking
+      asyncTimerId = window.setTimeout(function () {
+        reset();
+      }, 10000);
+    }
+  }, 0);
+}
+
+function genericHashLink(props, As) {
+  function handleClick(e) {
+    reset();
+    if (props.onClick) props.onClick(e);
+    if (typeof props.to === 'string') {
+      hashFragment = props.to.split('#').slice(1).join('#');
+    } else if (_typeof(props.to) === 'object' && typeof props.to.hash === 'string') {
+      hashFragment = props.to.hash.replace('#', '');
+    }
+    if (hashFragment !== '') {
+      scrollFunction = props.scroll || function (el) {
+        return props.smooth ? el.scrollIntoView({ behavior: "smooth" }) : el.scrollIntoView();
+      };
+      hashLinkScroll();
+    }
+  }
+
+  var scroll = props.scroll,
+      smooth = props.smooth,
+      filteredProps = _objectWithoutProperties(props, ['scroll', 'smooth']);
+
+  return _react2.default.createElement(
+    As,
+    _extends({}, filteredProps, { onClick: handleClick }),
+    props.children
+  );
+}
+
+function HashLink(props) {
+  return genericHashLink(props, _reactRouterDom.Link);
+}
+
+function NavHashLink(props) {
+  return genericHashLink(props, _reactRouterDom.NavLink);
+}
+
+var propTypes = {
+  onClick: _propTypes2.default.func,
+  children: _propTypes2.default.node,
+  scroll: _propTypes2.default.func,
+  to: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object])
+};
+
+HashLink.propTypes = propTypes;
+NavHashLink.propTypes = propTypes;
 
 /***/ }),
 

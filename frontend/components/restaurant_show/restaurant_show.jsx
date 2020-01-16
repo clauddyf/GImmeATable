@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { HashLink as Link } from "react-router-hash-link";
 import ReservationContainer from '../reservation/reservation_container';
 import ReviewComposeContainer from '../reviews/reviews_compose_container';
 import ReviewIndexContainer from '../reviews/review_index_container';
@@ -38,10 +39,10 @@ class RestaurantShow extends React.Component{
     }
     
     render(){
-        let restaurant = this.props.restaurant ? this.props.restaurant.restaurant : {};
+        let restaurant = this.props.restaurant ? this.props.restaurant.restaurant : '';
+        let restReviews = this.props.restaurant ? this.props.restaurant: '';
         debugger
         
-        let open;
         if (restaurant.open === 24) {
           open = `12:00 AM`;
         } else if (restaurant.open > 12) {
@@ -50,7 +51,7 @@ class RestaurantShow extends React.Component{
             open = `12:00 PM`
         } else { open = `${(restaurant.open)}:00 AM`; }
     
-        let close;
+        
         if (restaurant.close === 24) {
           close = `12:00 AM`;
         } else if (restaurant.close > 12) {
@@ -95,42 +96,42 @@ class RestaurantShow extends React.Component{
                                 </div>
                             </div>
                             <hr/>
-                            <div className='baby-din-style'>
+                            <div className='dresscode'>
                                 <span className='side-nav-type'>Dining Style</span>
                                 <div className='din-style'>
                                     <span>Casual Elegant</span>
                                 </div>
                             </div>
                             <hr/>
-                            <div className='baby-cuise'>
+                            <div className='dresscode'>
                                 <span className='side-nav-type'>Cuisine-Type</span>
                                 <div className= 'din-style'>
                                     <span>{restaurant.cuisine_type}</span>
                                 </div>
                             </div>
                             <hr/>
-                            <div className='baby-happy'>
+                            <div className='dresscode'>
                                 <span className='side-nav-type'>Happy-Hour</span>
                                 <div className='happy-hour'>
                                     <span>{happyhour}</span>
                                 </div>
                             </div>
                             <hr/>
-                            <div>
+                            <div className='dresscode'>
                                 <span className='side-nav-type'>Neighborhood</span>
                                 <div className='din-style'>
                                     <span>{restaurant.neighborhood}</span>
                                 </div>
                             </div>
                             <hr/>
-                            <div>
+                            <div className='dresscode'>
                                 <span className='side-nav-type'>Payment Options</span>
                                 <div className='din-style'>
                                     Visa,Mastercard,Discover,AMEX
                                 </div>
                             </div>
                             <hr/>
-                            <div>
+                            <div className='dresscode'>
                                 <span className='side-nav-type'>Hours of Operation</span>
                                 <div className='din-style'>
                                     <span>{restaurant.hours_op}</span>
@@ -205,7 +206,7 @@ class RestaurantShow extends React.Component{
                             Reviews
                         </div>
                         <div>
-                            <ReviewIndexContainer type={'restaurant'} reviews={this.props.restaurant.reviews}/>
+                            <ReviewIndexContainer type={'restaurant'} reviews={restReviews.reviews}/>
                         </div>
                         <div>
                             <ReviewComposeContainer restaurant={restaurant}/>

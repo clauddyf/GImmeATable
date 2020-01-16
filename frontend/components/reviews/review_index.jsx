@@ -10,12 +10,13 @@ class ReviewIndex extends React.Component {
 
     render() {
         debugger
-        if(this.props.reviews.length === 0) {return null;}
+        let reviews = this.props.reviews ? this.props.reviews : {}
+        if(reviews.length === 0) {return null;}
         return (
             <div className='rev-index'>
                 <h2>Reviews:</h2>
                 {
-                    this.props.reviews.map(review => (
+                    reviews.map(review => (
                         <ReviewIndexContent
                             key={review.id}
                             review={review}

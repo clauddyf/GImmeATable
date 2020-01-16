@@ -189,11 +189,12 @@
     max-height: calc(3*24px);
     text-overflow: ellipsis;
 }
-// .dresscode{
-//     align-self: center;
-//     margin: 0 0 0 .25rem;
-//     padding: 0 .25rem;
-// }
+.dresscode{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
 
 // .baby-dress{
 //     font-size: 14px;
