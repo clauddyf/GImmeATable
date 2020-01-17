@@ -19,7 +19,7 @@ GimmeATable is a site in which a user can search for a restaurant, reserve a tab
  On the handleSubmit function, when the component mounts, the state is an empty string.  
  The ternary logic states that if the state is still an empty logic on submit, assign it the id 1.
  
- <img align="right" width="450" height="150" src="https://github.com/clauddyf/GimmeATable/blob/master/public/search2.png">
+ <img align="right" width="450" height="180" src="https://github.com/clauddyf/GimmeATable/blob/master/public/search2.png">
  
  The id corresponds to the location id in the database, and the the location otpion id in the select tag of the html.
  
@@ -30,6 +30,10 @@ GimmeATable is a site in which a user can search for a restaurant, reserve a tab
  
  The user is afforded the luxury of reserving a table with the table containter being in a sticky format. Customers have the ease of making a resevation while avoiding time conflicts because of the use of react-datepicker.
  ![reservation_box](https://github.com/clauddyf/GimmeATable/blob/master/app/assets/images/reservations.png)
+ 
+In order to create a reservation, the user would have to first be logged in. On creating a reservation, the handleSubmit function checks to see if the currentUser is null, and if so, it opens the login modal. 
+
+Also, it calls the composeReservation function with the current state as its parameters to, and the redirected the the users profile using the profileRedirect function 
 
 ## Technologies
 * PostgreSQL
