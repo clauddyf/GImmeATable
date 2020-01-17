@@ -11,9 +11,19 @@ GimmeATable is a site in which a user can search for a restaurant, reserve a tab
 ## Features
 ### Search
   
-  The search feature allow customers to search for a restaurant by name, cuisine type, and the city. This allows customers to find their target table without the need to parse through each city.
+  The search feature allow customers to search for a restaurant by city, available time, available date, and available head count. This allows customers to find their target table without the need to parse through each restaurant.
   
  ![search_box](https://github.com/clauddyf/GimmeATable/blob/master/app/assets/images/searchbox.png)
+ The Search Parameter is a class component embedded in the splash and the restaurant index page.
+ ![search_code](https://github.com/clauddyf/GimmeATable/blob/master/public/search1.png)
+ On the handleSubmit function, when the component mounts, the state is an empty string.  
+ The ternary logic states that if the state is still an empty logic on submit, assign it the id 1.
+ 
+ <img align="right" width="450" height="150" src="https://github.com/clauddyf/GimmeATable/blob/master/public/search2.png">
+ 
+ The id corresponds to the location id in the database, and the the location otpion id in the select tag of the html.
+ 
+ Future implementations will include search by restaurant name and real reservation search
   
   
 ### Reservation
