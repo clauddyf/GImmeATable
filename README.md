@@ -32,9 +32,11 @@ GimmeATable is a site in which a user can search for a restaurant, reserve a tab
  ![reservation_box](https://github.com/clauddyf/GimmeATable/blob/master/app/assets/images/reservations.png)
  
 In order to create a reservation, the user would have to first be logged in. On creating a reservation, the handleSubmit function checks to see if the currentUser is null, and if so, it opens the login modal. 
-<img align="left" width="400" height="100" src="https://github.com/clauddyf/GimmeATable/blob/master/public/resehandle.png">
-<img align="right" width="400" height="100" src="https://github.com/clauddyf/GimmeATable/blob/master/public/profileredirect.png">
+<img align="left" width="430" height="100" src="https://github.com/clauddyf/GimmeATable/blob/master/public/resehandle.png">
+![rese_handle](https://github.com/clauddyf/GimmeATable/blob/master/public/profileredirect.png)
 
+
+Also, it calls the composeReservation function with the current state as its parameters to, and the redirected the the users profile using the profileRedirect function
 ![rese_action](https://github.com/clauddyf/GimmeATable/blob/master/public/reseaction.png)
 
 ## Technologies
