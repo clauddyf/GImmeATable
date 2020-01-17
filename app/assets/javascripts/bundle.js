@@ -1507,27 +1507,17 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      e.preventDefault(); // let dateTime = `${this.state.date}` + ` ` + `${this.state.time_id}`
-      // let reservation = {
-      //     reserve: this.state.reserve,
-      //     restaurant: this.props.currentRestaurant
-      // };
+      e.preventDefault();
 
       if (this.props.currentUser === null) {
-        window.alert('Please close this window and login above');
+        this.props.openModal('login');
       } else if (this.state.head_count === undefined) {
         window.alert('Select a data and head count');
       } else {
-        // this.props.composeReservation({
-        //     restaurant_id: this.state.restaurant_id,
-        //     date: dateTime,
-        //     head_count: this.state.head_count
-        // });
         this.props.composeReservation(this.state).then(function () {
           return _this2.profileRedirect();
         });
-      } // debugger
-
+      }
     } // .then(() => this.props.history.push('/profile')).fail(() => this.render());
     // .then(() => this.userProfile())  add this back to line 31 when you create the user profile
     // userProfile() {
