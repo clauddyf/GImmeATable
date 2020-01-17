@@ -208,14 +208,7 @@ var receiveReservation = function receiveReservation(reservation) {
     type: RECEIVE_RESERVATION,
     reservation: reservation
   };
-}; // export const receiveTempReservation = reservation => ({
-//     type: TEMP_RECEIVE_RESERVATION,
-//     reservation,
-// });
-// export const getTempReservation = data => dispatch => (
-//     APIUtil.getTempReservation(data).then(res => dispatch(receiveTempReservation(res)))
-// )
-
+};
 var composeReservation = function composeReservation(reservation) {
   return function (dispatch) {
     return _util_reservation_api_util__WEBPACK_IMPORTED_MODULE_0__["composeReservation"](reservation).then(function (res) {
