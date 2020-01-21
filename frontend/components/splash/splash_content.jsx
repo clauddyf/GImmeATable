@@ -25,7 +25,7 @@ class SplashContent extends React.Component {
     }
     
     render() {
-        // debugger
+        debugger
         const locList = Object.values(this.props.locations)
         .map((location,index) => 
         <li className='locIndexPlate' key={index}>
