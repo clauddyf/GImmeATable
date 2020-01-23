@@ -12,7 +12,6 @@ class SplashContent extends React.Component {
     }
     
     componentDidMount() {
-        // this.props.fetchRestaurants();
         this.props.fetchLocations();
     }
     
@@ -32,21 +31,10 @@ class SplashContent extends React.Component {
             
             <LocationIndex location = {location}/>
         </li>);
-
-        // const restList = Object.values(this.props.restaurants)
-        // .map((restaurant,index) =>
-        // <li className='restIndexPlate' key={index}>
-        //                                 <RestIndex restaurant={restaurant}/>
-        //                             </li>
-        //                         );
          return(
             <div className='splash-container'>
-                {/* <div className='baby-splash'>
-                    <RestaurantSearchContainer/>
-                </div> */}
                 <div className='ul-container'>
                     <ul className='location-ul-index'>
-                        {/* {restList} */}
                         {locList}
                     </ul>
                 </div>
