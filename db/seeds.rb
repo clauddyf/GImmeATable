@@ -12,66 +12,71 @@ require 'open-uri'
 require 'csv'
 
 
-Location.destroy_all
-Restaurant.destroy_all
+# Location.destroy_all
+# Restaurant.destroy_all
 User.destroy_all
 
 
+#LOCATION
+# SanFrancisco = Location.create!(id: 1,cityname: 'San Francisco')
+# Phoenix = Location.create!(id: 2, cityname: 'Phoenix')
+# NOLA = Location.create!(id: 3,cityname: 'New Orleans')
+# Portland = Location.create!(id: 4,cityname: 'Portland')
+# Chicago = Location.create!(id: 5,cityname: 'Chicago')
+# Austin = Location.create!(id: 6,cityname: 'Austin')
+# NewYork = Location.create!(id: 7,cityname: 'New York')
+# LasVegas = Location.create!(id: 8,cityname: 'Las Vegas')
+# Denver = Location.create!(id: 9,cityname: 'Denver')
+# Seattle = Location.create!(id: 10, cityname: 'Seattle')
 
-SanFrancisco = Location.create!(id: 1,cityname: 'San Francisco')
-Phoenix = Location.create!(id: 2, cityname: 'Phoenix')
-NOLA = Location.create!(id: 3,cityname: 'New Orleans')
-Portland = Location.create!(id: 4,cityname: 'Portland')
-Chicago = Location.create!(id: 5,cityname: 'Chicago')
-Austin = Location.create!(id: 6,cityname: 'Austin')
-NewYork = Location.create!(id: 7,cityname: 'New York')
-LasVegas = Location.create!(id: 8,cityname: 'Las Vegas')
-Denver = Location.create!(id: 9,cityname: 'Denver')
-Seattle = Location.create!(id: 10, cityname: 'Seattle')
+# Location.all.each_with_index do |location, idx|
+#     file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/loc_#{idx}.jpg")
+#     location.photos.attach(io: file, filename: "loc_#{idx}.jpg")
+#     puts "#{location.cityname} photos have been saved"
+# end
+# Location.all.each_with_index do |location, idx|
+#     file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/locshow_#{idx}.jpg")
+#     location.photos.attach(io: file, filename: "locshow_#{idx}.jpg")
+#     puts "#{location.cityname} second photos have been saved"
+# end
 
-Location.all.each_with_index do |location, idx|
-    file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/loc_#{idx}.jpg")
-    location.photos.attach(io: file, filename: "loc_#{idx}.jpg")
-    puts "#{location.cityname} photos have been saved"
-end
-Location.all.each_with_index do |location, idx|
-    file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/locshow_#{idx}.jpg")
-    location.photos.attach(io: file, filename: "locshow_#{idx}.jpg")
-    puts "#{location.cityname} second photos have been saved"
-end
-csv_text = File.read(Rails.root.join('db','lib','finalSeed.csv'))
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-csv.each do |row|
-    t = Restaurant.new
+#RESTAURANT
+
+# csv_text = File.read(Rails.root.join('db','lib','finalSeed.csv'))
+# csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+# csv.each do |row|
+#     t = Restaurant.new
     
-    t.name = row['name']
-    t.description = row['description']
-    t.hours_op = row['hours_op']
-    t.dresscode = row['dresscode']
-    t.address = row['address']
-    t.neighborhood = row['neighborhood']
-    t.website = row['website']
-    t.city_id = row['city_id']
-    t.phone_num= row['phone-number']
-    t.pricing = row['pricing']
-    t.cuisine_type = row['cuisine type']
-    t.open = row['open']
-    t.close = row['close']
-    t.num_stars = row['num stars']
-    t.num_of_views = row['num_of_views']
-    t.save!
-    puts "#{t.name} saved"
-end
-puts "There are now #{Restaurant.count} rows in the Restaurant table"
-Restaurant.all.each_with_index do |restaurant, idx|
-    puts "#{idx} for #{restaurant.name}"
-    file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/res_#{idx}.jpg")
-    restaurant.photos.attach(io: file, filename: "res_#{idx}.jpg")
-    puts "#{restaurant.name} photos have been saved"
-end
-puts "All photos have been saved"
+#     t.name = row['name']
+#     t.description = row['description']
+#     t.hours_op = row['hours_op']
+#     t.dresscode = row['dresscode']
+#     t.address = row['address']
+#     t.neighborhood = row['neighborhood']
+#     t.website = row['website']
+#     t.city_id = row['city_id']
+#     t.phone_num= row['phone-number']
+#     t.pricing = row['pricing']
+#     t.cuisine_type = row['cuisine type']
+#     t.open = row['open']
+#     t.close = row['close']
+#     t.num_stars = row['num stars']
+#     t.num_of_views = row['num_of_views']
+#     t.save!
+#     puts "#{t.name} saved"
+# end
+# puts "There are now #{Restaurant.count} rows in the Restaurant table"
+# Restaurant.all.each_with_index do |restaurant, idx|
+#     puts "#{idx} for #{restaurant.name}"
+#     file = open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/res_#{idx}.jpg")
+#     restaurant.photos.attach(io: file, filename: "res_#{idx}.jpg")
+#     puts "#{restaurant.name} photos have been saved"
+# end
+# puts "All photos have been saved"
 
-another_guy = User.new(email:'anotherdemo@gmail.com', password: 'password', first_name: 'Guest', last_name:'User', city: 'Oakland')
+
+#USER
+another_guy = User.new(email:'anotherdemo@gmail.com', password: 'password', first_name: 'Guest', last_name:'User', city: 'San Francisco')
 another_guy.save!
 # Location.first.photos.attach(io: open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/locshow_0.jpg"), filename: "locshow_0.jpg")
 # Location.all[1].photos.attach(io: open("https://gimmeatable-dev.s3-us-west-1.amazonaws.com/locshow_1.jpg"), filename: "locshow_1.jpg")

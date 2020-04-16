@@ -2092,7 +2092,19 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var restaurant = this.props.restaurant ? this.props.restaurant.restaurant : '';
+      // let restaurant = this.props.restaurant ? this.props.restaurant.restaurant : '';
+      var restaurant;
+
+      if (this.props.restaurant !== undefined) {
+        if (this.props.restaurant.restaurant !== undefined) {
+          restaurant = this.props.restaurant.restaurant;
+        } else {
+          restaurant = this.props.restaurant;
+        }
+      } else {
+        restaurant = '';
+      }
+
       var restReviews = this.props.restaurant ? this.props.restaurant : '';
       debugger;
 
@@ -2334,7 +2346,26 @@ var mDTP = function mDTP(dispatch) {
 }; // debugger
 
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_restaurant_show__WEBPACK_IMPORTED_MODULE_2__["default"])));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_restaurant_show__WEBPACK_IMPORTED_MODULE_2__["default"]))); // json.restaurant do
+//     json.id restaurant.id
+//     json.description restaurant.description
+// json.city restaurant.location
+// json.name  restaurant.name
+// json.dresscode restaurant.dresscode
+// json.dining_style restaurant.dining_style
+// json.cuisine_type restaurant.cuisine_type
+// json.happy_hour restaurant.happy_hour
+// json.num_of_views restaurant.num_of_views
+// json.hours_op  restaurant.hours_op
+// json.address restaurant.address
+// json.neighborhood restaurant.neighborhood
+// json.phone_num restaurant.phone_num
+// json.website restaurant.website
+// json.pricing restaurant.pricing
+// json.num_stars restaurant.num_stars
+// json.open restaurant.open
+// json.close restaurant.close
+// end
 
 /***/ }),
 
@@ -2590,7 +2621,7 @@ function (_React$Component) {
       var _this = this;
 
       debugger;
-      var reviews = this.props.reviews ? this.props.reviews : {};
+      var reviews = this.props.reviews ? this.props.reviews : [];
 
       if (reviews.length === 0) {
         return null;
@@ -4151,12 +4182,13 @@ __webpack_require__.r(__webpack_exports__);
 var ReviewsReducer = function ReviewsReducer() {
   var oldState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
+  // debugger
   Object.freeze(oldState);
   var newState = Object.assign({}, oldState);
 
   switch (action.type) {
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW"]:
-      newState[action.review.id] = action.review;
+      newState[action.reviews.id] = action.review;
       return newState;
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEWS"]:
@@ -72088,7 +72120,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -39,7 +39,17 @@ class RestaurantShow extends React.Component{
     }
     
     render(){
-        let restaurant = this.props.restaurant ? this.props.restaurant.restaurant : '';
+        // let restaurant = this.props.restaurant ? this.props.restaurant.restaurant : '';
+        let restaurant;
+        if(this.props.restaurant !== undefined){
+            if(this.props.restaurant.restaurant !== undefined){
+                restaurant = this.props.restaurant.restaurant
+            }else{
+                restaurant = this.props.restaurant
+            }
+        } else {
+            restaurant = ''
+        }
         let restReviews = this.props.restaurant ? this.props.restaurant: '';
         debugger
         
