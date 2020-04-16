@@ -2416,10 +2416,18 @@ function (_React$Component) {
   _createClass(RestaurantsIndex, [{
     key: "render",
     value: function render() {
-      var restaurants = this.props.restaurants;
+      // const {restaurants} = this.props;
+      var restaurant;
+
+      if (this.props.restaurant.restaurant !== undefined) {
+        restaurant = this.props.restaurant.restaurant;
+      } else {
+        restaurant = this.props.restaurant;
+      }
+
       debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/restaurants/".concat(this.props.restaurant.restaurant.id)
+        to: "/restaurants/".concat(restaurant.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2431,19 +2439,19 @@ function (_React$Component) {
         className: "rest-descr"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-name"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.restaurant.restaurant.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, restaurant.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-hood"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "neighborhood.png",
         className: "side-div-img",
         alt: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Neighborhood"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.restaurant.neighborhood)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Neighborhood"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, restaurant.neighborhood)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rest-addy"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "hofop.png",
         className: "side-div-img",
         alt: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hours of Operation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.restaurant.restaurant.hours_op)))));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hours of Operation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, restaurant.hours_op)))));
     }
   }]);
 
