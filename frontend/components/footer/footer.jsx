@@ -39,7 +39,7 @@ const Footer = () => (
                     Currently residing in San Francisco.
                 </li>
                 <li>
-                    Software Engineer App Academy.
+                    Hacker-In-Residence App Academy.
                 </li>
             </ul>
         </div>
