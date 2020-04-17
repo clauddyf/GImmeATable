@@ -4,11 +4,11 @@ import Greeting from './greeting';
 import { openModal } from '../../actions/modal_actions'
 
 const mSTP = ( { session, entities: { users }}) => {
-    debugger
     return {
-        currentUser: session.id 
+        currentUser: session.manUp
         // currentUser: users[session.id]   //may need to make a change for modal
     };
+    debugger
 };
 
 // const mSTP = ({ session }) => ({

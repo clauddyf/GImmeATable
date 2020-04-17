@@ -677,11 +677,11 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(_ref) {
   var session = _ref.session,
       users = _ref.entities.users;
-  debugger;
   return {
-    currentUser: session.id // currentUser: users[session.id]   //may need to make a change for modal
+    currentUser: session.manUp // currentUser: users[session.id]   //may need to make a change for modal
 
   };
+  debugger;
 }; // const mSTP = ({ session }) => ({
 //     currentUser: session.currentUser
 // })
@@ -4304,7 +4304,8 @@ var sessionReducer = function sessionReducer() {
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       return {
-        id: action.currentUser.id
+        id: action.currentUser.id,
+        manUp: action.currentUser
       };
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
@@ -4355,6 +4356,7 @@ var usersReducer = function usersReducer() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
   var newstate = Object.assign({}, state);
+  debugger;
 
   switch (action.type) {
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_USER"]:
