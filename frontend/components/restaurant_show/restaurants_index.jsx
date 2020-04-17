@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class RestaurantsIndex extends React.Component {
 
     render() {
-        // const {restaurants} = this.props;
+
         let restaurant;
         if(this.props.restaurant.restaurant !== undefined){
             restaurant = this.props.restaurant.restaurant
