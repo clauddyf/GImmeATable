@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';
 
 
-const Greeting = ({ currentUser, logout, openModal}) => {
+const Greeting = ({ currentUser, afterLoggedIn, logout, openModal}) => {
     const sessionLinks = () => (
         <nav className='login-signup'>
             <Link className = 'nav-signin' onClick={() => openModal('login')} to="/login">Sign in</Link>
@@ -11,7 +11,9 @@ const Greeting = ({ currentUser, logout, openModal}) => {
             <Link className = 'nav-signup' onClick={() => openModal('signup')} to='/signup'>Sign up!</Link>
         </nav>
     );
-        debugger
+
+    currentUser = currentUser ? currentUser: afterLoggedIn
+    
     const personalGreeting = () => (
         
         <hgroup className="header-group">

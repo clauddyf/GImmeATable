@@ -610,6 +610,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var Greeting = function Greeting(_ref) {
   var currentUser = _ref.currentUser,
+      afterLoggedIn = _ref.afterLoggedIn,
       logout = _ref.logout,
       openModal = _ref.openModal;
 
@@ -631,7 +632,7 @@ var Greeting = function Greeting(_ref) {
     }, "Sign up!"));
   };
 
-  debugger;
+  currentUser = currentUser ? currentUser : afterLoggedIn;
 
   var personalGreeting = function personalGreeting() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hgroup", {
@@ -677,11 +678,12 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(_ref) {
   var session = _ref.session,
       users = _ref.entities.users;
+  debugger;
   return {
-    currentUser: session.manUp // currentUser: users[session.id]   //may need to make a change for modal
+    currentUser: session.manUp,
+    afterLoggedIn: users[session.id] // currentUser: users[session.id]   //may need to make a change for modal
 
   };
-  debugger;
 }; // const mSTP = ({ session }) => ({
 //     currentUser: session.currentUser
 // })
@@ -4355,8 +4357,7 @@ var usersReducer = function usersReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  var newstate = Object.assign({}, state);
-  debugger;
+  var newstate = Object.assign({}, state); // debugger
 
   switch (action.type) {
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_USER"]:
