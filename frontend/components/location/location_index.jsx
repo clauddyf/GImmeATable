@@ -14,7 +14,7 @@ render() {
     } else {
         denver = (<img src={this.props.location.photoUrls[0]} className='loc-pics'/>);
     }
-    debugger
+    // debugger
     
     return (
         <Link to={`/locations/${this.props.location.id}`}>

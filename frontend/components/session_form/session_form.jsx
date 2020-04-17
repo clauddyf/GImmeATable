@@ -36,6 +36,7 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const anotherGuy = Object.assign({email:'anotherdemo@gmail.com', password: 'password', first_name: 'Ariel', last_name:'Solomon', city: 'Oakland'
     })
+    debugger
         this.props.processForm(anotherGuy).then(() => this.props.closeModal());
     }
 
@@ -57,6 +58,7 @@ class SessionForm extends React.Component {
         let demoButton;
         let altLogin;
         let someTerms;
+        debugger
         if (this.props.formType === 'Sign In'){
             demoButton = (
              <button className='session-buttons' onClick={this.handleDemo}>Demo Login</button>

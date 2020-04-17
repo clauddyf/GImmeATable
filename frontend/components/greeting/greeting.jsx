@@ -11,7 +11,7 @@ const Greeting = ({ currentUser, logout, openModal}) => {
             <Link className = 'nav-signup' onClick={() => openModal('signup')} to='/signup'>Sign up!</Link>
         </nav>
     );
-
+        debugger
     const personalGreeting = () => (
         
         <hgroup className="header-group">

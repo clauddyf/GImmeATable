@@ -631,6 +631,8 @@ var Greeting = function Greeting(_ref) {
     }, "Sign up!"));
   };
 
+  debugger;
+
   var personalGreeting = function personalGreeting() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hgroup", {
       className: "header-group"
@@ -675,8 +677,9 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(_ref) {
   var session = _ref.session,
       users = _ref.entities.users;
+  debugger;
   return {
-    currentUser: users[session.id] //may need to make a change for modal
+    currentUser: session.id // currentUser: users[session.id]   //may need to make a change for modal
 
   };
 }; // const mSTP = ({ session }) => ({
@@ -1028,9 +1031,9 @@ function (_React$Component) {
           src: this.props.location.photoUrls[0],
           className: "loc-pics"
         });
-      }
+      } // debugger
 
-      debugger;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/locations/".concat(this.props.location.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2416,7 +2419,6 @@ function (_React$Component) {
   _createClass(RestaurantsIndex, [{
     key: "render",
     value: function render() {
-      // const {restaurants} = this.props;
       var restaurant;
 
       if (this.props.restaurant.restaurant !== undefined) {
@@ -3297,6 +3299,7 @@ var mSTP = function mSTP(_ref) {
 };
 
 var mDTP = function mDTP(dispatch) {
+  debugger;
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["login"])(user));
@@ -3418,6 +3421,7 @@ function (_React$Component) {
         last_name: 'Solomon',
         city: 'Oakland'
       });
+      debugger;
       this.props.processForm(anotherGuy).then(function () {
         return _this4.props.closeModal();
       });
@@ -3441,6 +3445,7 @@ function (_React$Component) {
       var demoButton;
       var altLogin;
       var someTerms;
+      debugger;
 
       if (this.props.formType === 'Sign In') {
         demoButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -3766,7 +3771,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
+      // debugger
       var locList = Object.values(this.props.locations).map(function (location, index) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "locIndexPlate",
