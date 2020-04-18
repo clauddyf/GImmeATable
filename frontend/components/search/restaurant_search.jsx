@@ -6,11 +6,7 @@ class RestaurantSearch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            city:'',
-            date:'',
-            time:'',
-            numPeople:'',
-            restaurant:''
+            query: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -41,18 +37,18 @@ class RestaurantSearch extends React.Component {
     handleSubmit(e) {
         debugger
         e.preventDefault();
-        let cityId = this.state.city ? this.state.city : 1;
-        let name = this.state.restaurant 
-        let city = this.state.city
-        let time = this.state.time
-        let numPeople = this.state.numPeople
-
-        // this.props.history.push(`/allofem` 
-        // )
-        // + `&time=${this.state.time}`
-        // + `&date=${this.state.date}`
-        // + `&guests=${this.state.numPeople}`
-        // + `&restaurant=${this.state.restaurant}`
+        // let cityId = this.state.city ? this.state.city : 1;
+        // let name = this.state.restaurant 
+        // let city = this.state.city
+        // let time = this.state.time
+        // let numPeople = this.state.numPeople
+        // let userInput;
+        // // for (key in this.state){
+        // //     if(this.state[key] !== ''){
+                
+        // //     }
+        // // }
+        let name = this.state.query
         this.props.searchRestaurants(name)
     }
 
@@ -121,7 +117,7 @@ class RestaurantSearch extends React.Component {
                             className='search-input'
                             placeholder='Restaurant, City, Cuisine'
                             type='text'
-                            onChange={this.update("restaurant")}
+                            onChange={this.update("query")}
                         />
                         <input className='search-button' type="submit" value='Search'/>
                 </form>

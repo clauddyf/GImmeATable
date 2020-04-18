@@ -2910,11 +2910,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(RestaurantSearch).call(this, props));
     _this.state = {
-      city: '',
-      date: '',
-      time: '',
-      numPeople: '',
-      restaurant: ''
+      query: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -2953,18 +2949,18 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       debugger;
-      e.preventDefault();
-      var cityId = this.state.city ? this.state.city : 1;
-      var name = this.state.restaurant;
-      var city = this.state.city;
-      var time = this.state.time;
-      var numPeople = this.state.numPeople; // this.props.history.push(`/allofem` 
-      // )
-      // + `&time=${this.state.time}`
-      // + `&date=${this.state.date}`
-      // + `&guests=${this.state.numPeople}`
-      // + `&restaurant=${this.state.restaurant}`
+      e.preventDefault(); // let cityId = this.state.city ? this.state.city : 1;
+      // let name = this.state.restaurant 
+      // let city = this.state.city
+      // let time = this.state.time
+      // let numPeople = this.state.numPeople
+      // let userInput;
+      // // for (key in this.state){
+      // //     if(this.state[key] !== ''){
+      // //     }
+      // // }
 
+      var name = this.state.query;
       this.props.searchRestaurants(name);
     }
   }, {
@@ -3065,7 +3061,7 @@ function (_React$Component) {
         className: "search-input",
         placeholder: "Restaurant, City, Cuisine",
         type: "text",
-        onChange: this.update("restaurant")
+        onChange: this.update("query")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "search-button",
         type: "submit",

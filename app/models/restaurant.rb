@@ -26,4 +26,17 @@ class Restaurant < ApplicationRecord
     end
 end
 
-Restaurant.where('lower(name) LIKE ?', '%%').limit(10) + Location.where('lower(cityname) LIKE ?', '%austin%').limit(10) + Restaurant.where('lower(cuisine_type) LIKE ?', '%%').limit(10)
+# Restaurant.where('lower(name) LIKE ?', '%%').limit(10) + Location.where('lower(cityname) LIKE ?', '%clinton%').limit(10) + Restaurant.where('lower(cuisine_type) LIKE ?', '%%').limit(10)
+# Restaurant.find()
+# Location.find(id = param)
+
+# Restaurant.select_all("SELECT * FROM restaurants WHERE restaurants.city_id = '4'")
+
+#   SELECT locations.* FROM locations WHERE id = param
+
+# )
+#  This worked: Restaurant.where('city_id = ?', (Location.find(param))) )
+#  SELECT locations.id FROM locations WHERE cityname = 'Austin'
+
+# Location.find_by_sql("SELECT locations.id FROM locations WHERE cityname = 'Austin' ")
+# Restaurant.where('city_id = ?', (Location.find_by_sql("SELECT locations.id FROM locations WHERE cityname = 'Portland' ")) )
