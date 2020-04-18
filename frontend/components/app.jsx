@@ -14,14 +14,15 @@ import UserProfileContainer from './userprofile/profile_container';
 import RestaurantsIndex from './restaurant_show/restaurants_index';
 import SearchResults from './search/search_results';
 import SearchForm from './search/restaurant_search';
-import SearchContainer from './search/restaurant_search_container'
+import SearchContainer from './search/search_results_container';
+import SearchPage from './search/search_page';
 require("react-datepicker/dist/react-datepicker.css");
 // import 'react-datepicker/dist/react-datepicker.css';
 
 
 
 const App = () => {
-
+    debugger
         return(
             <div>
                 <header className="nav-bar">
@@ -50,7 +51,7 @@ const App = () => {
                      <Route path="/user/:userId" component={UserProfileContainer} />
                  </Switch>
                  <Switch>
-                     <Route path="/results" component={SearchContainer} />
+                     <Route path="/results" render={(props) => <SearchPage {...props} />} />
                  </Switch>
                 </ul>
                 <Footer/>

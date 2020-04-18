@@ -39,6 +39,7 @@ class RestaurantSearch extends React.Component {
         // .then( (restaurants) => <SearchResults restaurants = {restaurants} />)
         // this.state.eateries = this.props.searchRestaurants(name)
         debugger
+        // <SearchResults restaurants = {this.props.restaurants}/>
         // .then( (restaurants) => <SearchResults restaurants = {restaurants} />)
     }
 
