@@ -39,4 +39,4 @@ end
 #  SELECT locations.id FROM locations WHERE cityname = 'Austin'
 
 # Location.find_by_sql("SELECT locations.id FROM locations WHERE cityname = 'Austin' ")
-# Restaurant.where('city_id = ?', (Location.find_by_sql("SELECT locations.id FROM locations WHERE cityname = 'Portland' ")) )
+# Restaurant.where('city_id = ?', (Location.find_by_sql("SELECT locations.id FROM locations WHERE lower(cityname) = 'portland' ")) )
