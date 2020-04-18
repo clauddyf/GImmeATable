@@ -10,8 +10,8 @@ class Restaurant < ApplicationRecord
     
     
     def self.search_by_city(query)
-      param = '%' + query.downcase + '%'
-      Location.where('lower(cityname) LIKE ?', param).limit(10)
+      param = '%' + query.titleize + '%'
+      Restaurant.where('city_id = ?', (Location.find_by_sql("SELECT locations.id FROM locations WHERE cityname LIKE '#{param}'")))
     end
     
     def self.search_by_cuisine(query)
