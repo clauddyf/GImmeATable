@@ -1,8 +1,8 @@
 class Api::AllofemController < ApplicationController
 
-    def index
-        @allOfEm = Restaurant.all
-        render :index
+    def index()
+        # @allOfEm = Restaurant.search_results('query')
+        # render :index
     end
 
 

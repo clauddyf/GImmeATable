@@ -47,12 +47,13 @@ class RestaurantSearch extends React.Component {
         let time = this.state.time
         let numPeople = this.state.numPeople
 
-        this.props.history.push(`/locations/${cityId}` 
-        )
+        // this.props.history.push(`/allofem` 
+        // )
         // + `&time=${this.state.time}`
         // + `&date=${this.state.date}`
         // + `&guests=${this.state.numPeople}`
         // + `&restaurant=${this.state.restaurant}`
+        this.props.searchRestaurants(name)
     }
 
     render() {
@@ -60,7 +61,7 @@ class RestaurantSearch extends React.Component {
             <div className='search-form'>
                 <form className='form-parent' onSubmit={this.handleSubmit}>
                     <div className='search-bar'>
-                        <select className='search-bar-city' placeholder='select a city' onChange={this.update('city')} value={this.state.city}>
+                        {/* <select className='search-bar-city' placeholder='select a city' onChange={this.update('city')} value={this.state.city}>
                             <option value="Where to?">Where to?</option>
                             <option value="1">San Francisco</option>
                             <option value="2">Phoenix</option>
@@ -72,7 +73,7 @@ class RestaurantSearch extends React.Component {
                             <option value="8">Las Vegas</option>
                             <option value="9">Denver</option>
                             <option value="10">Seattle</option>
-                        </select>
+                        </select> */}
                         <label className='calendar-box'><SearchCalendar throughDate={this.throughDate}/>
                         </label>
                         <select className="search-bar-city" placeholder="Select a Time" onChange={this.update("time")} >

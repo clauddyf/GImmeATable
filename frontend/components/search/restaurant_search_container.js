@@ -12,7 +12,7 @@ const mSTP = (state) => ({
 
 const mDTP = (dispatch) => ({
     fetchRestaurants: () => dispatch(fetchRestaurants()),
-    searchRestaurants: () => dispatch(searchRestaurants()),
+    searchRestaurants: (query) => dispatch(searchRestaurants(query)),
     fetchLocations: () => dispatch(fetchLocations())
 });
 

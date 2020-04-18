@@ -11,6 +11,8 @@ import Splash from './splash/splash';
 import Footer from './footer/footer';
 import ReservationComposeContainer from './reservation/reservation_container';
 import UserProfileContainer from './userprofile/profile_container';
+import RestaurantsIndex from './restaurant_show/restaurants_index';
+import SearchResults from './search/search_results';
 require("react-datepicker/dist/react-datepicker.css");
 // import 'react-datepicker/dist/react-datepicker.css';
 
@@ -44,6 +46,9 @@ const App = () => {
                  </Switch>
                  <Switch>
                      <Route path="/user/:userId" component={UserProfileContainer} />
+                 </Switch>
+                 <Switch>
+                     <Route path="/results" component={SearchResults} />
                  </Switch>
                 </ul>
                 <Footer/>

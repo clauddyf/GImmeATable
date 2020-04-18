@@ -2,6 +2,9 @@ class Api::SearchesController < ApplicationController
     def index 
         @restaurants = Restaurant.search_results('query')
         render :index
+        # @allOfEm = Restaurant.search_results('query')
+        # render :index
+        
     end
     
     # def search_params

@@ -464,6 +464,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _footer_footer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./footer/footer */ "./frontend/components/footer/footer.jsx");
 /* harmony import */ var _reservation_reservation_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./reservation/reservation_container */ "./frontend/components/reservation/reservation_container.js");
 /* harmony import */ var _userprofile_profile_container__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./userprofile/profile_container */ "./frontend/components/userprofile/profile_container.js");
+/* harmony import */ var _restaurant_show_restaurants_index__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./restaurant_show/restaurants_index */ "./frontend/components/restaurant_show/restaurants_index.jsx");
+/* harmony import */ var _search_search_results__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./search/search_results */ "./frontend/components/search/search_results.jsx");
+
+
 
 
 
@@ -515,6 +519,9 @@ var App = function App() {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/user/:userId",
     component: _userprofile_profile_container__WEBPACK_IMPORTED_MODULE_12__["default"]
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/results",
+    component: _search_search_results__WEBPACK_IMPORTED_MODULE_14__["default"]
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer_footer__WEBPACK_IMPORTED_MODULE_10__["default"], null));
 };
 
@@ -2951,11 +2958,14 @@ function (_React$Component) {
       var name = this.state.restaurant;
       var city = this.state.city;
       var time = this.state.time;
-      var numPeople = this.state.numPeople;
-      this.props.history.push("/locations/".concat(cityId)); // + `&time=${this.state.time}`
+      var numPeople = this.state.numPeople; // this.props.history.push(`/allofem` 
+      // )
+      // + `&time=${this.state.time}`
       // + `&date=${this.state.date}`
       // + `&guests=${this.state.numPeople}`
       // + `&restaurant=${this.state.restaurant}`
+
+      this.props.searchRestaurants(name);
     }
   }, {
     key: "render",
@@ -2967,34 +2977,7 @@ function (_React$Component) {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-bar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        className: "search-bar-city",
-        placeholder: "select a city",
-        onChange: this.update('city'),
-        value: this.state.city
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "Where to?"
-      }, "Where to?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "1"
-      }, "San Francisco"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "2"
-      }, "Phoenix"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "3"
-      }, "NOLA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "4"
-      }, "Portland"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "5"
-      }, "Chicago"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "6"
-      }, "Austin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "7"
-      }, "New York"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "8"
-      }, "Las Vegas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "9"
-      }, "Denver"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "10"
-      }, "Seattle")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "calendar-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_calendar__WEBPACK_IMPORTED_MODULE_1__["default"], {
         throughDate: this.throughDate
@@ -3130,8 +3113,8 @@ var mDTP = function mDTP(dispatch) {
     fetchRestaurants: function fetchRestaurants() {
       return dispatch(Object(_actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_2__["fetchRestaurants"])());
     },
-    searchRestaurants: function searchRestaurants() {
-      return dispatch(Object(_actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_2__["searchRestaurants"])());
+    searchRestaurants: function searchRestaurants(query) {
+      return dispatch(Object(_actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_2__["searchRestaurants"])(query));
     },
     fetchLocations: function fetchLocations() {
       return dispatch(Object(_actions_location_actions__WEBPACK_IMPORTED_MODULE_3__["fetchLocations"])());
@@ -3236,6 +3219,96 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchCalendar);
+
+/***/ }),
+
+/***/ "./frontend/components/search/search_results.jsx":
+/*!*******************************************************!*\
+  !*** ./frontend/components/search/search_results.jsx ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var SearchResults =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SearchResults, _React$Component);
+
+  function SearchResults() {
+    _classCallCheck(this, SearchResults);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SearchResults).apply(this, arguments));
+  }
+
+  _createClass(SearchResults, [{
+    key: "render",
+    value: function render() {
+      var restaurant;
+
+      if (this.props.restaurant.restaurant !== undefined) {
+        restaurant = this.props.restaurant.restaurant;
+      } else {
+        restaurant = this.props.restaurant;
+      }
+
+      debugger;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Link, {
+        to: "/restaurants/".concat(restaurant.id)
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-photo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "rest-pics",
+        src: this.props.restaurant.photoUrls
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-descr"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-name"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, restaurant.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-hood"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "neighborhood.png",
+        className: "side-div-img",
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Neighborhood"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, restaurant.neighborhood)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rest-addy"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "hofop.png",
+        className: "side-div-img",
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hours of Operation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, restaurant.hours_op)))));
+    }
+  }]);
+
+  return SearchResults;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (SearchResults);
 
 /***/ }),
 
@@ -4477,7 +4550,7 @@ var fetchRestaurant = function fetchRestaurant(id) {
 var searchRestaurants = function searchRestaurants(query) {
   return $.ajax({
     method: 'get',
-    url: 'api/restaurants',
+    url: 'api/searches',
     data: {
       search: {
         query: query

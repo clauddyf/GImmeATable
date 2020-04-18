@@ -25,3 +25,5 @@ class Restaurant < ApplicationRecord
       by_name + search_by_city(query) + search_by_cuisine(query)
     end
 end
+
+Restaurant.where('lower(name) LIKE ?', '%%').limit(10) + Location.where('lower(cityname) LIKE ?', '%austin%').limit(10) + Restaurant.where('lower(cuisine_type) LIKE ?', '%%').limit(10)
