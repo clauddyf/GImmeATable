@@ -13,6 +13,8 @@ import ReservationComposeContainer from './reservation/reservation_container';
 import UserProfileContainer from './userprofile/profile_container';
 import RestaurantsIndex from './restaurant_show/restaurants_index';
 import SearchResults from './search/search_results';
+import SearchForm from './search/restaurant_search';
+import SearchContainer from './search/restaurant_search_container'
 require("react-datepicker/dist/react-datepicker.css");
 // import 'react-datepicker/dist/react-datepicker.css';
 
@@ -48,7 +50,7 @@ const App = () => {
                      <Route path="/user/:userId" component={UserProfileContainer} />
                  </Switch>
                  <Switch>
-                     <Route path="/results" component={SearchResults} />
+                     <Route path="/results" component={SearchContainer} />
                  </Switch>
                 </ul>
                 <Footer/>

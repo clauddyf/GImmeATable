@@ -1,13 +1,16 @@
 import React from 'react';
 import SearchCalendar from './search_calendar';
+import SearchResults from './search_results';
 
 
 class RestaurantSearch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            query: ''
+            query: '',
+            eateries:''
         };
+        debugger
         this.handleSubmit = this.handleSubmit.bind(this)
     }
     
@@ -16,40 +19,27 @@ class RestaurantSearch extends React.Component {
         this.props.fetchLocations();
     }
 
-    // handleClick(e) {
-    //     e.preventDefault();
-    //     this.props.searchRestaurants(this.state.search)
-    // }
-
     update(field) {
         return e => {
             this.setState({[field]:e.currentTarget.value});
         }
     }
     throughDate(newDate) {
-        // debugger
         let dateString = newDate.toDateString();
-        // let time = newDate.getHours();
         this.setState({date: dateString});
-        // debugger
     }
 
     handleSubmit(e) {
         debugger
         e.preventDefault();
-        // let cityId = this.state.city ? this.state.city : 1;
-        // let name = this.state.restaurant 
-        // let city = this.state.city
-        // let time = this.state.time
-        // let numPeople = this.state.numPeople
-        // let userInput;
-        // // for (key in this.state){
-        // //     if(this.state[key] !== ''){
-                
-        // //     }
-        // // }
         let name = this.state.query
         this.props.searchRestaurants(name)
+        // .then( (restaurants)=> this.props.history.push(`/results?res=${restaurants}`) )
+        this.props.history.push(`/results`)
+        // .then( (restaurants) => <SearchResults restaurants = {restaurants} />)
+        // this.state.eateries = this.props.searchRestaurants(name)
+        debugger
+        // .then( (restaurants) => <SearchResults restaurants = {restaurants} />)
     }
 
     render() {
@@ -57,19 +47,6 @@ class RestaurantSearch extends React.Component {
             <div className='search-form'>
                 <form className='form-parent' onSubmit={this.handleSubmit}>
                     <div className='search-bar'>
-                        {/* <select className='search-bar-city' placeholder='select a city' onChange={this.update('city')} value={this.state.city}>
-                            <option value="Where to?">Where to?</option>
-                            <option value="1">San Francisco</option>
-                            <option value="2">Phoenix</option>
-                            <option value="3">NOLA</option>
-                            <option value="4">Portland</option>
-                            <option value="5">Chicago</option>
-                            <option value="6">Austin</option>
-                            <option value="7">New York</option>
-                            <option value="8">Las Vegas</option>
-                            <option value="9">Denver</option>
-                            <option value="10">Seattle</option>
-                        </select> */}
                         <label className='calendar-box'><SearchCalendar throughDate={this.throughDate}/>
                         </label>
                         <select className="search-bar-city" placeholder="Select a Time" onChange={this.update("time")} >

@@ -2,7 +2,7 @@ import React from 'react';
 
 class SearchResults extends React.Component{
     render() {
-
+        debugger
         let restaurant;
         if (this.props.restaurant.restaurant !== undefined) {
             restaurant = this.props.restaurant.restaurant
@@ -10,7 +10,7 @@ class SearchResults extends React.Component{
             restaurant = this.props.restaurant
         }
 
-        debugger
+        // debugger
         return (
             <Link to={`/restaurants/${restaurant.id}`}>
                 <div className='main-div'>
