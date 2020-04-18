@@ -9,27 +9,12 @@ class RestaurantShow extends React.Component{
     constructor(props){
         super(props)
         debugger
-        // this.state = {
-        //     restaurant: this.props.restaurant.restaurant
-        // }
     }
     
     componentDidMount(){
         debugger
-        this.props.fetchRestaurant(this.props.match.params.restId)
-        // .then(restaurants => {
-        //     this.setState({
-        //         restaurants:restaurants
-        //     })
-        // })
+        this.props.fetchRestaurant(this.props.match.params.restId)     
     }
-
-    // componentWillReceiveProps(nextProps) {
-    //     debugger
-    //     this.setState({
-    //         restaurant: nextProps.restaurant.restaurant
-    //     })
-    // }
 
     componentDidUpdate(prevState) {
         debugger
@@ -51,7 +36,6 @@ class RestaurantShow extends React.Component{
             restaurant = ''
         }
         let restReviews = this.props.restaurant ? this.props.restaurant: '';
-        debugger
         
         if (restaurant.open === 24) {
           open = `12:00 AM`;

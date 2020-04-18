@@ -678,7 +678,6 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(_ref) {
   var session = _ref.session,
       users = _ref.entities.users;
-  debugger;
   return {
     currentUser: session.manUp,
     afterLoggedIn: users[session.id] // currentUser: users[session.id]   //may need to make a change for modal
@@ -768,8 +767,7 @@ function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevState) {
-      debugger;
-
+      // debugger
       if (prevState.match.params.locId !== this.props.match.params.locId) {
         this.props.fetchRestaurants(this.props.match.params.locId);
       }
@@ -791,7 +789,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
+      // debugger
       var denver;
       var location = this.props.location ? this.props.location.id : {};
       var photo = this.props.location ? this.props.location.photoUrls[1] : '';
@@ -2062,10 +2060,7 @@ function (_React$Component) {
     _classCallCheck(this, RestaurantShow);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(RestaurantShow).call(this, props));
-    debugger; // this.state = {
-    //     restaurant: this.props.restaurant.restaurant
-    // }
-
+    debugger;
     return _this;
   }
 
@@ -2073,18 +2068,8 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       debugger;
-      this.props.fetchRestaurant(this.props.match.params.restId); // .then(restaurants => {
-      //     this.setState({
-      //         restaurants:restaurants
-      //     })
-      // })
-    } // componentWillReceiveProps(nextProps) {
-    //     debugger
-    //     this.setState({
-    //         restaurant: nextProps.restaurant.restaurant
-    //     })
-    // }
-
+      this.props.fetchRestaurant(this.props.match.params.restId);
+    }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevState) {
@@ -2111,7 +2096,6 @@ function (_React$Component) {
       }
 
       var restReviews = this.props.restaurant ? this.props.restaurant : '';
-      debugger;
 
       if (restaurant.open === 24) {
         open = "12:00 AM";
@@ -2351,26 +2335,7 @@ var mDTP = function mDTP(dispatch) {
 }; // debugger
 
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_restaurant_show__WEBPACK_IMPORTED_MODULE_2__["default"]))); // json.restaurant do
-//     json.id restaurant.id
-//     json.description restaurant.description
-// json.city restaurant.location
-// json.name  restaurant.name
-// json.dresscode restaurant.dresscode
-// json.dining_style restaurant.dining_style
-// json.cuisine_type restaurant.cuisine_type
-// json.happy_hour restaurant.happy_hour
-// json.num_of_views restaurant.num_of_views
-// json.hours_op  restaurant.hours_op
-// json.address restaurant.address
-// json.neighborhood restaurant.neighborhood
-// json.phone_num restaurant.phone_num
-// json.website restaurant.website
-// json.pricing restaurant.pricing
-// json.num_stars restaurant.num_stars
-// json.open restaurant.open
-// json.close restaurant.close
-// end
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_restaurant_show__WEBPACK_IMPORTED_MODULE_2__["default"])));
 
 /***/ }),
 
@@ -2980,8 +2945,13 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      debugger;
       e.preventDefault();
       var cityId = this.state.city ? this.state.city : 1;
+      var name = this.state.restaurant;
+      var city = this.state.city;
+      var time = this.state.time;
+      var numPeople = this.state.numPeople;
       this.props.history.push("/locations/".concat(cityId)); // + `&time=${this.state.time}`
       // + `&date=${this.state.date}`
       // + `&guests=${this.state.numPeople}`
@@ -3109,6 +3079,11 @@ function (_React$Component) {
       }, "9 guest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "10"
       }, "10 guest"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "search-input",
+        placeholder: "Restaurant, City, Cuisine",
+        type: "text",
+        onChange: this.update("restaurant")
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "search-button",
         type: "submit",
         value: "Search"

@@ -7,6 +7,7 @@ class Api::RestaurantsController < ApplicationController
     
     def index
         location = Location.find(params[:location_id])
+        @allOfEm = Restaurant.all
         @restaurants = location.restaurants.includes(:location).order(:id)
         # @restaurants = Restaurant.find_by({location: :location_id})
         # @restaurants = Restaurant.all

@@ -4,7 +4,6 @@ import Greeting from './greeting';
 import { openModal } from '../../actions/modal_actions'
 
 const mSTP = ( { session, entities: { users }}) => {
-    debugger
     return {
         currentUser: session.manUp,
         afterLoggedIn: users[session.id]

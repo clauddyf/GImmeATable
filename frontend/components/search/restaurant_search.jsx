@@ -14,7 +14,7 @@ class RestaurantSearch extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this)
     }
-
+    
     componentDidMount() {
         this.props.searchRestaurants();
         this.props.fetchLocations();
@@ -39,8 +39,13 @@ class RestaurantSearch extends React.Component {
     }
 
     handleSubmit(e) {
+        debugger
         e.preventDefault();
         let cityId = this.state.city ? this.state.city : 1;
+        let name = this.state.restaurant 
+        let city = this.state.city
+        let time = this.state.time
+        let numPeople = this.state.numPeople
 
         this.props.history.push(`/locations/${cityId}` 
         )
@@ -111,12 +116,12 @@ class RestaurantSearch extends React.Component {
                             <option value="10">10 guest</option>
                         </select>
                     </div>
-                        {/* <input
+                        <input
                             className='search-input'
                             placeholder='Restaurant, City, Cuisine'
                             type='text'
                             onChange={this.update("restaurant")}
-                        /> */}
+                        />
                         <input className='search-button' type="submit" value='Search'/>
                 </form>
             </div>

@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     resources :locations, only: :show
     resources :restaurants, only: [:show,:index]
     resources :searches, only: [:index]
+    resources :allofem, only: [:index]
   end
 
   root "static_pages#root"

@@ -18,7 +18,7 @@ class LocationContent extends React.Component {
     }
 
     componentDidUpdate(prevState) {
-        debugger
+        // debugger
         if (prevState.match.params.locId !== this.props.match.params.locId) {
             this.props.fetchRestaurants(this.props.match.params.locId)
         }
@@ -33,7 +33,7 @@ class LocationContent extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         let denver;
         let location = this.props.location ? this.props.location.id : {};
         let photo = this.props.location ? this.props.location.photoUrls[1] : ''
