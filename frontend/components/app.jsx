@@ -51,7 +51,8 @@ const App = () => {
                      <Route path="/user/:userId" component={UserProfileContainer} />
                  </Switch>
                  <Switch>
-                     <Route path="/results" render={(props) => <SearchPage {...props} />} />
+                     {/* <Route path="/results" render={(props) => <SearchPage {...props} />} /> */}
+                    <Route exact path="/results" component={SearchPage}/>
                  </Switch>
                 </ul>
                 <Footer/>

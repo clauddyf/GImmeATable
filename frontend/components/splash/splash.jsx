@@ -28,9 +28,4 @@ const Splash = () => {
     )
 }
 
-// class Splash extends React.Component {
-//     render() {
-
-//     }
-// }
 export default Splash;
