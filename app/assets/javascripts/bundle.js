@@ -3236,28 +3236,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _search_results_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search_results_container */ "./frontend/components/search/search_results_container.js");
 
 
- // class SearchPage extends React.Component{
-//     constructor(props){
-//         super(props);
-//         debugger
-//     }
-//     render() {
-//         return (
-//         <div className='main-container'>
-//             {/* <div className='main-img'>
-//                 <SearchContainer/>
-//             </div> */}
-//             <ResultsContainer/>
-//         </div>
-//         )
-//     }
-// }
 
 debugger;
 
 var SearchPage = function SearchPage() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "content-block"
+    className: "searchPage"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "search-block-content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "greyed-out"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3266,7 +3252,9 @@ var SearchPage = function SearchPage() {
     className: "obama-text"
   }, "Find your table for any occasion")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "baby-splash"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_search_container__WEBPACK_IMPORTED_MODULE_1__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_results_container__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_search_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "search-results-block"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_results_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
 }; // const SearchPage = function(){
 
 
@@ -3339,9 +3327,11 @@ function (_React$Component) {
       var noResults;
 
       if (Object.keys(this.props.restaurants).length === 0) {
-        noResults = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        restaurants = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "empty-index-message"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "No restaurants matched your search"));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+          className: "noresults"
+        }, "No restaurants matched your search"));
       } else {
         restaurants = Object.values(this.props.restaurants).map(function (restaurant, index) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -3351,45 +3341,12 @@ function (_React$Component) {
             restaurant: restaurant
           }));
         });
-      } // const restList = Object.values(this.props.restaurants)
-      //     .map((restaurant, index) =>
-      //         <li className='restIndexPlate' key={index}>
-      //             <RestIndex restaurant={restaurant} />
-      //         </li>
-      //     );
-      // debugger
+      } // debugger
 
 
-      return (// <Link to={`/restaurants/${restaurant.id}`}>
-        //     <div className='main-div'>
-        //         <div className='rest-photo'>
-        //             <img className='rest-pics' src={restaurant.photoUrls} />
-        //         </div>
-        //         <div className='rest-descr'>
-        //             <div className='rest-name'>
-        //                 <h1>{restaurant.name}</h1>
-        //             </div>
-        //             <br />
-        //             <br />
-        //             <div className='rest-hood'>
-        //                 <img src="neighborhood.png" className='side-div-img' alt="" />
-        //                 <h1>Neighborhood</h1>
-        //                 <span>{restaurant.neighborhood}</span>
-        //             </div>
-        //             <br />
-        //             <br />
-        //             <div className='rest-addy'>
-        //                 <img src="hofop.png" className='side-div-img' alt="" />
-        //                 <h1>Hours of Operation</h1>
-        //                 <span>{restaurant.hours_op}</span>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </Link>
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-          className: "resta-ul-index"
-        }, restaurants)
-      );
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "resta-ul-index"
+      }, restaurants);
     }
   }]);
 
