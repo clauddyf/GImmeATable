@@ -12,7 +12,6 @@ class SearchCalendar extends React.Component {
             startDate: moment()._d,
         }
         this.handleChange = this.handleChange.bind(this);
-        // debugger
     }
 
     handleChange(date) {
@@ -29,14 +28,7 @@ class SearchCalendar extends React.Component {
                 className='calendar-style'
                 selected = {this.state.startDate}
                 onChange = {date => this.handleChange(date)}
-                // placeholderText= 'MM/DD/YYYY'
-                // showTimeSelect
-                // timeIntervals={30}
-                // minDate = {this.state.startDate._d}
-                // minTime={moment().hours(11).minutes(0)}
-                // maxTime={moment().hours(22).minutes(0)}
-                dateFormat="MM/dd/yyyy"
-            
+                dateFormat="MM/dd/yyyy"  
             />
         )
     }

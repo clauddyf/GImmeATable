@@ -12,7 +12,7 @@ class RestaurantsIndex extends React.Component {
             restaurant = this.props.restaurant
         }
 
-        debugger
+
         return (
             <Link to={`/restaurants/${restaurant.id}`}>
                 <div className='main-div'>

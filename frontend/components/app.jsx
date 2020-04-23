@@ -22,7 +22,6 @@ require("react-datepicker/dist/react-datepicker.css");
 
 
 const App = () => {
-    debugger
         return(
             <div>
                 <header className="nav-bar">

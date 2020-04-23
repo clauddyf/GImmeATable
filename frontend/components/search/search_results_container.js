@@ -7,15 +7,10 @@ import { withRouter } from 'react-router-dom';
 
 const mSTP = (state) => ({
     restaurants: state.entities.restaurants
-    // restaurants: Object.values(state.entities.restaurants),
-    // locations: Object.values(state.entities.locations)
-
 })
 
 const mDTP = (dispatch) => ({
     fetchRestaurants: () => dispatch(fetchRestaurants()),
-    // searchRestaurants: (query) => dispatch(searchRestaurants(query)),
-    // fetchLocations: () => dispatch(fetchLocations())
 });
 
 export default withRouter(connect(mSTP, mDTP)(SearchResults));

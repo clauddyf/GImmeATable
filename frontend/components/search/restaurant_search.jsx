@@ -10,7 +10,6 @@ class RestaurantSearch extends React.Component {
             query: '',
             eateries:''
         };
-        debugger
         this.handleSubmit = this.handleSubmit.bind(this)
     }
     
@@ -30,17 +29,11 @@ class RestaurantSearch extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         let name = this.state.query
         this.props.searchRestaurants(name)
-        // .then( (restaurants)=> this.props.history.push(`/results?res=${restaurants}`) )
         this.props.history.push(`/results`)
-        // .then( (restaurants) => <SearchResults restaurants = {restaurants} />)
-        // this.state.eateries = this.props.searchRestaurants(name)
         debugger
-        // <SearchResults restaurants = {this.props.restaurants}/>
-        // .then( (restaurants) => <SearchResults restaurants = {restaurants} />)
     }
 
     render() {

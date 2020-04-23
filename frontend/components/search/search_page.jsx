@@ -2,7 +2,7 @@ import React from 'react';
 import SearchContainer from './restaurant_search_container';
 import ResultsContainer from './search_results_container';
 
-debugger
+
 const SearchPage = () => (
     <div className='searchPage'>
         <div className='search-block-content'>
@@ -22,9 +22,9 @@ const SearchPage = () => (
         </div>
     </div>
 );
-// const SearchPage = function(){
-debugger
-// }
+
+
+
     
 
 

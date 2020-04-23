@@ -492,7 +492,6 @@ __webpack_require__(/*! react-datepicker/dist/react-datepicker.css */ "./node_mo
 
 
 var App = function App() {
-  debugger;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     className: "nav-bar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -2410,7 +2409,6 @@ function (_React$Component) {
         restaurant = this.props.restaurant;
       }
 
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/restaurants/".concat(restaurant.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2924,7 +2922,6 @@ function (_React$Component) {
       query: '',
       eateries: ''
     };
-    debugger;
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -2955,16 +2952,11 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      debugger;
       e.preventDefault();
       var name = this.state.query;
-      this.props.searchRestaurants(name); // .then( (restaurants)=> this.props.history.push(`/results?res=${restaurants}`) )
-
-      this.props.history.push("/results"); // .then( (restaurants) => <SearchResults restaurants = {restaurants} />)
-      // this.state.eateries = this.props.searchRestaurants(name)
-
-      debugger; // <SearchResults restaurants = {this.props.restaurants}/>
-      // .then( (restaurants) => <SearchResults restaurants = {restaurants} />)
+      this.props.searchRestaurants(name);
+      this.props.history.push("/results");
+      debugger;
     }
   }, {
     key: "render",
@@ -3178,8 +3170,7 @@ function (_React$Component) {
     _this.state = {
       startDate: moment__WEBPACK_IMPORTED_MODULE_2___default()()._d
     };
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this)); // debugger
-
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -3202,13 +3193,7 @@ function (_React$Component) {
         selected: this.state.startDate,
         onChange: function onChange(date) {
           return _this2.handleChange(date);
-        } // placeholderText= 'MM/DD/YYYY'
-        // showTimeSelect
-        // timeIntervals={30}
-        // minDate = {this.state.startDate._d}
-        // minTime={moment().hours(11).minutes(0)}
-        // maxTime={moment().hours(22).minutes(0)}
-        ,
+        },
         dateFormat: "MM/dd/yyyy"
       });
     }
@@ -3237,7 +3222,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-debugger;
 
 var SearchPage = function SearchPage() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3255,10 +3239,7 @@ var SearchPage = function SearchPage() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_search_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "search-results-block"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_results_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
-}; // const SearchPage = function(){
-
-
-debugger; // }
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchPage);
 
@@ -3324,7 +3305,6 @@ function (_React$Component) {
     value: function render() {
       debugger;
       var restaurants;
-      var noResults;
 
       if (Object.keys(this.props.restaurants).length === 0) {
         restaurants = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3380,9 +3360,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state) {
   return {
-    restaurants: state.entities.restaurants // restaurants: Object.values(state.entities.restaurants),
-    // locations: Object.values(state.entities.locations)
-
+    restaurants: state.entities.restaurants
   };
 };
 
@@ -3390,9 +3368,7 @@ var mDTP = function mDTP(dispatch) {
   return {
     fetchRestaurants: function fetchRestaurants() {
       return dispatch(Object(_actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_1__["fetchRestaurants"])());
-    } // searchRestaurants: (query) => dispatch(searchRestaurants(query)),
-    // fetchLocations: () => dispatch(fetchLocations())
-
+    }
   };
 };
 

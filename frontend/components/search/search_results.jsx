@@ -18,7 +18,6 @@ class SearchResults extends React.Component{
         debugger
 
         let restaurants;
-        let noResults;
         if (Object.keys(this.props.restaurants).length === 0) {
             restaurants = (
                 <div className='empty-index-message'>
