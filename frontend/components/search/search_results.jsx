@@ -5,7 +5,6 @@ import RestaurantIndex from '../restaurant_show/restaurants_index'
 class SearchResults extends React.Component{
     constructor(props){
         super(props);
-        debugger
     }
 
     componentWillMount(){
@@ -15,7 +14,7 @@ class SearchResults extends React.Component{
    
     render() {
 
-        debugger
+        // debugger
 
         let restaurants;
         if (Object.keys(this.props.restaurants).length === 0) {

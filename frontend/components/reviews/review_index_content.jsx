@@ -3,6 +3,7 @@ import React from 'react';
 class ReviewIndexContent extends React.Component {
      componentWillMount() {
          if (this.props.type == 'restaurant') {
+            debugger
              this.props.fetchUser(this.props.review.user_id);
             //  this.props.fetchUsers();
          } else {

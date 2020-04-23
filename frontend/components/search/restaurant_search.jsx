@@ -33,7 +33,7 @@ class RestaurantSearch extends React.Component {
         let name = this.state.query
         this.props.searchRestaurants(name)
         this.props.history.push(`/results`)
-        debugger
+        // debugger
     }
 
     render() {

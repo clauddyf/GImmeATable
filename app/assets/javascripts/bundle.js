@@ -2069,26 +2069,21 @@ function (_React$Component) {
   _inherits(RestaurantShow, _React$Component);
 
   function RestaurantShow(props) {
-    var _this;
-
     _classCallCheck(this, RestaurantShow);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(RestaurantShow).call(this, props));
-    debugger;
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(RestaurantShow).call(this, props)); // debugger
   }
 
   _createClass(RestaurantShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger;
+      // debugger
       this.props.fetchRestaurant(this.props.match.params.restId);
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevState) {
-      debugger;
-
+      // debugger
       if (prevState.match.params.restId !== this.props.match.params.restId) {
         this.props.fetchRestaurant(this.props.match.params.restId);
       }
@@ -2098,18 +2093,22 @@ function (_React$Component) {
     value: function render() {
       // let restaurant = this.props.restaurant ? this.props.restaurant.restaurant : '';
       var restaurant;
+      var restReviews;
 
       if (this.props.restaurant !== undefined) {
         if (this.props.restaurant.restaurant !== undefined) {
           restaurant = this.props.restaurant.restaurant;
+          restReviews = this.props.restaurant.reviews;
         } else {
           restaurant = this.props.restaurant;
+          restReviews = this.props.reviews;
         }
       } else {
         restaurant = '';
+        restReviews = this.props.reviews;
       }
 
-      var restReviews = this.props.restaurant ? this.props.restaurant : '';
+      debugger; // let restReviews = this.props.restaurant ? this.props.restaurant: '';
 
       if (restaurant.open === 24) {
         open = "12:00 AM";
@@ -2276,7 +2275,7 @@ function (_React$Component) {
         className: "rest-section-title"
       }, "Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
         type: 'restaurant',
-        reviews: restReviews.reviews
+        reviews: restReviews
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_reviews_compose_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         restaurant: restaurant
       }))))));
@@ -2287,28 +2286,6 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (RestaurantShow);
-{
-  /* <div className='ratings-bar'>
-     <div className='rte-bar-child'>
-         <ul className='rev-bar'>
-             <li className='rev-icon'>
-                 
-             </li>
-             <li className='c-type'>
-                 <span className='c-type'>{this.props.restaurant.num_of_views}</span>
-                 <span className='c-type'> Reviews</span>
-             </li>
-             
-             <li className='ctype-icon'>
-                 
-             </li>
-             <li className='c-type'>
-                 <span className='c-type'>{this.props.restaurant.cuisine_type}</span>
-             </li>
-         </ul>
-     </div>
-  </div> */
-}
 
 /***/ }),
 
@@ -2335,7 +2312,8 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownProps) {
   return {
     restaurant: state.entities.restaurants[ownProps.match.params.restId],
-    currentUser: state.session.id
+    currentUser: state.session.id,
+    reviews: state.entities.reviews
   };
 };
 
@@ -2343,7 +2321,20 @@ var mDTP = function mDTP(dispatch) {
   return {
     fetchRestaurant: function fetchRestaurant(restaurant) {
       return dispatch(Object(_actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_1__["fetchRestaurant"])(restaurant));
-    } // receiveCurrentUser: (currentUser) => dispatch(receiveCurrentUser(currentUser))
+    },
+    fetchReviews: function (_fetchReviews) {
+      function fetchReviews(_x) {
+        return _fetchReviews.apply(this, arguments);
+      }
+
+      fetchReviews.toString = function () {
+        return _fetchReviews.toString();
+      };
+
+      return fetchReviews;
+    }(function (reviews) {
+      return dispatch(fetchReviews(reviews));
+    }) // receiveCurrentUser: (currentUser) => dispatch(receiveCurrentUser(currentUser))
 
   };
 }; // debugger
@@ -2400,7 +2391,7 @@ function (_React$Component) {
   _createClass(RestaurantsIndex, [{
     key: "render",
     value: function render() {
-      debugger;
+      // debugger
       var restaurant;
 
       if (this.props.restaurant.restaurant !== undefined) {
@@ -2607,12 +2598,17 @@ function (_React$Component) {
       this.props.fetchRestaurants();
     }
   }, {
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.props.fetchReviews();
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this = this;
 
       debugger;
-      var reviews = this.props.reviews ? this.props.reviews : [];
+      var reviews = Object.keys(this.props.reviews).length > 0 ? this.props.reviews : [];
 
       if (reviews.length === 0) {
         return null;
@@ -2752,6 +2748,7 @@ function (_React$Component) {
     key: "componentWillMount",
     value: function componentWillMount() {
       if (this.props.type == 'restaurant') {
+        debugger;
         this.props.fetchUser(this.props.review.user_id); //  this.props.fetchUsers();
       } else {
         this.props.fetchRestaurant(this.props.review.restaurant_id);
@@ -2955,8 +2952,7 @@ function (_React$Component) {
       e.preventDefault();
       var name = this.state.query;
       this.props.searchRestaurants(name);
-      this.props.history.push("/results");
-      debugger;
+      this.props.history.push("/results"); // debugger
     }
   }, {
     key: "render",
@@ -3364,13 +3360,9 @@ function (_React$Component) {
   _inherits(SearchResults, _React$Component);
 
   function SearchResults(props) {
-    var _this;
-
     _classCallCheck(this, SearchResults);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchResults).call(this, props));
-    debugger;
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(SearchResults).call(this, props));
   }
 
   _createClass(SearchResults, [{
@@ -3381,7 +3373,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
+      // debugger
       var restaurants;
 
       if (Object.keys(this.props.restaurants).length === 0) {
@@ -4389,10 +4381,13 @@ var ReviewsReducer = function ReviewsReducer() {
 
   switch (action.type) {
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW"]:
-      newState[action.reviews.id] = action.review;
-      return newState;
+      debugger; // newState[action.review.id] = action.review;
+      // return newState;
+
+      return action.reviews;
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEWS"]:
+      debugger;
       return action.reviews;
 
     default:

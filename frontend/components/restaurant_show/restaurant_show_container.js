@@ -7,12 +7,14 @@ import { receiveCurrentUser } from '../../actions/session_actions';
 
 const mSTP = (state,ownProps) => ({
     restaurant: state.entities.restaurants[ownProps.match.params.restId],
-    currentUser: state.session.id
+    currentUser: state.session.id,
+    reviews: state.entities.reviews
     
 })
 
 const mDTP = dispatch => ({
     fetchRestaurant:(restaurant) => dispatch(fetchRestaurant(restaurant)),
+    fetchReviews: (reviews) => dispatch(fetchReviews(reviews))
     // receiveCurrentUser: (currentUser) => dispatch(receiveCurrentUser(currentUser))
 })
 // debugger

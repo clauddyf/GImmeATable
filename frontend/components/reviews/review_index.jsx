@@ -8,9 +8,13 @@ class ReviewIndex extends React.Component {
         this.props.fetchRestaurants();
     }
 
+    componentWillMount(){
+        this.props.fetchReviews()
+    }
+
     render() {
         debugger
-        let reviews = this.props.reviews ? this.props.reviews : []
+        let reviews = Object.keys(this.props.reviews).length > 0 ? this.props.reviews : []
         if(reviews.length === 0) {return null;}
         return (
             <div className='rev-index'>

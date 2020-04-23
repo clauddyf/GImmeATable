@@ -8,16 +8,16 @@ import ReviewIndexContainer from '../reviews/review_index_container';
 class RestaurantShow extends React.Component{
     constructor(props){
         super(props)
-        debugger
+        // debugger
     }
     
     componentDidMount(){
-        debugger
+        // debugger
         this.props.fetchRestaurant(this.props.match.params.restId)     
     }
 
     componentDidUpdate(prevState) {
-        debugger
+        // debugger
         if (prevState.match.params.restId !== this.props.match.params.restId) {
             this.props.fetchRestaurant(this.props.match.params.restId)
         }
@@ -26,16 +26,24 @@ class RestaurantShow extends React.Component{
     render(){
         // let restaurant = this.props.restaurant ? this.props.restaurant.restaurant : '';
         let restaurant;
+        let restReviews
         if(this.props.restaurant !== undefined){
             if(this.props.restaurant.restaurant !== undefined){
                 restaurant = this.props.restaurant.restaurant
+                restReviews = this.props.restaurant.reviews
             }else{
                 restaurant = this.props.restaurant
+                restReviews = this.props.reviews
+
             }
         } else {
             restaurant = ''
+            restReviews = this.props.reviews
         }
-        let restReviews = this.props.restaurant ? this.props.restaurant: '';
+
+        debugger
+
+        // let restReviews = this.props.restaurant ? this.props.restaurant: '';
         
         if (restaurant.open === 24) {
           open = `12:00 AM`;
@@ -221,7 +229,7 @@ class RestaurantShow extends React.Component{
                             Reviews
                         </div>
                         <div>
-                            <ReviewIndexContainer type={'restaurant'} reviews={restReviews.reviews}/>
+                            <ReviewIndexContainer type={'restaurant'} reviews={restReviews}/>
                         </div>
                         <div>
                             <ReviewComposeContainer restaurant={restaurant}/>
@@ -235,23 +243,3 @@ class RestaurantShow extends React.Component{
 }
 
 export default RestaurantShow;
-{/* <div className='ratings-bar'>
-    <div className='rte-bar-child'>
-        <ul className='rev-bar'>
-            <li className='rev-icon'>
-                
-            </li>
-            <li className='c-type'>
-                <span className='c-type'>{this.props.restaurant.num_of_views}</span>
-                <span className='c-type'> Reviews</span>
-            </li>
-            
-            <li className='ctype-icon'>
-                
-            </li>
-            <li className='c-type'>
-                <span className='c-type'>{this.props.restaurant.cuisine_type}</span>
-            </li>
-        </ul>
-    </div>
-</div> */}
