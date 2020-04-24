@@ -2608,7 +2608,7 @@ function (_React$Component) {
       var _this = this;
 
       debugger;
-      var reviews = Object.keys(this.props.reviews).length > 0 ? this.props.reviews : [];
+      var reviews = Object.keys(this.props.reviews).length > 0 ? Object.values(this.props.reviews) : [];
 
       if (reviews.length === 0) {
         return null;

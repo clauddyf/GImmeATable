@@ -14,7 +14,7 @@ class ReviewIndex extends React.Component {
 
     render() {
         debugger
-        let reviews = Object.keys(this.props.reviews).length > 0 ? this.props.reviews : []
+        let reviews = Object.keys(this.props.reviews).length > 0 ? Object.values(this.props.reviews) : []
         if(reviews.length === 0) {return null;}
         return (
             <div className='rev-index'>
