@@ -2839,7 +2839,8 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state) {
   return {
     currentUser: state.session.currentUser,
-    loggedIn: Boolean(state.session.id)
+    loggedIn: Boolean(state.session.id),
+    afterLoggingInUser: state.entities.users
   };
 };
 
@@ -4569,12 +4570,14 @@ var usersReducer = function usersReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  var newstate = Object.assign({}, state); // debugger
+  var newstate = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_USER"]:
-      newstate[action.user.id] = action.user;
-      return newstate;
+      debugger; // newstate[action.user.id] = action.user;
+      // return newstate;
+
+      return action.user;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_USERS"]:
       return action.users;

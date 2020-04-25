@@ -5,7 +5,8 @@ import ReviewCompose from './review_compose';
 
 const mSTP = (state) => ({
     currentUser: state.session.currentUser,
-    loggedIn: Boolean(state.session.id)
+    loggedIn: Boolean(state.session.id),
+    afterLoggingInUser: state.entities.users
 });
 
 const mDTP = (dispatch) => ({
