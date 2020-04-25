@@ -10,7 +10,7 @@ import { withRouter } from 'react-router-dom';
 
 const mSTP =(state,ownProps) => ({
     currentUser: state.session.currentUser,
-    // reviews: Object.values(state.entities.reviews) || [],
+    moreReviews: Object.values(state.entities.reviews) || [],
     users: state.entities.users,
     restaurants: state.entities.restaurants,
     user: ownProps.match.params.userId,

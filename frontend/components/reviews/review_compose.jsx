@@ -17,7 +17,10 @@ class ReviewCompose extends React.Component {
         } else if (this.state.body === '') {
             return
         } else {
-            this.props.composeReview(this.state).then(() => this.setState({body: ''}));
+            debugger
+            this.props.composeReview(this.state)
+                .then(() => this.setState({body: ''}))
+     
         }
     }
 

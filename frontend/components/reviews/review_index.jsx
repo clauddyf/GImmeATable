@@ -18,7 +18,7 @@ class ReviewIndex extends React.Component {
         if(reviews.length === 0) {return null;}
         return (
             <div className='rev-index'>
-                <h2>Reviews:</h2>
+                {/* <h2>Reviews:</h2> */}
                 {
                     reviews.map(review => (
                         <ReviewIndexContent

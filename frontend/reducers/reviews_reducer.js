@@ -8,9 +8,15 @@ const ReviewsReducer = (oldState  = {}, action) => {
     switch(action.type) {
         case RECEIVE_REVIEW:
             debugger
+            let returnObj = {}
+            if (action.reviews){
+                return action.reviews
+            } else {
+                returnObj = {1 : action.review}
+                return returnObj;
+            }
             // newState[action.review.id] = action.review;
             // return newState;
-            return action.reviews;
         case RECEIVE_REVIEWS:
             debugger
             return action.reviews;

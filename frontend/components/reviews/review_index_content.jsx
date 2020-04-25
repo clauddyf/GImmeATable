@@ -37,7 +37,18 @@ class ReviewIndexContent extends React.Component {
                 {this.props.review.body}
             </div>
         );
-     } else if (this.props.type === 'user' && this.props.review.user_id === parseInt(this.props.user)) {
+     } 
+    //  else if (this.props.type === 'restaurant' && this.props.review.restaurant_id === null){
+    //      content = (
+    //         <div className='rev-ind-cont'>
+    //             <h3>Review by {reviewer}:</h3>
+    //             <hr />
+    //             <br />
+    //             {this.props.review.body}
+    //         </div>
+    //      );
+    //  }
+     else if (this.props.type === 'user' && this.props.review.user_id === parseInt(this.props.user)) {
          content = (
              <div className='rev-ind-cont'>
                  <h3>Review for {reviewedRestaurant}:</h3>

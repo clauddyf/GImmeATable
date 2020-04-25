@@ -12,15 +12,17 @@ class RestaurantShow extends React.Component{
     }
     
     componentDidMount(){
-        // debugger
-        this.props.fetchRestaurant(this.props.match.params.restId)     
+        debugger
+        this.props.fetchRestaurant(this.props.match.params.restId)
     }
 
     componentDidUpdate(prevState) {
-        // debugger
         if (prevState.match.params.restId !== this.props.match.params.restId) {
+            debugger
             this.props.fetchRestaurant(this.props.match.params.restId)
+            this.props.history.push(`/restaurants/${this.props.restaurant.restaurant.id}`)   
         }
+        debugger
     }
     
     render(){
@@ -28,8 +30,9 @@ class RestaurantShow extends React.Component{
         let restaurant;
         let restReviews
         if(this.props.restaurant !== undefined){
-            if(this.props.restaurant.restaurant !== undefined){
+            if(this.props.restaurant.restaurant !== undefined && Object.keys(this.props.reviews).length > 0){
                 restaurant = this.props.restaurant.restaurant
+                this.props.restaurant.reviews.push(Object.values(this.props.reviews)[0])
                 restReviews = this.props.restaurant.reviews
             }else{
                 restaurant = this.props.restaurant
@@ -40,6 +43,12 @@ class RestaurantShow extends React.Component{
             restaurant = ''
             restReviews = this.props.reviews
         }
+        // if (this.props.restaurant.reviews && this.props.reviews) {
+        //     this.props.restaurant.reviews.push(this.props.reviews)
+        //     restReviews = this.props.restaurant.reviews
+        // } else {
+        //     restReviews = this.props.reviews
+        // }
 
         debugger
 

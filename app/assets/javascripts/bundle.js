@@ -2077,16 +2077,19 @@ function (_React$Component) {
   _createClass(RestaurantShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // debugger
+      debugger;
       this.props.fetchRestaurant(this.props.match.params.restId);
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevState) {
-      // debugger
       if (prevState.match.params.restId !== this.props.match.params.restId) {
+        debugger;
         this.props.fetchRestaurant(this.props.match.params.restId);
+        this.props.history.push("/restaurants/".concat(this.props.restaurant.restaurant.id));
       }
+
+      debugger;
     }
   }, {
     key: "render",
@@ -2096,8 +2099,9 @@ function (_React$Component) {
       var restReviews;
 
       if (this.props.restaurant !== undefined) {
-        if (this.props.restaurant.restaurant !== undefined) {
+        if (this.props.restaurant.restaurant !== undefined && Object.keys(this.props.reviews).length > 0) {
           restaurant = this.props.restaurant.restaurant;
+          this.props.restaurant.reviews.push(Object.values(this.props.reviews)[0]);
           restReviews = this.props.restaurant.reviews;
         } else {
           restaurant = this.props.restaurant;
@@ -2106,7 +2110,13 @@ function (_React$Component) {
       } else {
         restaurant = '';
         restReviews = this.props.reviews;
-      }
+      } // if (this.props.restaurant.reviews && this.props.reviews) {
+      //     this.props.restaurant.reviews.push(this.props.reviews)
+      //     restReviews = this.props.restaurant.reviews
+      // } else {
+      //     restReviews = this.props.reviews
+      // }
+
 
       debugger; // let restReviews = this.props.restaurant ? this.props.restaurant: '';
 
@@ -2498,6 +2508,7 @@ function (_React$Component) {
       } else if (this.state.body === '') {
         return;
       } else {
+        debugger;
         this.props.composeReview(this.state).then(function () {
           return _this2.setState({
             body: ''
@@ -2616,7 +2627,7 @@ function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rev-index"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Reviews:"), reviews.map(function (review) {
+      }, reviews.map(function (review) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_index_content__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: review.id,
           review: review,
@@ -2666,7 +2677,7 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownProps) {
   return {
     currentUser: state.session.currentUser,
-    // reviews: Object.values(state.entities.reviews) || [],
+    moreReviews: Object.values(state.entities.reviews) || [],
     users: state.entities.users,
     restaurants: state.entities.restaurants,
     user: ownProps.match.params.userId,
@@ -2778,13 +2789,23 @@ function (_React$Component) {
         content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "rev-ind-cont"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Review by ", reviewer, ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.review.body);
-      } else if (this.props.type === 'user' && this.props.review.user_id === parseInt(this.props.user)) {
-        content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "rev-ind-cont"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Review for ", reviewedRestaurant, ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.review.body);
-      } else {
-        content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
-      }
+      } //  else if (this.props.type === 'restaurant' && this.props.review.restaurant_id === null){
+      //      content = (
+      //         <div className='rev-ind-cont'>
+      //             <h3>Review by {reviewer}:</h3>
+      //             <hr />
+      //             <br />
+      //             {this.props.review.body}
+      //         </div>
+      //      );
+      //  }
+      else if (this.props.type === 'user' && this.props.review.user_id === parseInt(this.props.user)) {
+          content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "rev-ind-cont"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Review for ", reviewedRestaurant, ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.review.body);
+        } else {
+          content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+        }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, content);
     }
@@ -4381,10 +4402,20 @@ var ReviewsReducer = function ReviewsReducer() {
 
   switch (action.type) {
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW"]:
-      debugger; // newState[action.review.id] = action.review;
-      // return newState;
+      debugger;
+      var returnObj = {};
 
-      return action.reviews;
+      if (action.reviews) {
+        return action.reviews;
+      } else {
+        returnObj = {
+          1: action.review
+        };
+        return returnObj;
+      }
+
+    // newState[action.review.id] = action.review;
+    // return newState;
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEWS"]:
       debugger;
